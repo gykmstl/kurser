@@ -1,0 +1,56 @@
+body {
+    font-family: 'Verdana', sans-serif;
+}
+
+article {
+    margin: 1em 0;
+    border: 1px solid black;
+}
+
+article > h1 {
+    text-transform: uppercase;
+}
+
+a[target="_blank"]::after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+    margin: 0 3px 0 5px;
+}
+
+.kurs {
+    font-size: 200%;
+    border: 1px solid black;
+    
+    background-color: darkgrey;
+    color: white;
+}
+
+/* ol > li {
+    margin: 1em 0;
+} */
+
+iframe {
+    width: 100%;
+}
+
+details > div {
+    border: 1px solid black;
+}
+
+.prettyprint ol.linenums > li { 
+    list-style-type: decimal; 
+    margin: 0;
+}
+
+/* .dark-theme article {
+    border: 1px solid white;
+    background-color: white;
+} */
+
+/* .dark-theme {
+  background-color: black;
+  color: white;
+}
+
+.dark-theme details > div {
+    border: 1px solid white;
+} */

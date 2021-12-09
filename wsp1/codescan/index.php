@@ -1,0 +1,2 @@
+<?php
+include("../../codescan.php");

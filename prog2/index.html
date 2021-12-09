@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Programmering 2 - Balder</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+    <script>localStorage.setItem("balderkurs", "prog2")</script>
+</head>
+
+<body>
+    <nav>
+        <button data-src="../wu1/">Webbutveckling 1</button>
+        <button data-src="../prog1/">Programmering 1</button>
+        <button data-src="../prog2/">Programmering 2</button>
+        <button data-src="../wsp1/">Webbserverprogrammering1</button>
+    </nav>
+
+    <h1 class="kurs" id="prog2">Programmering 2</h1>
+
+    <p>
+        <a href="https://skelleftea.sharepoint.com/:w:/s/Section_648722b9-117f-4210-a143-eadcd94922d4/EQ_greoLWJhFg_cQP5TcNmcBxdbAE_g2SvrWIym-3nhOww?e=nPGgzW"
+            target="_blank">
+            Planering-lektionslogg INV3 HT21
+        </a>
+    </p>
+
+    <article>
+        <h1>Allmänt</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <p>Ladda ner <a href="balder202-app.zip">version 2.0.2 av BalderJS. (Med buggfix <b>2021-10-27</b>)</a></p>
+
+            <details>
+                <summary>Skolverket</summary>
+                <div>
+                    <p><a href='https://www.skolverket.se/undervisning/gymnasieskolan/laroplan-program-och-amnen-i-gymnasieskolan/gymnasieprogrammen/amne?url=1530314731%2Fsyllabuscw%2Fjsp%2Fsubject.htm%3FsubjectCode%3DPRR%26courseCode%3DPRRPRR02%26tos%3Dgy&sv.url=12.5dfee44715d35a5cdfa92a3#anchor_PRRPRR02'
+                            target='_blank'>Programmering 2</a></p>
+                </div>
+            </details>
+            <details>
+                <summary><i>BalderJS</i> API</summary>
+                <div>
+                    <p><a href="../api/" target="_blank">API <i>BalderJS</i></a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Att-kunna-lista</summary>
+                <div>
+                    <ul>
+                        <li>Använda data med datatyperna <code>string</code>,
+                            <code>number</code>, <code>boolean</code> och <code>object</code>.
+                        </li>
+                        <li>Skapa och anropa funktioner (även asynkrona).</li>
+                        <li>Rita i canvasen (med till exempel <code>circle</code>, <code>rectangle</code> och
+                            <code>text</code>).
+                        </li>
+                        <li>Skapa animeringar (med <code>setUpdate</code>).</li>
+                        <li>Läsa och skriva data (med <code>input</code> och <code>output</code>).</li>
+                        <li>Kontrollstrukturer, inklusive undantagshantering (<code>try-catch</code>).</li>
+                        <li>Skapa och använda <i>arrayer</i> med en och två dimensioner.</li>
+                        <li>Skapa nya element (med <code>add</code>) och koppla händelsehanterare till dessa.
+                        </li>
+                        <li>Skapa klasser med:
+                            <ul>
+                                <li>egenskaper</li>
+                                <li>konstruktorer</li>
+                                <li>metoder</li>
+                                <li><i>getters</i> och <i>setters</i></li>
+                            </ul>
+                        </li>
+                        <li>Skapa och använda objekt.</li>
+                        <li>Skapa klasser som ärver från andra klasser (med <code>extends</code>).</li>
+                        <li>Skapa inkapsling med åtkomstmodifierare (<code>private</code>, <code>protected</code> och
+                            <code>public</code>).
+                        </li>
+                        <li>Skriva till, och läsa från, <code>localStorage</code>.</li>
+                        <li>Skicka meddelanden mellan två klienter.</li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>Att-kunna-lista Teoriprov</summary>
+                <div>
+                    <h3>OOP</h3>
+                    <p>Begrepp att känna igen, beskriva och helst förstå:</p>
+                    <ul>
+                        <li>Klasser och objekt (<code>class</code>, <code>new</code>)</li>
+                        <li>Egenskaper</li>
+                        <li>Metoder</li>
+                        <li>Konstruktorer (<code>constructor</code>)</li>
+                        <li><i>getters</i> och <i>setters</i> (<code>get</code>, <code>set</code>)</li>
+                        <li>Inkapsling (<code>private</code>, <code>protected</code>
+                            , <code>public</code> och <code>readonly</code>)
+                        </li>
+                        <li>Klassegenskaper och klassmetoder (med <code>static</code>)</li>
+                        <li>Arv (<code>extends</code>)</li>
+                        <li>Abstrakta klasser (med <code>abstract</code>)</li>
+                        <li>Polymorfism</li>
+                        <li>Gränssnitt (<code>interface</code>, <code>implements</code>)</li>
+                        <li><del>Generiska klasser och metoder (<code>&lt;<i>Type</i>&gt;</code>)</del</li>
+                    </ul>
+                   
+                    <h3>OOA, OOD</h3>
+                    <p>Dessa begrepp, från häftet <a
+                            href="https://www.ida.liu.se/divisions/sas/groups/upp/info/prog/OOP-Nutshell.pdf"
+                            target="_blank">Objektorienterad programutveckling i ett nötskal</a>, ska du kunna namnge då de förklaras:
+                    </p>
+                    <ul>
+                        <li>Användningsfallsdiagram (<em>use case diagrams</em>)<br /><img
+                                src="images/use-case-diagram.PNG" width="600" /><br /><br /></li>
+                        <li>CRC-kort<br /><img src="images/crc-card.PNG" width="600" /><br /><br /></li>
+                        <li>Klassdiagram<br /><img src="images/class-diag.PNG" width="600" /><br /><br /></li>
+                        <!-- <li>Analys- och designmetodik<br /><img src="images/ooa-ood.PNG" width="600" /><br /><br /></li> -->
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Tips o trix med <i>VS Code</i></summary>
+                <iframe src="../vscode.html" style="height: 40em;"></iframe>
+            </details>
+            <details>
+                <summary>Vad kallas tecknen?</summary>
+                <iframe src="../tecken.html" style="height: 40em;"></iframe>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Objektorienterad programutveckling</summary>
+                <div>
+                    <p>Läs igenom minst en gång. </p>
+                    <p><a href='http://balder.skelamp.se/prog2/OOP-Nutshell.pdf' target='_blank'>Objektorienterad
+                            programutveckling i ett nötskal</a></p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Windows (provuppgift)</summary>
+                <div>
+                    <p>Skapa en mapp <b>windows</b>.</p>
+                    <p>Skapa i den en klass <code>Window</code> med detta innehåll:</p>
+
+                    <p><b>Egenskaper:</b></p>
+                    <ul>
+                        <li><code>app</code>, en text som är fönstrets (applikationens) namn.</li>
+                        <li><code>state</code>, en text som kan anta värdena "minimized" , "maximized" och "normal".
+                        </li>
+                        <li><code>x</code>, ett tal som anger x-koordinaten för fönstrets övre vänstra hörn.</li>
+                        <li><code>y</code>, ett tal som anger y-koordinaten för fönstrets övre vänstra hörn.</li>
+                        <li><code>width</code>, ett tal som anger fönstrets bredd.</li>
+                        <li><code>height</code>, ett tal som anger fönstrets höjd.</li>
+                        <li><code>color</code>, en text som anger fönstrets färg.</li>
+                    </ul>
+
+                    <p><b>Konstruktor:</b></p>
+
+                    Tar emot en parameter som anger fönstrets namn. Sätter storlek och position så att fönstret hamnar
+                    (typ) i mitten av canvasen.
+                    Slumpar fram fönstrets färg.
+
+                    <p><b>Metoder:</b></p>
+                    <ul>
+                        <li><code>draw()</code> - ritar upp fönstret i canvasen</li>
+                        <li><code>maximize()</code> - maximerar fönstret genom att ändra <code>state</code>-egenskapen.
+                        </li>
+                        <li><code>minimize()</code> - minimerar fönstret genom att ändra <code>state</code>-egenskapen.
+                        </li>
+                        <li><code>restore()</code> - återställer fönstret genom att ändra <code>state</code>-egenskapen.
+                        </li>
+                    </ul>
+
+                    Klassen ska testas av ett grafiskt gränssnitt liknade detta:
+                    <div>
+                        <img src="images/win-gui.PNG" alt="" width="600">
+                    </div>
+                    Längst ner i canvasen ska en bottenlist ritas. (Ska motsvara aktivitetsfältet i <i>Windows</i>.)
+
+                    <p>Knapparnas funktionalitet:</p>
+
+                    <ul>
+                        <li><b>open</b> ska öppna ett angivet fönster. Det kan se ut så här:
+                            <div>
+                                <img src="images/win-gui-open.PNG" alt="" width="600">
+                            </div>
+                            Längst upp i fönstret ska en list visas med namnet till vänster och tre symboler ("-", "O",
+                            "X") till höger.
+                        </li>
+                        <li><b>close</b> ska stänga (ta bort) ett angivet fönster.</li>
+                        <li><b>focus</b> ska ge fokus åt ett angivet fönster. Detta visas genom att fönstret ska ritas
+                            ovanpå andra överlappande fönster:
+                            <div>
+                                <img src="images/win-gui-focus.PNG" alt="" width="600">
+                            </div>
+                        </li>
+                        <li><b>minimize</b> ska minimera ett angivet fönster. Ett minimerat fönster visas som en liten
+                            kvadrat i canvasens bottenlist:
+                            <div>
+                                <img src="images/win-gui-min.PNG" alt="" width="600">
+                            </div>
+                        </li>
+                        <li><b>maximize</b> ska maximera ett angivet fönster. Ett maximerat fönster visas på hela
+                            canvasen, förutom bottenlisten:
+                            <div>
+                                <img src="images/win-gui-max.PNG" alt="" width="600">
+                            </div>
+                        </li>
+                        <li><b>restore</b> ska återställa ett angivet fönster till den storlek och position den hade
+                            före det min-/maximerades.</li>
+                        <li><b>x+=10</b> ska flytta ett angivet fönster 10 pixlar till höger.</li>
+                        <li><b>x-=10</b> ska flytta ett angivet fönster 10 pixlar till vänster.</li>
+                        <li><b>y+=10</b> ska flytta ett angivet fönster 10 pixlar nedåt.</li>
+                        <li><b>y-=10</b> ska flytta ett angivet fönster 10 pixlar uppåt.</li>
+                    </ul>
+
+                    <p>Slutligen så vore det snyggt om alla fönsters tillstånd sparades i <code>localStorage</code> så
+                        att man alltid kan börja om där man slutade förra gången.</p>
+
+                    <p><b>Tips:</b></p>
+                    <ul>
+                        <li>Efter det att textrutan och knapparna skapats så kan funktion <code>resetCanvas()</code>
+                            anropas.
+                            Den anpassar canvasen till det utrymme som finns över på skärmen.</li>
+                        <li>Skapa en array av fönster (<code>Window</code>-objekt), så här:<br>
+                            <code>let ws: Window[] = []</code>
+                        </li>
+                        <li>Då <b>open</b>-knappen klickas så lägg till ett nytt fönster i arrayen.</li>
+                        <li>Skapa en <code>draw</code>-funktion som loopar igenom arrayen och för varje fönster anropar
+                            dess
+                            <code>draw</code>-metod. Om inte fönstret är minimerat för då ska en liten ruta, med
+                            fönstrets färg, visas i bottenlisten istället.
+                        </li>
+                        <li>Då <b>close</b>-knappen klickas så ta först reda på vilken plats fönstret har i arrayen och
+                            ta sedan bort det.</li>
+                        <li>Då <b>focus</b>-knappen klickas så flytta det fönstret sist i arrayen. På så vis ritas det
+                            upp sist och alltså överst.</li>
+                    </ul>
+
+                    <p>Lämna in mappen i din <b>codescan</b>-mapp på <i>skelamp</i>.</p>
+
+                    <p><b>* Galen extrauppgift:</b></p>
+
+                    <p>Gör så att fönsterhanteringen fungerar som på "riktigt". Tänk om man kunde:</p>
+                    <ul>
+                        <li>Minimera, maximera, återställa och stänga genom att klicka på symbolerna i fönstrens övre
+                            högra hörn!</li>
+                        <li>Flytta fokus till ett fönster genom att klicka i det!</li>
+                        <li>Ändra storlek på ett fönster genom att "dra" i kanterna!</li>
+                        <li>Flytta ett fönster genom att "dra" det!</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Tärning (Gammal provuppgift)</summary>
+                <div>
+                    <h3>Klassen Tärning</h3>
+                    <p>Skriv en klass <span style="font-family: 'courier new', courier, monospace;">Tärning</span> med:
+                    </p>
+                    <ul>
+                        <li>En egenskap <span style="font-family: 'courier new', courier, monospace;">prickar</span> som
+                            kan innehålla ett
+                            tal.</li>
+                        <li>En metod <span style="font-family: 'courier new', courier, monospace;">kasta </span>som vid
+                            anrop "kastar"
+                            tärningen; mer precist sätter egenskapen <span
+                                style="font-family: 'courier new', courier, monospace;">prickar</span> slumpmässigt till
+                            1, 2, 3, 4, 5 eller
+                            6 och returnerar värdet. </li>
+                        <li>En konstruktor som anropar <span
+                                style="font-family: 'courier new', courier, monospace;">kasta</span>-metoden en
+                            första gång för att ge tärningen ett starttillstånd, det vill säga gör så att egenskapen
+                            <span style="font-family: 'courier new', courier, monospace;">prickar</span> har fått ett
+                            värde. 
+                        </li>
+                    </ul>
+                    <p>Testa med denna kod:</p>
+                    <pre>let t = new Tärning()
+output(t.prickar)       
+output(t.kasta())    
+output(t.prickar)      
+</pre>
+                    <p>Kommentar: Den första utskriften ska skriva 1, 2, 3, 4, 5, eller 6 (med lika stor sannolikhet
+                        vardera). Den andra
+                        utskriften ska skriva tärningens prickar efter det att den kastats en gång till. Den tredje
+                        utskriften ska vara
+                        identisk med den andra då prickarna bara avläses utan att tärningen kastas på nytt.</p>
+                    <p>Exempel på godkänd utskrift (andra och tredje raden lika):</p>
+                    <pre>5
+3
+3
+</pre>
+                    <p>Exempel på felaktig utskrift (andra och tredje raden olika):</p>
+                    <pre>5
+3
+6
+</pre>
+                    <p>För betygen C-B-A ska dessutom detta finnas med/fungera:</p>
+                    <ul>
+                        <li>Konstruktorn ska kunna ta emot antalet sidor på tärningen. Om antalet inte skickas med
+                            så ska
+                            <em>default</em>-värdet vara 6. De enda värden som ska godkännas är 4, 6, 8, 12 och 20
+                            (antalet sidor i de <a href="https://sv.wikipedia.org/wiki/Platonska_kroppar"
+                                target="_blank">Platonska kropparna</a>). Om andra
+                            värden skickas in ska ett Error-objekt skapas, och kastas. <br /> 
+                        </li>
+                        <li>Skriv testkod som gör det troligt att antalet sidor ändras på rätt sätt. Till exempel kan du
+                            kasta 100 tärningar
+                            och räkna hur många gånger du fick de olika utfallen. Visa helst resultatet grafiskt i ett
+                            diagram.<br /> </li>
+                        <li>Skriv också testkod som visar att undantaget från konstruktorn kan fångas och
+                            hanteras.<br /> </li>
+                        <li>Gör så att egenskapen <span
+                                style="font-family: 'courier new', courier, monospace;">prickar</span> inte går att
+                            skriva till från testkoden. Det är inte önskvärt att kod som denna fungerar:<br />
+                            <pre>t.prickar = 99
+</pre>
+                            Det ska dock fortfarande gå att avläsa egenskapen. Tipset är att använde en "getter".<br /> 
+                        </li>
+                        <li>Omdefinera <span
+                                style="font-family: 'courier new', courier, monospace;">toString</span>-metoden så att
+                            den
+                            returnerar antalet prickar på tärningen. Testa med en utskrift som dessa:<br />
+                            <pre>output(t.prickar)
+output(t.toString())
+output(t)
+</pre>
+                            Raderna ska ge likadana utskrifter, i den sista anropas <span
+                                style="font-family: 'courier new', courier, monospace;">toString</span>-metoden
+                            automatiskt.<br /> 
+                        </li>
+                        <li>Gör en ny klass <span
+                                style="font-family: 'courier new', courier, monospace;">Bildtärning</span> som:
+                            <ul>
+                                <li>Ärver från klassen <span
+                                        style="font-family: 'courier new', courier, monospace;">Tärning</span></li>
+                                <li>Har egenskaperna <span
+                                        style="font-family: 'courier new', courier, monospace;">x</span>, <span
+                                        style="font-family: 'courier new', courier, monospace;">y</span>, <span
+                                        style="font-family: 'courier new', courier, monospace;">storlek</span>.</li>
+                                <li>Har metoden <span
+                                        style="font-family: 'courier new', courier, monospace;">visa</span>, som vid
+                                    anrop
+                                    visar tärningen i <span
+                                        style="font-family: 'courier new', courier, monospace;">canvas</span>-rutan. Den
+                                    ska då ritas upp i en rektangel med övre vänstra hörnet i <span
+                                        style="font-family: 'courier new', courier, monospace;">(x, y)</span> och med
+                                    både bredd och höjd
+                                    som <span style="font-family: 'courier new', courier, monospace;">storlek</span>.
+                                    (Hur detta ska göras
+                                    får du bestämma själv. Man kan använda <span
+                                        style="font-family: 'courier new', courier, monospace;">text</span>-funktionen
+                                    för att skriva ut
+                                    antalet prickar, eller rita ut rätt antal prickar med anpassad storlek, eller visa
+                                    tärningsbilder med
+                                    <span
+                                        style="font-family: 'courier new', courier, monospace;">image</span>-funktionen,
+                                    eller, ...)
+                                </li>
+                                <li>Omdefiniera <span
+                                        style="font-family: 'courier new', courier, monospace;">kasta</span>-metoden så
+                                    att
+                                    den också visar tärningen, enligt ovan.<br /><br /></li>
+                            </ul>
+                        </li>
+                        <li>Skriv testkod till klassen övan.<br /> </li>
+                        <li>Gör en ny klass <span style="font-family: 'courier new', courier, monospace;">Yatzy</span>
+                            som:<br />
+                            <ul>
+                                <li>Har fem <span
+                                        style="font-family: 'courier new', courier, monospace;">Bildtärning</span>-objekt
+                                </li>
+                                <li>Har en <span
+                                        style="font-family: 'courier new', courier, monospace;">kasta</span>-metod som
+                                    kastar om
+                                    alla fem tärningar</li>
+                                <li>Har en <span
+                                        style="font-family: 'courier new', courier, monospace;">kastaOm</span>-metod där
+                                    man - på
+                                    ett sätt som du bestämmer själv - kan bestämma vilken eller vilka tärningar som ska
+                                    kastas om.<br /> 
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Skriv testkod till klassen ovan. </li>
+                    </ul>
+                    <h1></h1>
+                </div>
+            </details>
+            <details>
+                <summary>Rubix (Gammal provuppgift)</summary>
+                <div>
+                    <p>Skapa ett program där man kan "vrida" en 2D-version av Rubiks kub. <span>Spara projektet
+                            som </span><strong>rubix</strong><span>.</span></p>
+                    <p><span></span>Du bestämmer själv över designen, det behöver <em>inte </em>se ut likadant som
+                        nedan.</p>
+                    <ul>
+                        <li><span>Det behöver alltså inte vara randig bakgrund eller röda pilar. Det viktiga är att man
+                                ska kunna se
+                                rutornas tillstånd och kunna förändra det.</span></li>
+                        <li><span></span>Du får, men behöver inte, använda ett <span
+                                style="font-family: 'courier new', courier, monospace;">Grid</span>-objekt för att visa
+                            rutorna.</li>
+                        <li><span>Du får, men behöver inte, använda OOP (klasser och objekt).</span></li>
+                    </ul>
+                    <p><img src="images/rubix.PNG" width="500" height="272" /></p>
+                    <p>Man ska - på något vis alltså - kunna "vrida" rader och kolumner åt olika håll. Om vi betraktar
+                        bara den översta
+                        raden med rutorna </p>
+                    <p><span style="font-size: xx-large;"><span style="color: #00ff00;">■</span> <span
+                                style="color: #00ff00;">■</span> <span style="color: #ffff00;">■ <span
+                                    style="color: #000000;">(a, b,
+                                    c)</span></span></span></p>
+                    <p>...och vrider höger, så kommer raden att ändras till</p>
+                    <p><span style="font-size: xx-large;"><span style="color: #ffff00;">■</span> <span
+                                style="color: #00ff00;">■ ■ <span style="color: #000000;">(c, a, b)</span></span></span>
+                    </p>
+                    <p>Den gula rutan går "över kanten" och kommer fram till vänster. På samma sätt för övriga rader och
+                        kolumner </p>
+                    <p>För betyget E:</p>
+                    <ul>
+                        <li>Startpositionen hårdkodas enligt bilden ovan.</li>
+                        <li>Första raden och kolumnen går att vrida.</li>
+                        <li>En räknare visar hur många vridningar som utförts. (Motsvarar <strong>current</strong> i
+                            skärmdumpen ovan. De
+                            övriga, <strong>target</strong> och <strong>best</strong>, behöver inte finnas med.)</li>
+                        <li>Måltillståndet (<strong>aim</strong>) visas eller beskrivs.</li>
+                    </ul>
+                    <p>För betyget C:</p>
+                    <ul>
+                        <li>Alla rader och kolumner går att vrida.</li>
+                        <li>Koden är snygg, utan alltför mycket "klipp o klistra".</li>
+                        <li>Om målpositionen uppnås så meddelas detta.</li>
+                        <li>Startpositionen erhålls genom att utgå från målpositionen och vrida slumpmässigt 20 gånger.
+                        </li>
+                        <li>Ett lösningsförsök ska kunna pausas genom att spara tillståndet, för att sedan kunna
+                            återupptas vid ett senare
+                            tillfälle. </li>
+                    </ul>
+                    <p>För betyget A:</p>
+                    <ul>
+                        <li>Det ska gå att välja storlek på kvadraten. Man ska kunna spela med 2-6 olika färger. De tre
+                            första färgerna är
+                            gul, röd och grön. De övriga färgerna bestämmer du själv. Måltillståndet är alltid en kolumn
+                            av färg ett, en
+                            kolumn av färg två och så vidare.</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Introduktion / repetition</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>Lämna in uppgifter så här</summary>
+                <div>
+                    <ol>
+                        <li>Installera filöverföringsprogrammet <a href="https://winscp.net/eng/index.php"
+                                target="_blank">WinSCP</a>.<br />(Klicka på <b>Download</b>-knappen. Vänta.
+                            Dubbelklicka
+                            sedan
+                            på den nedladdade <b>exe</b>-filen.)</li>
+                        <li>Skapa en ny session med dina användaruppgifter på <b>skelamp</b> (som du fått av din
+                            lärare):<br />Klicka på <b>New Site</b> (1)<br />Fyll i uppgifterna i textrutorna (2).
+                            Använd
+                            ditt
+                            användarnamn och lösenord!<br />Klicka på <b>Save<br /></b>Bocka för <b>Save
+                                password</b> (4)<br /><b>OK</b> (5) och <b>Login</b> (6)<br /><img
+                                src="../wu/images/win-scp.PNG" width="700" height="292" /> </li>
+                        <li>På vänstra sidan ser du filerna på din dator. På högra sidan de filer som finns på din
+                            användare
+                            på
+                            skelamp.
+                            Gå in i w-mappen och skapa där en ny mapp med namnet <b>prog2</b> (inte "wu1" som det
+                            visas i skärmdumpen nedan):<br /><img src="../wu/images/wu1-folder.PNG" width="400"
+                                height="363" />
+                        </li>
+                        <li>Dra och släpp din <b>site1</b>-mapp i <b>w/codescan/prog2</b>-mappen på
+                            skelamp.<br />På vänstra
+                            sidan ser du filerna på din dator. På högra sidan de filer som finns på din användare på
+                            skelamp.
+                            Leta
+                            först
+                            rätt på stället där din <b>site1</b>-mapp finns.<br /><img src="../wu/images/site-wu1.PNG"
+                                width="500" /><br /> </li>
+                        <li>Gå till en webbläsare och testa att webbplatsen fungerar.<br />Gå till
+                            <b>skelamp.se</b><br />Klicka på den server där din användare ligger <br>
+                            och sedan på <b>codescan</b>-mappen bredvid ditt användarnamn:<br>
+                            <img src="../wu/images/brage.PNG" width="300" height="424" /><br /> 
+
+                            <p>Första gången måste du fylla i dina användaruppgifter (spara dem sedan i
+                                webbläsaren):<br>
+                                <img src="../wu/images/login-nanna.PNG" width="300" alt="">
+                            </p>
+                            <p>Klicka dig vidare till <b>prog2</b> och <b>site1</b>. Om allt fungerar - så
+                                att
+                                du
+                                kan se sidan visas -  så är du nu klar!</p>
+                        </li>
+                    </ol>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+
+        </section>
+    </article>
+    <article>
+        <h1>Objektorienterad programmering</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>TypeScript Handbook</summary>
+                <div>
+                    <p><a href="https://www.typescriptlang.org/docs/handbook/2/classes.html" target="_blank">Classes</a>
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>javascript.info</summary>
+                <div>
+                    <p><a href="https://javascript.info/classes" target="_blank">Classes</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Exempel</summary>
+                <div>
+                    <div><a href="https://stackblitz.com/edit/typescript-cl3x6m?file=index.ts"
+                            target="_blank">Figurrace</a>
+                    </div>
+                    <div><a href="https://stackblitz.com/edit/typescript-vd1rqy?file=index.ts"
+                            target="_blank">PlusPlus</a>
+                    </div>
+                    <div><a href="https://stackblitz.com/edit/typescript-6ksnwt?file=index.ts"
+                            target="_blank">Shooter</a>
+                    </div>
+                    <div><a href="https://stackblitz.com/edit/typescript-opkr93?file=index.ts"
+                            target="_blank">Bokstavsregn</a>
+                    </div>
+                    <div><a href="https://stackblitz.com/edit/typescript-fkuerg?file=index.ts" target="_blank">Cat vs
+                            Dog</a>
+                    </div>
+                    <div><a href="https://stackblitz.com/edit/typescript-fkuerg?file=index.ts"
+                            target="_blank">Pendeln</a>
+                    </div>
+                    <div><a href="https://stackblitz.com/edit/typescript-iywvce?file=index.ts" target="_blank">Digit
+                            shooter</a>
+                    </div>
+                    <hr>
+                    <div><a href='https://stackblitz.com/edit/typescript-g1gf9m?file=index.ts'
+                            target='_blank'>Counter</a></div>
+                    <div><a href='https://stackblitz.com/edit/typescript-czg3hx?file=index.ts'
+                            target='_blank'>CounterElement</a>
+                    </div>
+                    <div><a href='https://stackblitz.com/edit/typescript-9pohj5?file=index.ts'
+                            target='_blank'>MaxMinTerm</a>
+                    </div>
+                    <div><a href='https://stackblitz.com/edit/typescript-cuyijz?file=index.ts'
+                            target='_blank'>MaxMinTermElement</a>
+                    </div>
+
+                    <div><a href='https://stackblitz.com/edit/typescript-x786ag?file=index.ts' target='_blank'>Enemy</a>
+                    </div>
+                    <div><a href='https://stackblitz.com/edit/typescript-5enhet?file=index.ts'
+                            target='_blank'>Animal</a></div>
+                    <div><a href='https://stackblitz.com/edit/typescript-uu3cnr?file=index.ts' target='_blank'>Konto</a>
+                    </div>
+                    <div><a href='https://stackblitz.com/edit/typescript-gdwh15?file=index.ts'
+                            target='_blank'>Clicker</a></div>
+                    <div><a href='https://stackblitz.com/edit/typescript-1frma1?file=index.ts'
+                            target='_blank'>Generics</a>
+                    </div>
+
+                    <hr>
+                    <p><a href='https://stackblitz.com/edit/typescript-kzcre8?file=index.ts' target='_blank'>Point</a>
+                    </p>
+                    <p><a href='https://stackblitz.com/edit/typescript-aquarg?file=index.ts' target='_blank'>Djur</a>
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>Läsning</summary>
+                <div>
+                    <p><a href='OOP-Nutshell.pdf' target='_blank'>Objektorienterad programutveckling i ett nötskal</a>
+                    </p>
+                </div>
+            </details>
+
+            <!-- TODO: static, super -->
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Spindlar</summary>
+                <div>
+                    <p>Namnge mappen <strong>spindlar</strong></p>
+
+                    <iframe src="code/?file=spider.php" style="height: 6em;"></iframe>
+
+                    <p>Utgå från klassen ovan.</p>
+                    <p><b>1 Varde spindlar</b></p>
+                    <p>Skriv en konstruktor som gör så att spindlar föds i mitten av skärmen samt
+                        en <b>update</b>-funktion som ritar ut
+                        spindeln. Verifiera att det fungerar genom att skapa och rita ut en spindel.</p>
+                    <p><b>2 En array av spindlar</b></p>
+                    <p>Skapa en vektor, <strong>spiders</strong>, som du fyller med 42 spindlar. Verifiera att vektorn
+                        fungerar genom
+                        att rita ut spindel 21: <b>spiders[20].update();</b>. (nollindexering gör att spindel 1 är på
+                        index 0).</p>
+                    <p><b>3 Spindlarna kryper</b></p>
+                    <p>Låt <b>update</b>-metoden uppdatera <b>x</b> och <b>y</b>. Hur mycket <b>x</b> och <b>y</b> ska
+                        ändras ska
+                        bestämmas av egenskaperna <b>xSpeed </b>och <b>ySpeed. </b>Slumpa fram rimliga värden på dessa i
+                        konstruktorn.
+                    </p>
+                    <p>Låt <b>setUpdate</b>-funktionen rita ut alla spindlar från arrayen.</p>
+                    <p><b>* 4 Realismen ökar</b></p>
+                    <p>Istället för att 42 spindlar föds direkt ska spindlarna nu födas var 10:e update och läggas in i
+                        arrayen först
+                        då. Oändligt många spindlar ska alltså födas i mitten och sakta krypa utåt. Fundera på om stora
+                        mängder spindlar
+                        kan orsaka problem i din dator och vad du skulle kunna göra åt saken.</p>
+                </div>
+            </details>
+            <details>
+                <summary>* Spel med klass</summary>
+                <div>
+                    <p>Förbättra/förändra något av exemplen.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Tidpunkt</summary>
+                <div>
+                    <p>Se denna <a href="https://stackblitz.com/edit/typescript-lxvch1?file=index.ts"
+                            target="_blank">StackBlitz</a>.<br />
+                    </p>
+                    <p>Programmet testar en klass <code>Time</code>. Du kommer att märka att allt inte fungerar som det
+                        ska...</p>
+                    <p>Uppgifter:</p>
+                    <ul>
+                        <li>Skriv om <code>tick</code> -metoden så att den klarar minut-, timmes- och dygnsövergångar.
+                        </li>
+                        <li>Skriv om <code>toString</code> -metoden så att den returnerar tiden med extra nollor före,
+                            som ett digitalur
+                            brukar. <br />Som <span
+                                style="font-family: 'courier new', courier, monospace;">09:03:05</span> till exempel.
+                        </li>
+                        <li>Skriv om konstruktorn så att inskickade värden utanför de godkända inte används. Om man
+                            exempelvis försöker
+                            sätta timmen till 42 så ska det högsta godkända värdet (23) användas istället.</li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>Bordtennisresultat</summary>
+                <div>
+                    <p>Ett bordtennisresultat kan visas så här:<br /><img src="images/table_tennis_score_board.jpg"
+                            width="221" height="137" /></p>
+                    <p>Läs om <a href="https://sv.wikipedia.org/wiki/Bordtennis#Regler" target="_blank">poängräkning</a>
+                        på Wikipedia.</p>
+                    <p>Gör en program som som kan hantera resultatet i en bordtennismatch.</p>
+                    <p>Skapa först en klass <code>TableTennisScoreboard</code> med detta innehåll:</p>
+                    <ul>
+                        <li>En privat egenskap <span
+                                style="font-family: 'courier new', courier, monospace;">_point1</span> för antalet
+                            poäng för spelare 1.</li>
+                        <li>En privat egenskap <span
+                                style="font-family: 'courier new', courier, monospace;">_point2</span> för antalet
+                            poäng för spelare 2.</li>
+                        <li>En privat egenskap <span
+                                style="font-family: 'courier new', courier, monospace;">_set1 </span>för antalet set
+                            för spelare 1.</li>
+                        <li>En privat egenskap <span
+                                style="font-family: 'courier new', courier, monospace;">_set2 </span>för antalet set
+                            för spelare 2.</li>
+                        <li>En konstruktor som initierar de privata egenskaparna ovan. Låt noll (0) vara defaultvärde.
+                        </li>
+                        <li>En metod <span style="font-family: 'courier new', courier, monospace;">add1</span> för att
+                            ge spelare 1 en
+                            poäng.</li>
+                        <li>En metod <span style="font-family: 'courier new', courier, monospace;">add2</span> för att
+                            ge spelare 2 en
+                            poäng.</li>
+                        <li>En <i>getter</i> <span
+                                style="font-family: 'courier new', courier, monospace;">point1</span> som avläser <span
+                                style="font-family: 'courier new', courier, monospace;">_point1</span>.</li>
+                        <li>En <i>getter</i> <span style="font-family: 'courier new', courier, monospace;">point2</span>
+                            som avläser <span style="font-family: 'courier new', courier, monospace;">_point2</span>.
+                        </li>
+                        <li>En <i>getter</i> <span style="font-family: 'courier new', courier, monospace;">set1</span>
+                            som avläser <span style="font-family: 'courier new', courier, monospace;">_set1</span>.</li>
+                        <li>En <i>getter</i> <span style="font-family: 'courier new', courier, monospace;">set2</span>
+                            som avläser <span style="font-family: 'courier new', courier, monospace;">_set2</span>.</li>
+                        <li>En <i>getter</i> <span
+                                style="font-family: 'courier new', courier, monospace;">winner1</span> som returnerar
+                            <span style="font-family: 'courier new', courier, monospace;">true</span> om spelare 1 har
+                            vunnit matchen (=fyra
+                            set), annars <span style="font-family: 'courier new', courier, monospace;">false</span>.
+                        </li>
+                        <li>En <i>getter</i> <span
+                                style="font-family: 'courier new', courier, monospace;">winner2</span> som returnerar
+                            <span style="font-family: 'courier new', courier, monospace;">true</span> om spelare 2 har
+                            vunnit matchen (=fyra
+                            set), annars <span style="font-family: 'courier new', courier, monospace;">false</span>.
+                        </li>
+                    </ul>
+                    <p>Skapa därefter en klass <code>TableTennisScoreboardElement</code> med ett grafiskt
+                        användargränssnitt som, i någon
+                        mån, liknar en resultattavla för bordtennis. Man ska kunna ge poäng till spelarna och få ett
+                        meddelande om någon
+                        vunnit.</p>
+                </div>
+            </details>
+            <details>
+                <summary>* MyHitbox</summary>
+                <div>
+                    <p>Gör en klass <code>MyHitbox</code> som fungerar som <code>Hitbox</code>-klassen i
+                        <em>BalderJS</em>.
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>* MyTurtle</summary>
+                <div>
+                    <p>Gör en klass <code>MyTurtle</code> som fungerar som <code>Turtle</code>-klassen i
+                        <em>BalderJS</em>.
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>* Bråktal - Rational</summary>
+                <div>
+                    <p>Bygg vidare på <code>Rational</code>-klassen i <a
+                            href="https://stackblitz.com/edit/typescript-oyo7ab?file=index.ts" target="_blank">denna
+                            StackBlitz</a>.</p>
+                    <ul>
+                        <li>Gör metoder <span style="font-family: 'courier new', courier, monospace;">sub</span>, <span
+                                style="font-family: 'courier new', courier, monospace;">mul</span> och <span
+                                style="font-family: 'courier new', courier, monospace;">div</span> (för operatorerna
+                            <span style="font-family: 'courier new', courier, monospace;">-</span>, * och <span
+                                style="font-family: 'courier new', courier, monospace;">/</span>).
+                        </li>
+                        <li>Lägg till metoder <span
+                                style="font-family: 'courier new', courier, monospace;">neg</span> och <span
+                                style="font-family: 'courier new', courier, monospace;">inv</span> som returnerar det
+                            negerade
+                            respektive inverterade bråktalet.</li>
+                        <li>Lägg till en klassmetod <span
+                                style="font-family: 'courier new', courier, monospace;">Rational.parse</span>
+                            som kan göra om  en sträng till ett bråktal.</li>
+                        <li>Gör ett gränssnitt så att allt går att testa.</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>Femtonpussel</summary>
+                <div>
+                    <p>Skapa ett program som kan hantera ett <a href="https://sv.wikipedia.org/wiki/Femtonspel"
+                            target="_blank">femtonpussel</a>:</p>
+                    <p><img src="images/puz15.png" width="177" height="177" /></p>
+                    <p>Koden i <a href="https://stackblitz.com/edit/typescript-su7quy?file=index.ts"
+                            target="_blank">denna StackBlitz</a>
+                        kan vara något att utgå ifrån.</p>
+                    <p>Gör så att man kan få lösa ett blandat 15-pussel och få reda på om man är klar samt hur många
+                        drag som krävdes.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Grasshopper</summary>
+                <div>
+                    <p>Skapa en klass <span style="font-family: 'courier new', courier, monospace;">Grasshopper</span>
+                        inspirerad av appen
+                        med samma namn. En av många som lär ut programmering från grunden.<br />
+                        <img src="images/grasshopper-1.PNG" width="300" /><br><img src="images/grasshopper-2.PNG"
+                            width="300" />
+                    </p>
+                    <p>Klassen ska ha dessa medlemmar:</p>
+                    <ul>
+                        <li>En privat egenskap <span style="font-family: 'courier new', courier, monospace;">x</span>
+                            med
+                            <em>default</em>-värdet 0. <br /> 
+                        </li>
+                        <li>En privat egenskap <span style="font-family: 'courier new', courier, monospace;">y</span>
+                            med <em>default</em>-värdet 0. <br /> </li>
+                        <li>En privat egenskap <span style="font-family: 'courier new', courier, monospace;">x0</span>
+                            av typen <span
+                                style="font-family: 'courier new', courier, monospace;">number</span>. <br /> </li>
+                        <li>En privat egenskap <span
+                                style="font-family: 'courier new', courier, monospace;">boxSide</span> med <em>default</em>-värdet
+                            100. <br /> </li>
+                        <li>En konstruktor som gör det möjligt att ge startvärden till <span
+                                style="font-family: 'courier new', courier, monospace;">x</span>, <span
+                                style="font-family: 'courier new', courier, monospace;">y</span> och <span
+                                style="font-family: 'courier new', courier, monospace;">boxSide</span>. Den ska också
+                            initiera <span style="font-family: 'courier new', courier, monospace;">x0</span> till värdet
+                            av <span style="font-family: 'courier new', courier, monospace;">x</span>.  <br /> </li>
+                        <li>En metod <span style="font-family: 'courier new', courier, monospace;">drawBox(color:
+                                string)</span> som ritar
+                            en kvadrat med övre vänstra hörnet i <span
+                                style="font-family: 'courier new', courier, monospace;">(x;
+                                y)</span>, sidlängden <span
+                                style="font-family: 'courier new', courier, monospace;">boxSide</span> och
+                            färgen <span style="font-family: 'courier new', courier, monospace;">color</span>. Värdet på
+                            <span style="font-family: 'courier new', courier, monospace;">x</span> ska därefter ökas med
+                            <span style="font-family: 'courier new', courier, monospace;">boxSide</span>.<br /> 
+                        </li>
+                        <li>En metod <span
+                                style="font-family: 'courier new', courier, monospace;">drawBoxes(instructions:
+                                string)</span> som tolkar varje tecken i indatasträngen som en instruktion enligt nedan.
+                            <ul>
+                                <ul>
+                                    <li>Tecknet "b" ska anropa <span
+                                            style="font-family: 'courier new', courier, monospace;">drawBox</span>
+                                        med strängen "blue".</li>
+                                    <li>Tecknet "w" ska anropa <span
+                                            style="font-family: 'courier new', courier, monospace;">drawBox </span>med
+                                        strängen "white".
+                                    </li>
+                                    <li>Tecknet "r" ska anropa <span
+                                            style="font-family: 'courier new', courier, monospace;">drawBox </span>med
+                                        strängen "red".</li>
+                                    <li>Ett mellanslag, " ", ska anropa <span
+                                            style="font-family: 'courier new', courier, monospace;">newLine</span>.<br /> 
+                                    </li>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li>En metod <span style="font-family: 'courier new', courier, monospace;">newLine()</span> som
+                            gör ett radbyte.
+                            Egenskapen <span style="font-family: 'courier new', courier, monospace;">x</span> ska då
+                            sättas till <span style="font-family: 'courier new', courier, monospace;">x0</span> och
+                            egenskapen <span style="font-family: 'courier new', courier, monospace;">y</span> ökas med
+                            <span style="font-family: 'courier new', courier, monospace;">boxSide</span>.
+                        </li>
+                    </ul>
+                    <p>Koden nedan ska därefter kunna producera en utskrift av två franska flaggar på svart bakgrund
+                        enligt bild:<br /><img src="images/franskaflaggor.PNG" width="400" height="147" /></p>
+
+                    <iframe src="code/?file=grasshopper.php" style="height: 16em;"></iframe>
+                    <p></p>
+                    <p>Extrauppgifter:</p>
+                    <p>Rita - med hjälp av klassen - dessa länders flaggor. Utöka metoden <span
+                            style="font-family: 'courier new', courier, monospace;">drawBoxes</span> med nya färger om
+                        så behövs. </p>
+                    <ul>
+                        <li>Italien</li>
+                        <li>Litauen</li>
+                        <li>Mauritius</li>
+                        <li>Benin</li>
+                        <li>Sverige</li>
+                        <li>Grekland</li>
+                        <li>Norge</li>
+                        <li>Schweiz</li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>* Hink</summary>
+                <div>
+                    <p>Se <a href="https://stackblitz.com/edit/typescript-qi4p9h?file=index.ts" target="_blank">denna
+                            StackBlitz</a>. Gör
+                        klar klassen <span style="font-family: 'courier new', courier, monospace;">Hink</span> och
+                        testkoden så att de
+                        fungerar som man kan förvänta sig.</p>
+                    <p>Försök att, med hjälp av programmet, att lösa detta problem, hämtat ur en klurighetsbok:</p>
+                    <p><strong><span style="font-family: 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;">Du ska
+                                mäta upp 6 liter
+                                vatten i en hink som rymmer 9 liter. </span></strong></p>
+                    <p><strong><span style="font-family: 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;">Till
+                                din hjälp har du en
+                                4-litershink. Ingen av hinkarna är graderad. </span></strong></p>
+                    <p><strong><span style="font-family: 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;">Beskriv
+                                hur du ska gå
+                                tillväga. Det finns obegränsad tillgång på vatten.</span></strong></p>
+                    <p><strong><span style="font-family: 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;"><img
+                                    src="images/Hinkproblem.JPG" width="199" height="127" /></span></strong></p>
+                </div>
+            </details>
+            <details>
+                <summary>Shapes</summary>
+                <div>
+                    <p>Utgå från koden i <a href="https://stackblitz.com/edit/typescript-lkra46?file=index.ts"
+                            target="_blank">denna
+                            StackBlitz</a>. </p>
+                    <p>Skriv nya klasser, <span style="font-family: 'courier new', courier, monospace;">Ellipse</span>,
+                        <span style="font-family: 'courier new', courier, monospace;">Triangle</span>, <span
+                            style="font-family: 'courier new', courier, monospace;">Square</span> och <span
+                            style="font-family: 'courier new', courier, monospace;">Circle</span>. Placera in dem på
+                        rätt plats i
+                        arvshierarkin. Testa att läsa ordet <strong>är</strong> på pilarna. En
+                        kvadrat <strong>är</strong> en rektangel
+                        till exempel.
+                    </p>
+                    <p><img src="images/shape.PNG" width="500" height="304" /></p>
+                    <p>Några rader är bortkommenterade. Då du skrivit en klass klar så kommentera fram motsvarande rader
+                        och testa så
+                        att det funkar.</p>
+                    <iframe src="code/?file=shapes.php" style="height: 20em;"></iframe>
+
+                    <ul>
+                        <li>För trianglar så använd <a href="https://sv.wikipedia.org/wiki/Herons_formel"
+                                target="_blank">Herons
+                                formel</a> för areaberäkningen. <br /><br /></li>
+                        <li>För ellipser anges de två radierna och för kvadrater sidan. Formler för ellipsens
+                            omkrets hittar du <a href="http://sv.wikipedia.org/wiki/Ellips_(matematik)#Area_och_omkrets"
+                                target="_blank">här</a>.<br /><br />
+                        </li>
+                        <li>Kvadrat- och cirkelklassen ska inte innehålla någon beräkning av area och omkrets. Dessa
+                            egenskaper ska
+                            finnas i deras respektive basklasser.</li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>Fordonsregister</summary>
+                <div>
+                    <p>Bygg vidare på <a href="https://stackblitz.com/edit/typescript-cnyhfh?file=index.ts"
+                            target="_blank">denna <i>StackBlitz</i></a>.</p>
+                    <p>Om något av dessa fel finns på indata till konstruktorn så ska ett undantag kastas.</p>
+                    <ul>
+                        <li>Parametern <code>märke</code> är tomt eller består bara av mellanslag.</li>
+                        <li>Parametern <code>modell</code> är tom eller består bara av mellanslag.</li>
+                        <li>Parametern <code>regnr</code> följer inte något av de giltiga mönstren ABC123 eller
+                            ABC12D.<br>
+                            Tips: Kan testas med ett <a href="https://javascript.info/regexp-introduction"
+                                target="_blank">reguljärt uttryck</a>.</li>
+                    </ul>
+                    <p>Det kastade undantaget ska fångas i den anropande funktionen och resultera i en felutskrift.</p>
+                    <p>Radioknapparna ska fungera. Om exempelvis "Bilar" är markerat så ska bara bilarna visas i
+                        listrutan.
+                    </p>
+
+                    <p><a href='https://javascript.info/try-catch' target='_blank'>Läs först på om <i>try-catch</i></a>.
+                    </p>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Datalagring</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>javascript.info</summary>
+                <div>
+                    <p><a href='https://javascript.info/localstorage' target='_blank'>LocalStorage, sessionStorage</a>
+                    </p>
+                    <p><a href='https://javascript.info/json' target='_blank'>JSON</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>MDN</summary>
+                <div>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage'
+                            target='_blank'>Window.localStorage</a></p>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON'
+                            target='_blank'>JSON</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Exempel</summary>
+                <div>
+                    <p><a href='https://stackblitz.com/edit/typescript-zpkhvg?file=index.ts'
+                            target='_blank'>localStorage</a></p>
+                    <p><a href='https://stackblitz.com/edit/typescript-ptkadm?file=index.ts'
+                            target='_blank'>localStorage+JSON</a></p>
+                    <p><a href='https://stackblitz.com/edit/typescript-4juup5?file=index.ts'
+                            target='_blank'>localStorage+JSON Cirkel-egenskaper</a></p>
+                    <p><a href='https://stackblitz.com/edit/typescript-nsjufm?file=index.ts'
+                            target='_blank'>localStorage+JSON Cirkel-objekt</a></p>
+                    <p><a href='https://stackblitz.com/edit/typescript-vkacdq?file=index.ts'
+                            target='_blank'>localStorage+JSON Cirkel-array</a></p>
+                    <p><a href='https://stackblitz.com/edit/typescript-jr3wde?file=index.ts'
+                            target='_blank'>localStorage+JSON+Object.assign Cirkel-objekt</a></p>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Fordonsregister 2.0</summary>
+                <div>
+                    <p>Komplettera uppgiften <b>Fordonsregister</b> så att
+                        fordonen sparas med <code>localStorage</code>, och hämtas
+                        automatiskt nästa gång sidan öppnas. Du ska alltså inte behöva mata in nya fordon varje gång
+                        sidan
+                        uppdateras.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Att-göra-lista (TODO-list)</summary>
+                <div>
+                    <p>Skapa en sida där man kan hantera en att-göra-lista. Listan ska sparas och uppdateras med
+                        <i>localStorage</i>.
+                    </p>
+                    <p>Man ska kunna:</p>
+                    <ul>
+                        <li>Lägga till en ny aktivitet, till exempel "Gå ut med skräpet", "Mata hunden" eller "Diska"
+                        </li>
+                        <li>Visa alla aktiviteter.</li>
+                        <li>Markera att en aktivitet är utförd.</li>
+                    </ul>
+
+                    <p>Utöver det så är det fritt fram att skapa förbättringar så att listan blir användbar. Till
+                        exempel:
+                    </p>
+                    <ul>
+                        <li>Sätta datum/tid då aktiviteten ska vara utförd.</li>
+                        <li>Göra det möjligt att sortera aktiviteterna i olika katergorier.</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Kommunikation</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>Exempel</summary>
+                <div>
+                    <p><a href='https://stackblitz.com/edit/typescript-jauay8?file=index.ts' target='_blank'>Connect</a>
+                    </p>
+                    <p><a href='https://stackblitz.com/edit/typescript-3z4o3y?file=index.ts'
+                            target='_blank'>Tic-Tac-Toe</a></p>
+                    <p><a href='https://stackblitz.com/edit/typescript-hufm5f?file=index.ts' target='_blank'>Poker-1</a>
+                        I <b>BalderJS 8.1</b> finns ett fel på rad 801 i filen <b>balder.ts</b>. Det är ett x för
+                        mycket. Ta bort det (...clie<del>x</del>nts). I version <b>8.1.1</b> så är det fixat.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Skapa Balder-server</summary>
+                <div>
+                    <p>Gör så här:</p>
+                    <ol>
+                        <li>Ladda ner filen <a href="balder-server.zip">balderlib-server.zip</a>.</li>
+                        <li>Zippa upp.</li>
+                        <li>Ändra i <b>config.php</b>-filen.</li>
+                        <li>Flytta filerna till din plats på skelamp (eller annan server)</li>
+                        <li>Skapa en databas - med namnet från config-filen.</li>
+                        <li>Importera i den filen <a href="balder-db.sql">balder-db.sql</a>.</li>
+                        <li>Anslut!</li>
+                    </ol>
+                </div>
+            </details>
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Luffarschack</summary>
+                <div>
+                    Bygg ut exemplet Tic-Tac-Toe så att man kan spela luffarschack i ett 20x20-rutnät.
+                </div>
+            </details>
+            <details>
+                <summary>Brädspel</summary>
+                <div>
+                    Skapa valfritt brädspel där två - eller fler - personer kan spela mot varandra!
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Tävlingsprogrammering</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>Dynamisk programmering</summary>
+                <div>
+                    <p><a href='https://towardsdatascience.com/beginners-guide-to-dynamic-programming-8eff07195667'
+                            target='_blank'>https://towardsdatascience.com/beginners-guide-to-dynamic-programming-8eff07195667</a>
+                    </p>
+                    <p><a href='https://en.wikipedia.org/wiki/Dynamic_programming'
+                            target='_blank'>https://en.wikipedia.org/wiki/Dynamic_programming</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Exempel</summary>
+                <div>
+                    <p><a href='https://stackblitz.com/edit/typescript-n3gtr7?file=index.ts'
+                            target='_blank'>Fibonacci</a></p>
+                </div>
+            </details>
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Programmeringsolympiaden</summary>
+                <div>
+                    <p><a href='https://progolymp.se/tidigare/uppgifter' target='_blank'>Tidigare uppgifter</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Project Euler</summary>
+                <div>
+                    <p><a href='https://projecteuler.net/archives' target='_blank'>Problems Archives</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Kattis</summary>
+                <div>
+                    <p><a href='https://open.kattis.com/' target='_blank'>Problem Archive</a></p>
+                </div>
+            </details>
+
+        </section>
+    </article>
+
+    <article>
+        <h1>Projekt</h1>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Skolan</summary>
+                <div>
+                    <p>I denna skola - löst baserad på Baldergymnasiet - finns det, som i så många andra, lärare,
+                        elever, kurser och lektioner. I ett admin-gränssnitt så ska man kunna lägga till, ändra och ta
+                        bort. I ett användar-gränssnitt så ska man kunna avläsa.</p>
+
+                    <p>Skapa och öppna en mapp, <b>balder-admin</b>. Kopiera in koden nedan och ändra till en egen
+                        server.</p>
+
+                    <details>
+                        <summary>app.ts</summary>
+                        <iframe src="code/?file=admin-app.txt" style="height: 20em;"></iframe>
+                    </details>
+
+                    <p>Skapa och öppna, i en annan <i>VS Code</i>-instans, en mapp, <b>balder-user</b>. Kopiera in
+                        koden nedan och ändra till samma server som ovan.</p>
+
+                    <details>
+                        <summary>app.ts</summary>
+                        <iframe src="code/?file=user-app.txt" style="height: 20em;"></iframe>
+                    </details>
+
+                    <p>Testa och se så att du från admin-sidan kan lägga till lärare, och från användar-sidan hämta
+                        lärare (eller åtminstone deras signaturer). <b>För att det ska fungera så kör fönstren
+                            sida-vid-sida på din skärm.</b></p>
+
+                    <p>Skapa dessa klasser, innehållande angivna egenskaper, i <i>admin</i>-appen och motsvarande
+                        interface i <i>user</i>-appen:</p>
+
+                    <b><code>Lärare</code></b>
+                    <ul>
+                        <li><code>signatur: string</code> (MSTL)</li>
+                        <li><code>förnamn: string</code> (Mattias)</li>
+                        <li><code>efternamn: string</code> (Steinwall)</li>
+                    </ul>
+
+                    <b><code>Elev</code></b>
+                    <ul>
+                        <li><code>id: number</code> (5)</li>
+                        <li><code>förnamn: string</code> (Ruben)</li>
+                        <li><code>efternamn: string</code> (Forsgren)</li>
+                    </ul>
+
+                    <b><code>Kurs</code></b>
+                    <ul>
+                        <li><code>kurskod: string</code> (PRRPRR02)</li>
+                        <li><code>namn: string</code> (Programmering 2)</li>
+                        <li><code>poäng: number</code> (100)</li>
+                    </ul>
+
+                    <b><code>Kursinstans</code></b>
+                    <ul>
+                        <li><code>id: number</code> (1)</li>
+                        <li><code>kurskod: string</code> (PRRPRR02)</li>
+                        <li><code>lärarsignatur: string</code> (MSTL)</li>
+                        <li><code>start: string</code> (2021-08-30)</li>
+                        <li><code>stopp: string</code> (2021-12-21)</li>
+                    </ul>
+
+                    <b><code>Lektioner</code></b>
+                    <ul>
+                        <li><code>id: number</code> (2)</li>
+                        <li><code>kursinstans_id: number</code> (1)</li>
+                        <li><code>dag: string</code> (tisdag)</li>
+                        <li><code>start: string</code> (8:10)</li>
+                        <li><code>stopp: string</code> (10:50)</li>
+                    </ul>
+
+                    <b><code>Deltagare</code></b>
+                    <ul>
+                        <li><code>kursinstans_id: number</code> (1)</li>
+                        <li><code>elev_id: number</code> (5)</li>
+                        <li><code>betyg: string | null</code> (null)</li>
+                    </ul>
+
+                    <p>Det som står inom parentes efter varje egenskap är exempeldata.</p>
+
+
+                    <h3>På admin-sidan ska man kunna...</h3>
+
+                    <ul>
+                        <li>Lägga till lärare. Signaturen ska bli unik och båda namnfälten ska innehålla minst två
+                            tecken.</li>
+                        <li>Lägga till elever. Elevens ID ska räknas upp med automatik och alltså inte anges. Även
+                            elevers för- och efternamn ska innehålla minst två tecken.</li>
+                        <li>Lägga till kurser. Kurskoden ska inledas med sex versaler (stora bokstäver). Namnet ska
+                            innehålla minst två tecken och poängen ska vara 50, 100 eller 150.</li>
+                        <li>Lägga till kursinstanser. Kursinstansens ID ska räknas upp med automatik och alltså inte
+                            anges. Det ska finnas en kurs med angiven kurskod och en lärare med angiven signatur.
+                            Stopp-datum måste vara senare än start-datum.</li>
+                        <li>Lägga till lektioner. Lektionens ID ska räknas upp med automatik och alltså inte anges. Det
+                            ska finnas en kursinstans med angiven kursinstanskod. Stopp-tiden måste vara senare än
+                            start-tiden och konflikter med andra lektioner ska undvikas.</li>
+                        <li>Lägga till deltagare. Både kursinstansens och elevens ID ska finnas.</li>
+                        <li>Ändra i posterna i efterhand.</li>
+                        <li>Ta bort poster.</li>
+                    </ul>
+
+                    <h3>På användar-sidan ska man kunna...</h3>
+
+                    <ul>
+                        <li>Hämta och visa info om lärare.</li>
+                        <li>Hämta och visa info om elever.</li>
+                        <li>Hämta och visa info om kursinstanser. Visa då också kursens och lärarens namn, inte bara
+                            kurskod repektive signatur.</li>
+                        <li>Göra sökningar på lärare, elever och kurser.</li>
+                        <li>Visa schemat för en lärare, eller elev, ett angivet datum. Kanske typ som i
+                            schema-appen(!):<br>
+                            <img src="images/schema.PNG" width="300" alt="schema">
+                        </li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>Sänka skepp</summary>
+                <div>
+                    <p>Läs på om spelet. På den engelska sidan finns reglerna beskrivna.</p>
+                    <p><a href='https://sv.wikipedia.org/wiki/S%C3%A4nka_skepp'
+                            target='_blank'>https://sv.wikipedia.org/wiki/S%C3%A4nka_skepp</a></p>
+                    <p><a href='https://en.wikipedia.org/wiki/Battleship_(game)'
+                            target='_blank'>https://en.wikipedia.org/wiki/Battleship_(game)</a></p>
+
+                    <p>Skapa ett <i>online</i>-spel för två personer. Du kan, om du vill, utgå från exemplet <a
+                            href='https://stackblitz.com/edit/typescript-3z4o3y?file=index.ts'
+                            target='_blank'>TicTac-Toe</a>.</p>
+
+
+                </div>
+            </details>
+        </section>
+    </article>
+
+</body>
+
+
+</html>
+
+
+<!-- TODO-->
+<!-- foo-bar -->
+<!-- reduce, prog2? -->
+<!-- <p><a href="https://web.microsoftstream.com/video/bfb35356-f2ec-49c3-874b-161c022fb83f" target="_blank">Intro
+            till variabler</a></p> -->
+
+<!-- <h2>BalderApp</h2> -->
+
+<!-- <h2>Primitiva datatyper</h2>
+                        
+                        <ul>
+                            <li>string</li>
+                            <li>number</li>
+                            <li>boolean</li>
+                        </ul> -->
+
+<!-- <p>undefined och null</p> -->
+
+<!-- <h2>Identifierare</h2> -->
+<!-- <p>kebab-case, pascal-case m fl</p> -->
+
+<!-- <h2>Operatorer</h2>
+                            <h2>Funktioner</h2>
+                            <h2>Objekt</h2>
+                            <h2>Arrayer</h2>
+                            
+                            <h2>Kommentarer</h2>
+                            <h2>Feltyper</h2> -->
+<!-- <p>Syntax, logiska, exekverings, ...</p> -->
+
+<!-- <h2>Exempel</h2>
+                                <ul>
+        <li><a href="https://stackblitz.com/edit/typescript-alddmf?file=index.ts" target="_blank">Hitbox 210830</a></li>
+    </ul> -->
+
+<!-- <div>
+                    <a href="https://tc39.es/ecma262/#sec-ecmascript-language-types-symbol-type"
+                        target="_blank">https://tc39.es/ecma262/#sec-ecmascript-language-types-symbol-type</a>
+                </div> -->
+<!-- <div>
+                    <a href="https://www.theserverside.com/definition/Kebab-case"
+                        target="_blank">https://www.theserverside.com/definition/Kebab-case</a>
+                </div> -->
+
+<!-- <div>
+                        <a href="https://codeburst.io/javascript-null-vs-undefined-20f955215a2"
+                            target="_blank">https://codeburst.io/javascript-null-vs-undefined-20f955215a2</a>
+                    </div> -->
+
+
+<!-- 
+                                Text och tecken:
+                                <h2>Literaler</h2>
+                                    <p>single / double quotes</p>
+                                    <p>template strings</p>
+                                    <h2>Indexering</h2>
+                                    <h2>Metoder</h2>
+                                    <h2>Konverteringar</h2>
+                                    <h2>Teckenkoder</h2>
+                                    <p>chr och ord</p> -->
+
+<!-- <a
+                                        href="https://medium.com/programming-essentials/how-to-convert-values-into-strings-in-javascript-13df1c09b3ed">https://medium.com/programming-essentials/how-to-convert-values-into-strings-in-javascript-13df1c09b3ed</a> -->
+
+<!-- Iterationer
+            <h2>while</h2>
+                <h2>for</h2>
+                <h2>do-while</h2> -->
+
+
+<!--
+
+https://progolymp.se/tidigare/uppgifter
+
+
+
+
+                -->
+
+<!-- 
+    Användningsfall 
+    http://www.diva-portal.org/smash/get/diva2:1015870/FULLTEXT01.pdf -->

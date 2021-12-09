@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kurser - Balder</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script>
+        let balderkurs = localStorage.getItem("balderkurs");
+
+        if (["wu1", "prog1", "prog2", "wsp1"].includes(balderkurs)) {
+            window.location.replace(balderkurs);
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <button data-src="wu1/">Webbutveckling 1</button>
+        <button data-src="prog1/">Programmering 1</button>
+        <button data-src="prog2">Programmering 2</button>
+        <button data-src="wsp1/">Webbserverprogrammering1</button>
+    </nav>
+</body>
+
+</html>
+
+<!-- <svg width="2em" height="2em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" id="toggle">
+    <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 13V2a6 6 0 110 12z" fill="#C5C5C5"></path>
+</svg> -->
+
+<!-- <a href="wu1/">Webbutveckling 1</a>
+    <a href="prog1/">Programmering 1</a>
+    <a href="prog2">Programmering 2</a>
+<a href="wsp1/">Webbserverprogrammering1</a> -->

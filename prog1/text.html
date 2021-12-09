@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animering - Uppgift - Programmering</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+    <p>Namnge mapparna <strong>text-1</strong>, <strong>text-2</strong>, och så vidare.</p>
+    <p>Inmatningar från användaren, <em>input</em>, har här markerats med <strong>fet stil</strong> för att förtydliga
+        att det är inmatningar. Så behöver det inte att se ut i dina program. </p>
+    <ol>
+        <li>Skapa ett hälsande program som fungerar så här:<br /><span
+                style="font-family: 'courier new', courier, monospace;">Vad heter
+                du?<strong><br />Mattias </strong></span><br /><span
+                style="font-family: 'courier new', courier, monospace;">Hej Mattias!</span><br /><br />Tips: Använd
+            strängaddition <span style="font-family: 'courier new', courier, monospace;">"Hej " + namn + "!"</span>,
+            eller en strängmall `<span style="font-family: 'courier new', courier, monospace;">Hej ${namn}!` </span>vid
+            utskrift.<br /> <br /><a href="http://127.0.0.1:5500/?p=Vad%20heter%20du%3F&amp;i=Mattias"
+                target="_blank">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=Vad%20heter%20du%3F&amp;i=Mattias&amp;o=Hej%20Mattias!"
+                target="_blank">Test-1</a>  <a
+                href="http://127.0.0.1:5500/?p=Vad%20heter%20du%3F&amp;i=Karin&amp;o=Hej%20Karin!"
+                target="_blank">Test-2</a><br /> </li>
+        <li>Detta program ska presentera sin användare på känt manér. <br /><span
+                style="font-family: 'courier new', courier, monospace;">First Name?<br />Last
+                Name?<strong><br />James</strong> </span><br /><span
+                style="font-family: 'courier new', courier, monospace;"><strong>Bond</strong> </span><br /><span
+                style="font-family: 'courier new', courier, monospace;">My name is Bond, James
+                Bond.<br /></span> <br /><a
+                href="http://127.0.0.1:5500/?p=First%20Name%3F%C2%A0%0ALast%20Name%3F&amp;i=James%0ABond"
+                target="_blank">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=First%20Name%3F%C2%A0%0ALast%20Name%3F&amp;i=James%0ABond&amp;o=My%20name%20is%20Bond%2C%20James%20Bond."
+                target="_blank">Test-1</a>  <a
+                href="http://127.0.0.1:5500/?p=First%20Name%3F%C2%A0%0ALast%20Name%3F&amp;i=Donald%0ADuck&amp;o=My%20name%20is%20Duck%2C%20Donald%20Duck."
+                target="_blank">Test-2</a><br /><br /></li>
+        <li>Skriv ett program som skriver ut en inmatad text först enbart med versaler sedan enbart med gemener:
+            <br /><span style="font-family: 'courier new', courier, monospace;">En text:<strong><br />Hej Monika
+                </strong></span><br /><span style="font-family: 'courier new', courier, monospace;">Versalt: HEJ MONIKA
+            </span><br /><span style="font-family: 'courier new', courier, monospace;">Gement: hej monika</span>
+            <br /><br />Tips: Använd strängmetoderna <span
+                style="font-family: 'courier new', courier, monospace;">toUpperCase</span> och <span
+                style="font-family: 'courier new', courier, monospace;">toLowerCase</span>.<br /><br /><a
+                href="http://127.0.0.1:5500/?p=En%20text%3A">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=En%20text%3A&amp;i=Hej%20Monika&amp;o=Versalt%3A%20HEJ%20MONIKA%0AGement%3A%20hej%20monika"
+                target="_blank">Test-1</a>  <a
+                href="http://127.0.0.1:5500/?p=En%20text%3A&amp;i=AxA&amp;o=Versalt%3A%20AXA%0AGement%3A%20axa"
+                target="_blank">Test-2</a><br /><br />
+        </li>
+        <li>Skriv ett program som frågar efter ditt namn varefter din signatur skrivs ut: <br /><span
+                style="font-family: 'courier new', courier, monospace;">Förnamn?<br />Efternamn?<br /><strong>Kalle</strong>
+            </span><br /><span style="font-family: 'courier new', courier, monospace;"><strong>Anka</strong>
+            </span><br /><span style="font-family: 'courier new', courier, monospace;">Dina initialer är
+                KA.</span><br /><br />Tips: Använd indexering <span
+                style="font-family: 'courier new', courier, monospace;">[]</span>. Observera att det första tecknet har
+            index 0 (noll).<br /><br /><a
+                href="http://127.0.0.1:5500/?p=F%C3%B6rnamn%3F%0AEfternamn%3F&amp;i=Kalle%0AAnka">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=F%C3%B6rnamn%3F%0AEfternamn%3F&amp;i=Kalle%0AAnka&amp;o=Dina%20initialer%20%C3%A4r%20KA."
+                target="_blank">Test-1</a>  <a
+                href="http://127.0.0.1:5500/?p=F%C3%B6rnamn%3F%0AEfternamn%3F&amp;i=Mimmi%0APigg&amp;o=Dina%20initialer%20%C3%A4r%20MP."
+                target="_blank">Test-2</a><br /><br /></li>
+        <li>Skriv ett program som tar ditt namn varefter ditt användarnamn (tre första ur förnamnet + tre första ur
+            efternamnet) skrivs ut: <br /><span
+                style="font-family: 'courier new', courier, monospace;">Förnamn?<br />Efternamn?<br /><strong>Kalle</strong> </span><br /><span
+                style="font-family: 'courier new', courier, monospace;"><strong>Anka</strong> </span><br /><span
+                style="font-family: 'courier new', courier, monospace;">Ditt användarnamn är
+                kalank.<br /><br /></span>Tips: Använd metoderna <span
+                style="font-family: 'courier new', courier, monospace;">slice</span> och <span
+                style="font-family: 'courier new', courier, monospace;">slice</span> och <span
+                style="font-family: 'courier new', courier, monospace;">toLowerCase</span>. <br /><br /><a
+                href="http://127.0.0.1:5500/?p=F%C3%B6rnamn%3F%0AEfternamn%3F&amp;i=Kalle%0AAnka"
+                target="_blank">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=F%C3%B6rnamn%3F%0AEfternamn%3F&amp;i=Kalle%0AAnka&amp;o=Ditt%20anv%C3%A4ndarnamn%20%C3%A4r%20kalank."
+                target="_blank">Test-1</a>  <a
+                href="http://127.0.0.1:5500/?p=F%C3%B6rnamn%3F%0AEfternamn%3F&amp;i=Mimmi%0APigg&amp;o=Ditt%20anv%C3%A4ndarnamn%20%C3%A4r%20mimpig."
+                target="_blank">Test-2</a><br /><br /></li>
+        <li>Skriv ett program som frågar efter ditt telefonnummer (inklusive riktnummer). Byt ut bindestrecket mot
+            mellanslag: <br /><span style="font-family: 'courier new', courier, monospace;">Telefonnummer med
+                bindestreck:<strong><br />0910-12345 </strong></span><br /><span
+                style="font-family: 'courier new', courier, monospace;">Telefonnummer utan bindestreck: 0910
+                12345</span> <br /><br />Tips: Använd metoden <span
+                style="font-family: 'courier new', courier, monospace;">replaceAll</span>. <br /><br /><a
+                href="http://127.0.0.1:5500/?p=Telefonnummer%20med%20bindestreck%3A%0A&amp;i=0910-12345"
+                target="_blank">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=Telefonnummer%20med%20bindestreck%3A%0A&amp;i=0910-12345&amp;o=Telefonnummer%20utan%20bindestreck%3A%200910%2012345"
+                target="_blank">Test-1</a>  <a
+                href="http://127.0.0.1:5500/?p=Telefonnummer%20med%20bindestreck%3A%0A&amp;i=08-123%2045%2056&amp;o=Telefonnummer%20utan%20bindestreck%3A%2008%20123%2045%2056"
+                target="_blank">Test-2</a><br /><br /></li>
+        <li>* ( Extrauppgift)<br />Skriv ett program som delar upp ett telefonnumret i riktnummer och abonnentnummer på
+            detta vis: <br /><span style="font-family: 'courier new', courier, monospace;">Telefonnummer med
+                bindestreck:<strong><br />0910-12345 </strong></span><br /><span
+                style="font-family: 'courier new', courier, monospace;">Riktnummer: 0910 </span><br /><span
+                style="font-family: 'courier new', courier, monospace;">Abonnentnummer: 12345 </span><br /><br />Tips:
+            Använd metoden <span style="font-family: 'courier new', courier, monospace;">indexOf</span> för att hitta
+            positionen för bindestrecket. Då man vet positionen kan man sedan dela upp numret i två
+            delsträngar.<br /><br /><a
+                href="http://127.0.0.1:5500/?p=Telefonnummer%20med%20bindestreck%3A%0A&amp;i=0910-12345"
+                target="_blank">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=Telefonnummer%20med%20bindestreck%3A%0A&amp;i=0910-12345&amp;o=Riktnummer%3A%200910%0AAbonnentnummer%3A%2012345"
+                target="_blank">Test-1</a>  <a
+                href="http://127.0.0.1:5500/?p=Telefonnummer%20med%20bindestreck%3A%0A&amp;i=08-123%2045%2056&amp;o=Riktnummer%3A%2008%0AAbonnentnummer%3A%20123%2045%2056"
+                target="_blank">Test-2</a><br /><br /></li>
+        <li>* (Extrauppgift)<br />Skriv ett program som använder några ytterligare strängmetoder. Exempelvis så
+            här:<br /><span style="font-family: 'courier new', courier, monospace;">En text:<strong><br />Hello
+                    World!</strong></span><br /><span style="font-family: 'courier new', courier, monospace;">Innehåller
+                (minst) ett mellanslag: true</span><br /><span
+                style="font-family: 'courier new', courier, monospace;">Inleds med "Hej": false</span><br /><br /><a
+                href="http://127.0.0.1:5500/?p=En%20text%3A%0A&amp;i=Hello%20World!">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=En%20text%3A%0A&amp;i=Hello%20World!&amp;o=Inneh%C3%A5ller%20(minst)%20ett%20mellanslag%3A%20true%0AInleds%20med%20%22Hej%22%3A%20false"
+                target="_blank">Test-1</a>  <a
+                href="http://127.0.0.1:5500/?p=En%20text%3A%0A&amp;i=Hejsan&amp;o=Inneh%C3%A5ller%20(minst)%20ett%20mellanslag%3A%20false%0AInleds%20med%20%22Hej%22%3A%20true"
+                target="_blank">Test-2</a></li>
+
+    </ol>
+    <p>Ladda upp mappen till <b>codescan/prog/text</b>-mappen på din användare på <a href="http://skelamp.se/"
+            target="_blank">skelamp</a>.</p>
+</body>
+
+</html>

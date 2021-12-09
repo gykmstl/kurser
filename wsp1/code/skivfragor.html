@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skivfrågor</title>
+
+    <style>
+        li {
+            margin: 1em 0;
+        }
+
+        table, tr, td, th {
+            border: 1px solid black;
+        }
+
+        td, th {
+            width: 16em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Skivfrågor</h1>
+    
+    <h2>Uppgifter:</h2>
+    <ol>
+        <li>Visa alla skivor från år 2000. (29 st.)<br />
+            Tips: Ställ villkor på fältet <b>year</b>.
+        </li>
+
+        <li>Visa alla dubbel-cd. (15 st.)<br />Tips: Ställ villkor på fältet <b>nr_cds</b>.
+            Kolla vilka värden som anges där.
+        </li>
+
+        <li>Visa alla singlar. (22 st.)<br />Tips: Ställ villkor på fältet <b>format</b>.
+            Kolla vilka värden som anges där.
+        </li>
+
+        <li>Visa skivorna där <b>artist_id</b> är 118. (3 st.)</li>
+
+        <li>Visa alla grupper. (267 st.)</li>
+
+        <li>Visa alla skivor som innehåller orden ”best of” (26 st.)<br />
+            Tips: <code>...LIKE '%best of%'</code>
+        </li>
+
+        <li>Visa alla skivor från åren 1967, 1977 och 1990. (38 st.)<br />
+            Tips: <code>...year = 1967 OR year = 1977 OR year = 1990</code>
+        </li>
+
+        <li>Visa alla skivor som saknar betyg. (9 st.)<br />
+            Tips: Sök efter NULL-värden.</li>
+
+        <li>Visa alla samlings-cd. (130 st.)<br />
+            Tips: Sätt villkor på fältet <b>compilation</b>.
+        </li>
+
+        <li>Visa alla skivor vars titel är lika med artistens namn. (26 st.)<br />
+            Tips: Här måste du hämta fält från båda
+            tabellerna<br />
+            <code>
+                SELECT * FROM artists, records<br>
+                WHERE artists.artist_id = records.artist_id<br>
+                AND ...
+            </code>
+        </li>
+
+        <li>Visar alla skivor från 80-talet. Ta inte med samlingar. (49 st.)</li>
+
+        <li>Visa alla skivor mellan 1985 och 1991. (142 st.)</li>
+
+        <li>Visa alla skivor med betyget fem som är gjorda av män. (11 st.)</li>
+
+        <li>Visa alla skivor med artister från Sverige och där betyget är minst fyra. (36 st.)</li>
+
+        <li>Visa alla vanliga cd-skivor, det vill säga där fältet <b>format</b> är tomt och
+            antalet cd är ett. (538 st.)</li>
+
+        <li>Visa alla bra korta cd-skivor, det vill säga där fältet <b>format</b> inte är tomt
+            och betyget är minst 4. (37 st.)</li>
+
+        <li>Sortera skivorna från högsta till lägsta betyg.</li>
+
+        <li>Sortera i första hand på artisten, i andra hand på årtalet.</li>
+
+        <li>Visa antalet skivor per artist. Resultatet bör likna det nedan:<br />
+            <table>
+                <tbody>
+                    <tr>
+                        <th>artist</th>
+                        <th>count(*)</th>
+                    </tr>
+                    <tr>
+                        <td>Suede</td>
+                        <td>21</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            Tips: Använd funktionen <code>COUNT</code> i kombination med
+            <code>GROUP BY</code>.
+        </li>
+
+        <li>Visa antalet artister per land. Resultatet bör likna det nedan:<br />
+            <table>
+                <tbody>
+                    <tr>
+                        <th>country</th>
+                        <th>count(*)</th>
+                    </tr>
+                    <tr>
+                        <td>Storbrittanien</td>
+                        <td>166</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+
+        <li>Visa antalet skivor och medelbetyget på skivorna för artisterna. Resultatet bör likna det
+            nedan:<br />
+            <table>
+                <tbody>
+                    <tr>
+                        <th>artist</th>
+                        <th>count(*)</th>
+                        <th>avg(grade)</th>
+                    </tr>
+                    <tr>
+                        <td>Band, The</td>
+                        <td>1</td>
+                        <td>5.0000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+
+        <li>Skapa en fråga med ett beräknat fält <b>record</b> i vilket
+            skivorna (ej de med diverse artister) ska visas på detta sätt:<br />
+            <table>
+                <tbody>
+                    <tr>
+                        <th>artist</th>
+                        <th>title</th>
+                        <th>record</th>
+                    </tr>
+                    <tr>
+                        <td>Abba</td>
+                        <td>Gold</td>
+                        <td>Abba - Gold</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+
+        <li>Skapa en fråga med ett beräknat fält <b>new_grade</b> som
+            visar sifferbetygen som bokstavsbetyg istället. Låt 1-2 motsvara IG, 3 G, 4 VG och 5 MVG. Resultatet bör
+            likna det nedan:<br />
+            <table>
+                <tbody>
+                    <tr>
+                        <th>artist</th>
+                        <th>title</th>
+                        <th>grade</th>
+                        <th>new_grade</th>
+                    </tr>
+                    <tr>
+                        <td>Abba</td>
+                        <td>Gold</td>
+                        <td>4</td>
+                        <td>VG</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+
+        <li>Skapa en ny tabell med kommandot:<br />
+            <code>CREATE TABLE grade2_records LIKE records</code>
+            <br />Infoga alla skivor med betyget 2 i tabellen <b>grade2_records</b>.
+            <br />
+            Tips: <code>INSERT</code>.<br />Antal påverkade rader: 21
+        </li>
+
+        <li>Ta bort alla skivor med betyget 2 från tabellen
+            <b>records</b>.<br />
+            Tips: <code>DELETE</code>.<br />Antal påverkade rader: 21
+        </li>
+
+        <li>Återställ tabellen <b>records</b>.<br />Antal påverkade rader: 21</li>
+
+        <li>Bredda betygsskalan genom att dubblera alla betyg. <br />
+            Tips: <code>UPDATE</code><br />
+            Antal påverkade rader: 605
+        </li>
+
+        <li>Återställ betygsskalan.<br />Antal påverkade rader: 605</li>
+
+        <li>Förändra alla "The"-artister så att den bestämda artikeln hamnar i början av namnet istället
+            för, som nu, i slutet. Exempelvis ska ”Beatles, The” ändras till ”The Beatles”.<br />
+            Antal påverkade rader: 65</li>
+
+        <li>Återställ "The" till slutet.<br />
+            Antal påverkade rader: 65</li>
+    </ol>
+
+</body>
+
+</html>

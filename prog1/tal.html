@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animering - Uppgift - Programmering</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+    <p>Namnge mapparna <strong>tal-1</strong>, <strong>tal-2</strong>, och så vidare.</p>
+    <p>Inmatningar från användaren har här markerats med <strong>fet stil</strong> för att förtydliga att det är
+        inmatningar. Så behöver det inte att se ut i dina program. </p>
+    <ol>
+        <li>Skriv ett program som adderar två heltal på detta vis: <br /><span
+                style="font-family: 'courier new', courier, monospace;">Tal 1:</span><br /><span
+                style="font-family: 'courier new', courier, monospace;">Tal 2:</span><br /><span
+                style="font-family: 'courier new', courier, monospace;"><strong>34</strong> </span><br /><span
+                style="font-family: 'courier new', courier, monospace;"><strong>75</strong> </span><br /><span
+                style="font-family: 'courier new', courier, monospace;">Summa: 109</span><br /><br /><a
+                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A&amp;i=34%0A74" target="_blank">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A&amp;i=34%0A74&amp;o=Summa%3A%20108"
+                target="_blank">Test-1</a> <a
+                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A&amp;i=1%0A1&amp;o=Summa%3A%202"
+                target="_blank">Test-2</a><br /><br /></li>
+        <li>Skriv ett program som kan omvandla ett antal timmar och minuter till minuter på detta vis:<br /><span
+                style="font-family: 'courier new', courier, monospace;">Timmar:<br />Minuter:<strong><br />3</strong> </span><br /><span
+                style="font-family: 'courier new', courier, monospace;"><strong>10 </strong></span><br /><span
+                style="font-family: 'courier new', courier, monospace;">Totalt 190 minuter.</span><br /> <br /><a
+                href="http://127.0.0.1:5500/?p=Timmar%3A%0AMinuter%3A&amp;i=3%0A10" target="_blank">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=Timmar%3A%0AMinuter%3A&amp;i=3%0A10&amp;o=Totalt%20190%20minuter."
+                target="_blank">Test-1</a> <a
+                href="http://127.0.0.1:5500/?p=Timmar%3A%0AMinuter%3A&amp;i=2%0A15&amp;o=Totalt%20135%20minuter."
+                target="_blank">Test-2</a><br /> </li>
+        <li>Skriv ett program som kan omvandla åt andra hållet.<br /><span
+                style="font-family: 'courier new', courier, monospace;">Minuter:<strong><br />190 </strong></span><br /><span
+                style="font-family: 'courier new', courier, monospace;">Hela timmar: 3 </span><br /><span
+                style="font-family: 'courier new', courier, monospace;">Restminuter: 10<br /></span> <br /> Tips: Använd
+            %-operatorn. 190 % 60 blir 10 (resten vid division med 60).<br /><br /><a
+                href="http://127.0.0.1:5500/?p=Minuter%3A%0A&amp;i=190" target="_blank">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=Minuter%3A%0A&amp;i=190&amp;o=Hela%20timmar%3A%203%0ARestminuter%3A%2010"
+                target="_blank">Test-1</a>  <a
+                href="http://127.0.0.1:5500/?p=Minuter%3A%0A&amp;i=1000&amp;o=Hela%20timmar%3A%2016%0ARestminuter%3A%2040"
+                target="_blank">Test-2</a><br /><br /></li>
+        <li>* (Extrauppgift)<br />Gör en penningväxlare på detta vis: <br /><span
+                style="font-family: 'courier new', courier, monospace;">Penningsumma:<strong><br />17823 </strong></span><br /><span
+                style="font-family: 'courier new', courier, monospace;">17 tusenlappar </span><br /><span
+                style="font-family: 'courier new', courier, monospace;">8 hundralappar </span><br /><span
+                style="font-family: 'courier new', courier, monospace;">2 tior</span><br /><span
+                style="font-family: 'courier new', courier, monospace;">3 enkronor<br /><br /><span
+                    style="font-family: arial, helvetica, sans-serif;"><a
+                        href="http://127.0.0.1:5500/?r=35&amp;p=Penningsumma%3A%0A&amp;i=17823"
+                        target="_blank">Start</a>  <a
+                        href="http://127.0.0.1:5500/?r=35&amp;p=Penningsumma%3A%0A&amp;i=17823&amp;o=17%20tusenlappar%0A8%20hundralappar%0A2%20tior%0A3%20enkronor"
+                        target="_blank">Test-1</a>  <a
+                        href="http://127.0.0.1:5500/?r=35&amp;p=Penningsumma%3A%0A&amp;i=999&amp;o=0%20tusenlappar%0A9%20hundralappar%0A9%20tior%0A9%20enkronor"
+                        target="_blank">Test-2</a><br /><br /></span></span></li>
+
+
+
+        <li>Givet radien i en cirkel ska programmet svara med area och omkrets. Använd konstanten <span
+                style="font-family: 'courier new', courier, monospace;">Math.PI</span> för pi.<br /><br /></li>
+        <li>Skriv ett program som beräknar det längsta avståndet (d) mellan hörnen, rymddiagonalen, i en låda med givna
+            mått (a, b och c). <br /><a
+                <img
+                    src="images/ratblock.png"
+                    width="300" /><br /><span
+                style="font-family: 'courier new', courier, monospace;">a:<br />b:<br />c: <br /><strong>12</strong>
+            </span><br /><span style="font-family: 'courier new', courier, monospace;"><strong>4</strong>
+            </span><br /><span style="font-family: 'courier new', courier, monospace;"><strong>3</strong>
+            </span><br /><span style="font-family: 'courier new', courier, monospace;">d =
+                13</span><br /><br />Formel:<br /><img
+                src="../images/rymddiag.PNG" width="212"
+                height="59" /><br /><br />Använd funktionen <span
+                style="font-family: 'courier new', courier, monospace;">Math.sqrt</span> för kvadratrotsberäkningen.
+            Operatorn ** ger "upphöjt till".<br /><br /><a
+                href="http://127.0.0.1:5500/?p=a%3A%0Ab%3A%0Ac%3A&amp;i=12%0A4%0A3" target="_blank">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=a%3A%0Ab%3A%0Ac%3A&amp;i=12%0A4%0A3&amp;o=13" target="_blank">Test-1</a> 
+            </li>
+        <li>Skriv ett program som omvandlar från Celsius till Fahrenheit. <br /><span
+                style="font-family: 'courier new', courier, monospace;">Temp (<span>°</span>C):
+                <br /><strong>100</strong> </span><br /><span
+                style="font-family: 'courier new', courier, monospace;">212.0 <span>°</span>F <br /><br /></span><a
+                href="http://127.0.0.1:5500/?p=Temp%20(%C2%B0C)%3A&amp;i=100">Start</a>  <a
+                href="http://127.0.0.1:5500/?p=Temp%20(%C2%B0C)%3A&amp;i=100&amp;o=212.0%20%C2%B0F"
+                target="_blank">Test-1</a>  <a
+                href="http://127.0.0.1:5500/?p=Temp%20(%C2%B0C)%3A&amp;i=0&amp;o=32.0%20%C2%B0F"
+                target="_blank">Test-2</a><br /><br /></li>
+        <li>Skriv ett program som omvandlar från Fahrenheit till Celsius. <br /><span
+                style="font-family: 'courier new', courier, monospace;">Temp (<span>°</span>F):
+                <br /><strong>212</strong> </span><br /><span
+                style="font-family: 'courier new', courier, monospace;">100.0 °C<br /> <br /><span
+                    style="font-family: arial, helvetica, sans-serif;"><a
+                        href="http://127.0.0.1:5500/?p=Temp%20(%C2%B0F)%3A&amp;i=212">Start </a> <a
+                        href="http://127.0.0.1:5500/?p=Temp%20(%C2%B0F)%3A&amp;i=212&amp;o=100.0%20%C2%B0C"
+                        target="_blank">Test-1</a>  <a
+                        href="http://127.0.0.1:5500/?p=Temp%20(%C2%B0F)%3A&amp;i=32&amp;o=0.0%20%C2%B0C"
+                        target="_blank">Test-2</a></span><br /><br /></span></li>
+        <!-- <li> * Skriv ett program som beräknar omkretsen, C, för en ellips givet dess två radier a och b. Använd
+            formeln:<br /><img src="https://samarbeta.skelleftea.se/draftfile.php/1609/user/draft/538652826/ellips.PNG"
+                width="383" height="64" /><br />Läs mer på <a href="https://sv.wikipedia.org/wiki/Ellips_(matematik)"
+                target="_blank">wikipedia</a>.</li> -->
+
+
+    </ol>
+
+    <p>Ladda upp mappen till <b>codescan/prog/tal</b>-mappen på din användare på <a href="http://skelamp.se/"
+            target="_blank">skelamp</a>.</p>
+</body>
+
+</html>

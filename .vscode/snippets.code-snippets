@@ -1,0 +1,77 @@
+{
+	// Place your kurser workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"div-a": {
+		"scope": "html",
+		"prefix": "diva",
+		"body": [
+			"<div><a href='$1' target='_blank'>$1</a></div>"
+		],
+		"description": "out-link"
+	},
+	"p-a": {
+		"scope": "html",
+		"prefix": "pa",
+		"body": [
+			"<p><a href='$1' target='_blank'>$2</a></p>"
+		],
+		"description": "p-a"
+	},
+	"sec-mat": {
+		"scope": "html",
+		"prefix": "sec-mat",
+		"body": [
+			"<section>\n\t<h2>Material</h2>\n\n\t$0\n</section>"
+		],
+		"description": "section-material"
+	},
+	"sec-uppg": {
+		"scope": "html",
+		"prefix": "sec-uppg",
+		"body": [
+			"<section>\n\t<h2>Uppgifter</h2>\n\n\t$0\n</section>"
+		],
+		"description": "section-uppgifter"
+	},
+	"det-sum": {
+		"scope": "html",
+		"prefix": "det-sum",
+		"body": [
+			"<details>\n\t<summary>$1</summary>\n\t<div>\n\t\t$2\n\t</div>\n</details>"
+		],
+		"description": "detail-summary"
+	},
+	"ifr": {
+		"scope": "html",
+		"prefix": "ifr",
+		"body": [
+			"<iframe src='$1' style='height: $2em'></iframe>$0"
+		],
+		"description": "iframe"
+	},
+
+
+	// "art-divs": {
+	// 	"scope": "html",
+	// 	"prefix": "artdivs",
+	// 	"body": [
+	// 		"<article><div></div><div$1</a></div>"
+	// 	],
+	// 	"description": "out-link"
+	// }
+}

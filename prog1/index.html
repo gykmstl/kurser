@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Programmering 1 - Balder</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+    <script>localStorage.setItem("balderkurs", "prog1")</script>
+</head>
+
+<body>
+    <nav>
+        <button data-src="../wu1/">Webbutveckling 1</button>
+        <button data-src="../prog1/">Programmering 1</button>
+        <button data-src="../prog2/">Programmering 2</button>
+        <button data-src="../wsp1/">Webbserverprogrammering1</button>
+    </nav>
+
+    <h1 class="kurs">Programmering 1</h1>
+
+    <p>
+        <a href="https://skelleftea.sharepoint.com/:w:/s/Section_89126257-b3c5-456e-b206-0653cb0cf1b3/ERnp7RIUONVFlTwrWtHgpe0BPCRpEEgq59ym53534LefHQ?e=B7SGpI"
+            target="_blank">
+            Planering-lektionslogg TE2INF 2122
+        </a>
+    </p>
+
+    <article>
+        <h1>Allmänt</h1>
+
+        <p>Ladda ner <a href="balder202-app.zip">version 2.0.2 av BalderJS. (Med buggfix <b>2021-10-27</b>)</a></p>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>Advent of Code</summary>
+                <div>
+                    <p><a href='https://adventofcode.com/' target='_blank'>Advent of Code</a></p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Betygssteg</summary>
+                <div>
+                    <img src="images/betygssteg.jpg" alt="" width="600">
+                </div>
+            </details>
+            <details>
+                <summary>Att-kunna-lista</summary>
+                <div>
+                    <h3>Teoretiskt</h3>
+                    <ul>
+                        <li>Tolka given kod. Det vill säga ge förklaringar till vad koden gör.</li>
+                        <li>Identifiera, och rätta till, fel i given kod.</li>
+                    </ul>
+                    <h3>Praktiskt</h3>
+                    <ul>
+                        <li>Rita i canvasen (cirklar, rektanglar, trianglar, linjer, text och bilder)
+                            <!-- <a href="https://stackblitz.com/edit/typescript-atbb1t?file=index.ts" target="_blank">Ex</a> -->
+                        </li>
+                        <li>Spara och utföra beräkningar med strängar, tal och booleska värden.
+                            <!-- Spara i variabler och utföra beräkningar på. -->
+                            <!-- <a href="https://stackblitz.com/edit/typescript-36b5pg?file=index.ts" target="_blank">Ex</a> -->
+                        </li>
+                        <!-- <li>Använda objekt. </li> -->
+                        <li>Skapa animeringar med <code>setUpdate()</code>. 
+                        </li>
+                        <li>Inmatning av data med <code>await input()</code>.</li>
+                        <!-- <li>Konvertera från sträng till tal med <code>+</code>.</li> -->
+                        <li>Utmatning av data med <code>output()</code>.</li>
+                        <li>Använda <code>if</code>- och <code>switch-</code>satser.
+                        </li>
+                        <li>Använda <code>for</code>- och <code>while</code>-loopar.
+                        </li>
+                        <li>Avbryta en loop med <code>break</code>.</li>
+                        <li>Använda <em>arrayer</em> med en och två dimensioner.
+                            <!-- <a href="https://codepen.io/gykmstl/pen/GRjqgLa?editors=0010" target="_blank">Ex</a> -->
+                        </li>
+                        <li>Skriva, och anropa, funktioner som <em>gör</em> något och funktioner som <em>returnerar</em>
+                            något. </li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary><i>BalderJS</i>-program med <i>StackBlitz</i></summary>
+                <div>
+                    <p>Ändra något i koden till vänster, till exempel färgen eller radien.</p>
+                    <iframe
+                        data-src="https://stackblitz.com/edit/typescript-juu5jp?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                        style="width: 100%;height: 40em;">
+                    </iframe>
+                </div>
+            </details>
+            <details>
+                <summary><i>BalderJS</i>-program med <i>VS Code</i></summary>
+                <div>
+                    <h3>Första gången</h3>
+                    <p>A) Installera <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>.
+                        (Om du inte redan
+                        gjort det...)</p>
+                    <p>B) Installera <a href="https://nodejs.org/en/download/" target="_blank">Node.js</a>. Välj
+                        <b>Windows
+                            Installer (.msi), 64-bit</b>. Då filen laddats ner så starta den (dubbelklicka).
+                    </p>
+                    <p>C) Installera <a href="https://code.visualstudio.com/docs/languages/typescript"
+                            target="_blank">TypeScript-kompilatorn</a> genom att:</p>
+                    <ol>
+                        <li>Öppna <em>VS Code</em>.</li>
+                        <li>Välj <b>View - Terminal</b> för att visa terminalfönstret. </li>
+                        <li>Skriv där kommandot (avsluta med Enter): <kbd>npm install -g typescript</kbd></li>
+                        <li>Kontrollera att installationen görs, det tar ca 10 sekunder.</li>
+                    </ol>
+
+                    <p>D) Skriv också detta kommando i terminalfönstret (avsluta med Enter): 
+                        <kbd>Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser</kbd>
+                    </p>
+                    <p>E) Installera tillägget <a
+                            href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
+                            target="_blank">Live Server</a>. Klicka på den gröna <b>Install</b>-knappen.</p>
+                    <p>F) Man kan bestämma vilken webbläsare som ska öppnas med inställningen: <b>File -
+                            Preferences -
+                            Settings</b>:</p>
+                    <p><img src="images/liveserver.PNG" width="500" height="286" /></p>
+                    <p>Alla moderna webbläsare, till exempel <em>Chrome</em> och <em>Firefox</em> funkar bra.</p>
+                    <p> <br />G) Installera också tillägget <a
+                            href="https://marketplace.visualstudio.com/items?itemName=yukidoi.blade-runner"
+                            target="_blank">Blade
+                            Runner</a>.<br /> </p>
+                    <p>H) En del tillägg kräver att <em>VS Code</em> startas om, så gör det.</p>
+                    <p> <br />I) Gör denna inställning: <b>File - Preferences - Settings</b>:<br /><img
+                            src="images/format.PNG" width="500" height="327" /></p>
+                    <p> <br /> <br />J) Ladda ner den komprimerade filen <a
+                            href="balder202-app.zip">balder202-app.zip</a>. Högerklicka
+                        sedan på den och välj alternativet <b>Extrahera alla</b>. Då skapas en mapp
+                        <b>balder-app</b> som kan vara mall för dina projekt:
+                    </p>
+
+                    <h3>Varje gång</h3>
+                    <p>A) Inifrån <em>VS Code</em> så väljer du <b>File - Open Folder</b> och väljer där den
+                        mapp som du vill
+                        jobba med.</p>
+                    <p>B) Om du vill göra ett nytt program så ta först en kopia av någon mapp och ge den ett beskrivande
+                        namn:</p>
+                    <ul>
+                        <li>Markera den mapp du vill kopiera (till exempel <b>balder-app</b>).</li>
+                        <li>Kopiera med <b>Ctrl+C</b>.</li>
+                        <li>Klistra in med <b>Ctrl+V</b>.</li>
+                        <li>Byt till ett mer beskrivande namn på mappen.</li>
+                    </ul>
+                    <p>C) Markera den mapp du vill jobba med och välj sedan <b>Select Folder</b>. (Du behöver
+                        alltså inte
+                        klicka dig in i själva mappen.)</p>
+                    <p>D) Visa filen <b>app.ts</b>. Stäng gärna fönstret med alla filer så får du bättre plats
+                        med
+                        koden.</p>
+                    <p>E) Tryck på <b>Go Live</b>-ikonen (längst ner i fönstret).
+                        <img src="images/golive.PNG" width="70" height="21" />
+                        Då öppnas en webbläsarflik som sedan uppdateras varje gång din fil sparas.
+                    </p>
+                    <p>F) Skriv kod i <b>app.ts</b> - spara - och se resultatet i webbläsaren.</p>
+                    <p>Tips:</p>
+                    <ul>
+                        <li>Visa editorn till vänster och webbläsaren till höger på skärmen så kan du samtidigt se kod o
+                            resultat.</li>
+                        <li>Starta Live Server med kortkommandot <b>Alt+L Alt+O</b>.</li>
+                        <li>Spara med kortkommandot <b>Ctrl+S</b>.</li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary><i>BalderJS</i> API</summary>
+                <div>
+                    <p><a href="../api/" target="_blank">API <i>BalderJS</i></a></p>
+                    <iframe src='../api/' style='height: 40em'></iframe>
+                </div>
+            </details>
+            <details>
+                <summary>Tips o trix med <i>VS Code</i></summary>
+                <iframe src="../vscode.html" style="height: 40em;"></iframe>
+            </details>
+            <details>
+                <summary>Vad kallas tecknen?</summary>
+                <iframe src="../tecken.html" style="height: 40em;"></iframe>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>
+                    Input, text, siffror och selektioner
+                </summary>
+                <ol>
+                    <li>
+                        <p>
+                            Skriv ett program som tar ett personnummer (de 4 sista siffrorna är oviktiga) som input och
+                            sedan
+                            skriver ut hur gammal personen är. <br>
+                            Tips: Använd slice eller substring för att plocka ut år, månad och dag ut personnumret. <br>
+                        </p>
+                        <p>
+                            Exempel: <br>
+                            <b>Personnummer: 101010 </b> <br>
+                            Du är 11 år <br>
+                        </p>
+                        <p>
+                            Spara lösningen om du ska göra funktionsuppgifterna längst ner i repetitionen.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Skriv ett program som tar hastighetsgräns på en väg och din nuvarande hastighet som input.
+                            <br>
+                            Programmet ska säga åt dig om du kör för snabbt, lagom hastighet eller för långsamt. <br>
+                            Om du kör för långsamt bör bero på vilken hastighetsgräns du skrivit in. <br>
+                        </p>
+                    </li>
+                </ol>
+            </details>
+            <details>
+                <summary>
+                    Arrayer och iterationer
+                </summary>
+                <ol>
+                    <li>
+                        <p>
+                            Skapa ett program som innehåller en array med tal. <br>
+                            Använd en loop för att addera alla tal i arrayen med talet som kommer efter i arrayen. <br>
+                            Det sista talet behöver inte adderas med något. <br>
+                            Skriv gärna ditt program så att arrayen uppdateras med de nya talen eller att talen läggs
+                            till i en ny
+                            array. <br>
+                        </p>
+                        <p>
+                            Om din array ser ut såhär <b>[5, 4, 3, 1, 5]</b> ska du få följande output: <br>
+                            [9, 7, 4, 6, 5] <br>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Skriv en tvådimensionell array som innehåller olika färger. <br>
+                            Använd två loopar för att rita ut rektanglar bredvid och under varandra med färgerna från
+                            din array.
+                            <br>
+                            Exempelarray: [["blue", "yellow"], ["green", "blue"]]<br>
+                            <img src="images/color-array.PNG" width="400" alt="">
+                        </p>
+                        <p>
+                            Spara lösningen om du ska göra funktionsuppgifterna nedan.
+                        </p>
+                    </li>
+                </ol>
+            </details>
+            <details>
+                <summary>
+                    Funktioner
+                </summary>
+                <ol>
+                    <li>
+                        <p>
+                            I första repetitionsuppgiften skrev du ett program som räknade ut en ålder. <br>
+                            Gör om det till en funktion som ger tillbaka (returnerar) åldern. Funktionen ska ta
+                            personnumret som
+                            argument. <br>
+                            Använd sedan den funktionen för att räkna ut åldern på ett antal personer, du behöver inte
+                            ta inputs.
+                            <br>
+                            Räkna sedan ut summan av allas åldrar.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Använd din lösning på uppgiften som använde en array med färger för att rita ut rektanglar.
+                            <br>
+                            Gör om det till en funktion som tar ett startvärde på x och y samt en array med färger som
+                            argument.
+                            <br>
+                            Använd sedan funktionen för att rita ut olika grupper av rektanglar på skärmen. <br>
+                        </p>
+                    </li>
+                </ol>
+            </details>
+            <details>
+                <summary>Prisdialog (Provuppgift 2020-12-16)</summary>
+                <div>
+                    <p>En uppgift som testar betygen <strong>E-D</strong>.</p>
+                    <p>Spara som <strong>prisdialog</strong>. Skriv snygg och lättläst kod, med bra variabelnamn och
+                        korrekta indrag.</p>
+                    <p>Skriv ett program som för en dialog som nedan. </p>
+                    <p>Du får utgå från att användaren ger rimliga indata. Programmet får krascha om så inte är fallet.
+                    </p>
+                    <div>
+                        <samp>Styckepris (kr):<br>
+                            <div style="border: 1px solid black">6</div>
+                        </samp>
+                    </div>
+                    <div>
+                        <samp>Antal (st):<br>
+                            <div style="border: 1px solid black">3</div>
+                        </samp>
+                    </div>
+                    <div>
+                        <samp>Inbetalt (kr):<br>
+                            <div style="border: 1px solid black">20</div>
+                        </samp>
+                    </div>
+                    <div>
+                        <samp>
+                            Priset blev 18 kronor. <br />
+                            Du får 2 kronor tillbaka.
+                        </samp>
+                    </div>
+
+                    <p>Jo, jag vet att det inte är så vanligt längre att betala med "riktiga pengar", mynt och sedlar.
+                        Men i denna uppgift så låtsas vi göra det!</p>
+                    <p>Sista raden ska, vid lämpliga tillfällen, bytas mot</p>
+                    <pre><samp>Jämna pengar!</samp></pre>
+                    <p>  eller</p>
+                    <pre><samp>Det saknas pengar!</samp></pre>
+                    <p>(Uttrycket "jämna pengar" innebär att man betalat precis det varorna kostat.)<br /><br /></p>
+                    <p><a href="http://127.0.0.1:5500/?i=6%0A3%0A20&amp;o=Priset%20blev%2018%20kronor.%0ADu%20f%C3%A5r%202%20kronor%20tillbaka."
+                            target="_blank">Test-1</a>  <a
+                            href="http://127.0.0.1:5500/?i=12%0A5%0A60&amp;o=Priset%20blev%2060%20kronor.%0AJ%C3%A4mna%20pengar!"
+                            target="_blank">Test-2</a>  <a
+                            href="http://127.0.0.1:5500/?i=9%0A12%0A100&amp;o=Priset%20blev%20108%20kronor.%0ADet%20saknas%20pengar!"
+                            target="_blank">Test-3</a></p>
+
+                    <p>Ladda upp mappen i din <strong>codescan</strong>-mapp på skelamp.</li>
+                </div>
+            </details>
+
+            <details>
+                <summary>Rutnät (Provuppgift 2020-12-16)</summary>
+                <div>
+                    <p>En uppgift som testar betygen <strong>E-C</strong>.</p>
+                    <p>Spara som <strong>rutnat</strong>. Skriv snygg och lättläst kod, med bra variabelnamn och
+                        korrekta indrag.</p>
+                    <p>Skriv ett program som kan rita upp ett rutnät i canvasen med det antal rutor användaren önskar.
+                    </p>
+
+                    <p>Du får utgå från att användaren ger rimliga indata. Programmet får krascha om så inte är fallet.
+                    </p>
+
+                    <p>Resultatet ska likna det nedan. Rutnätet ska fylla upp hela canvasen.</p>
+
+                    <p>
+                        <img src="images/rutor.PNG" width="900" />
+                    </p>
+                    <p>Tips 1: Konstanterna <code>W</code> och <code>H</code> ger bredd respektive höjd på canvasen.</p>
+
+                    <p>Tips 2: Anropet <code>resetCanvas()</code> anpassar canvasen efter skärmen. Gör det efter
+                        inmatningarna.</p>
+                    <p>Ladda upp mappen i din <strong>codescan</strong>-mapp på skelamp.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Sten-sax-påse (Provuppgift 2020-12-16)</summary>
+                <div>
+                    <p>En uppgift som testar betygen <strong>E-A</strong>.</p>
+                    <p>Spara som <strong>stensaxpase</strong>. Skriv snygg och lättläst kod, med bra variabelnamn och
+                        korrekta indrag.</p>
+                    <p>Skapa ett program med vilket man kan spela <a
+                            href="https://sv.wikipedia.org/wiki/Sten,_sax,_p%C3%A5se" target="_blank">sten-sax-påse</a>
+                        mot datorn.</p>
+                    <p><img src="images/rockpaperscissors.png" width="390" height="171" /></p>
+                    <p>Önskvärd funktionalitet:</p>
+                    <ul>
+                        <li>Du får själv bestämma över designen, men spelaren ska på ett enkelt och tydligt sätt kunna
+                            välja mellan sten, sax eller påse.<br /> 
+                        </li>
+                        <li>Man ska kunna se vad datorn och spelaren valt.<br /> </li>
+                        <li>Man ska kunna se vem, datorn eller spelaren, som vann omgången eller om det blev
+                            oavgjort.<br /> </li>
+                        <li>Man ska kunna spela flera omgångar och se ställningen, det vill säga hur många gånger som
+                            dator och spelare
+                            vunnit.<br /> </li>
+                        <li>Man ska också kunna se resultaten från tidigare omgångar och hur ställningen har förändrats
+                            under
+                            spelet. (typ <strong>Spelare: sax - Dator: sten,  Dator vann, 0 - 1</strong>)<br /> </li>
+                        <li>Man ska, i förväg, kunna bestämma om man spelar bäst av tre, fem eller sju omgångar.
+                            (Motsvarar först till två,
+                            tre eller fyra vinster.)<br /> </li>
+                        <li>Då någon vunnit spelet så ska detta meddelas.<br /> </li>
+                        <li>Man ska få chansen att påbörja ett nytt spel.</li>
+                    </ul>
+                    <p>Tips:</p>
+                    <ul>
+                        <li>Man kan använda bilder och sedan känna av då man klickar på dessa (kanske med en
+                            hitbox).<br /> </li>
+                        <li>Använd slumptal för datorns val. Slumpa ett tal 0 - 2. Låt 0 motsvara sten, 1 sax och 2
+                            påse.<br /> </li>
+                        <li>Om något känns oklart i uppgiften så gör en egen tolkning av hur du tycker det borde
+                            fungera.</li>
+                    </ul>
+
+                    <p>Ladda upp mappen i din <strong>codescan</strong>-mapp på skelamp.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Öppet hus 2021-11-13</summary>
+                <div>
+                    <p>Skapa ett spel, eller annat program, som på något sätt gör så att
+                        <b>Baldergymnasiet/Teknikprogrammet/INF-inriktningen</b> framstår som det finaste, bästa
+                        och det helt självklara alternativet för de åk9-elever som <i>råkar</i> se sidan.
+                    </p>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Introduktion</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>javascript.info</summary>
+                <div>
+                    <p><a href="https://javascript.info/variables" target="_blank">Variables // javascript.info</a>
+                    </p>
+                    <p><a href="https://javascript.info/types" target="_blank">Data types // javascript.info</a></p>
+                    <p><a href="https://javascript.info/type-conversions" target="_blank">Type Conversions //
+                            javascript.info</a></p>
+                    <p><a href="https://javascript.info/operators" target="_blank">Basic operators, maths //
+                            javascript.info</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>w3schools</summary>
+                <div>
+                    <p><a href="https://www.w3schools.com/colors/colors_names.asp" target="_blank">Vad heter
+                            färgerna?</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>MDN</summary>
+                <div>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive"
+                            target="_blank">https://developer.mozilla.org/en-US/docs/Glossary/Primitive</a></p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures"
+                            target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures</a>
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>Webbling</summary>
+                <div>
+                    <p><a href='https://webbling.se/index.php/L%C3%A4r_dig_mer_om_JavaScript' target='_blank'>Lär dig
+                            mer om JavaScript</a></p>
+                </div>
+            </details>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <p>Skapa en <b>codescan/prog/intro</b>-mapp på din användare på <a href="http://skelamp.se/"
+                    target="_blank">skelamp</a>.</p>
+
+            <details>
+                <summary>Grafik</summary>
+                <div>
+                    <p>Namnge mapparna <b>grafik-1, grafik-2, ...<br /><br /></b></p>
+                    <ol>
+                        <li>Gör ett "konstverk" med hjälp av streck, cirklar, rektanglar och trianglar. Använd både
+                            fyllda och
+                            streckade former.</li>
+                        <li>Rita ett hus med lite runtikring. Använd gärna fler former och skapa kombinationer som ser
+                            ut som allt
+                            från moln till träd, låt bara fantasin sätta gränser.</li>
+                        <li>Skriv ut ditt namn på skärmen, med stor fontstorlek så det syns!</li>
+                        <li>Visa en bild på en gullig katt (eller hund, eller <em>whatever</em>...)<br />Till
+                            exempel: <a
+                                href="https://devblogs.nvidia.com/wp-content/uploads/2016/07/cute.jpg">https://devblogs.nvidia.com/wp-content/uploads/2016/07/cute.jpg</a> <br /><br />
+                        </li>
+                        <li>* Rita fyra cirklar som har samma storlek (men olika positioner). Storleken ska definieras
+                            med en
+                            variabel så att du kan byta storlek på alla samtidigt genom att ändra i koden på ett enda
+                            ställe.</li>
+                        <li>* Rita ut fyra cirklar på slumpmässiga platser och med slumpmässiga storlekar. Varje gång
+                            man laddar
+                            om ska positionerna och storlekarna ändras.</li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>* Animering</summary>
+                <div>
+                    <p>Namnge mapparna <b>anim-1, anim-2, ...</b></p>
+                    <ol>
+                        <li> * Rita något som rör sig på skärmen när man håller ner en tangent, och rör sig åt andra
+                            hållet andra
+                            hållet när man håller ner en annan tangent.</li>
+                        <li>* Rita en bild på en gubbe (eller en bil, eller något annat som innehåller flera geometriska
+                            former) och
+                            gör så att man kan styra den med piltangenterna.</li>
+                        <li>* Rita ut en cirkel som man kan styra med tangentbordet. Om cirkeln kommer in i ett visst
+                            område (målet)
+                            ska det komma upp ett meddelande på skärmen som säger "MÅL!!!" och animeringen stoppas.</li>
+                        <li>* Rita en cirkel som åker runt och studsar om den når kanten.</li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>* Ritprogram</summary>
+                <div>
+                    <p>Namnge mappen <b>ritprogram</b></p>
+                    <p>Gör ett ritprogram där man kan rita med musen om man trycker på vänster musknapp, sudda med höger
+                        musknapp och byta pensel med tangentbordet, till exempel med siffertangenterna.</p>
+                    <p>Du kan, om du vill, utgå från <a
+                            href="https://stackblitz.com/edit/typescript-mhnu8l?file=index.ts"
+                            target="_blank">Ritprogram - start</a>.</p>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <!-- <article>
+        <h1>Canvasgrafik</h1>
+
+        <h2>Funktioner</h2>
+        <h2>ctx</h2>
+    </article> -->
+
+    <article>
+        <h1>Text och tecken</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>w3schools</summary>
+                <div>
+
+                    <p><a href="https://www.w3schools.com/js/js_strings.asp"
+                            target="_blank">https://www.w3schools.com/js/js_strings.asp</a></p>
+                    <p><a href="https://www.w3schools.com/js/js_string_methods.asp"
+                            target="_blank">https://www.w3schools.com/js/js_string_methods.asp</a></p>
+                    <p><a href="https://www.w3schools.com/js/js_string_search.asp"
+                            target="_blank">https://www.w3schools.com/js/js_string_search.asp</a></p>
+                    <p><a href="https://www.w3schools.com/js/js_string_templates.asp"
+                            target="_blank">https://www.w3schools.com/js/js_string_templates.asp</a></p>
+                </div>
+            </details>
+
+            <details>
+                <summary>MDN</summary>
+                <div>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+                            target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String</a>
+                    </p>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <p>Skapa en <b>codescan/prog/text</b>-mapp på din användare på <a href="http://skelamp.se/"
+                    target="_blank">skelamp</a>.</p>
+
+            <details>
+                <summary>Text</summary>
+                <iframe src="text.html" style="height: 40em"></iframe>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Numeriska värden</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>w3schools</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/js/js_arithmetic.asp'
+                            target='_blank'>https://www.w3schools.com/js/js_arithmetic.asp</a></p>
+                    <p><a href='https://www.w3schools.com/js/js_assignment.asp'
+                            target='_blank'>https://www.w3schools.com/js/js_assignment.asp</a></p>
+                </div>
+            </details>
+
+            <details>
+                <summary>MDN</summary>
+                <div>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates'
+                            target='_blank'>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates</a>
+                    </p>
+                </div>
+            </details>
+        </section>
+
+        <!-- <h2>Literaler</h2>
+        <p>Använda '_' för att separera tusental</p>
+        <p>Använda 'e' för exponentiering</p>
+
+
+        <h2>Operatorer</h2>
+        <p>+ - * /</p>
+        <p>** jfr med ^ och Math.pow()</p>
+        <p>Infinity, divison med noll, ...</p>
+        ++ postfix prefix
+
+        <h2>Metoder</h2>
+        <p>Math.floor, trunc, ceil</p>
+        <p>randomInt()</p>
+
+        <h2>bigint</h2>
+
+        <a
+            href="https://flaviocopes.com/javascript-number-isinteger/">https://flaviocopes.com/javascript-number-isinteger/</a> -->
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <p>Skapa en <b>codescan/prog/tal</b>-mapp på din användare på <a href="http://skelamp.se/"
+                    target="_blank">skelamp</a>.</p>
+
+            <details>
+                <summary>Tal</summary>
+                <iframe src="tal.html" style="height: 40em"></iframe>
+            </details>
+        </section>
+    </article>
+
+    <!-- <article>
+        <h1>Sanningsvärden</h1> -->
+
+    <!-- <p>Flagga</p>
+        <p>Toggla</p>
+
+        <a
+            href="https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a">https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a</a> -->
+    <!-- </article> -->
+
+    <article>
+        <h1>Selektioner</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>javascript.info</summary>
+                <div>
+                    <p><a href='https://javascript.info/comparison'
+                            target='_blank'>https://javascript.info/comparison</a></p>
+                    <p><a href='https://javascript.info/ifelse' target='_blank'>https://javascript.info/ifelse</a></p>
+                    <p><a href='https://javascript.info/logical-operators'
+                            target='_blank'>https://javascript.info/logical-operators</a></p>
+                    <p><a href='https://javascript.info/while-for' target='_blank'>https://javascript.info/while-for</a>
+                    </p>
+                    <p><a href='https://javascript.info/switch' target='_blank'>https://javascript.info/switch</a></p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Exempel</summary>
+                <div>
+                    <p><a href="https://stackblitz.com/edit/typescript-iakw9m?file=index.ts"
+                            target="_blank">Trafikljus-1</a></p>
+                    <p><a href="https://stackblitz.com/edit/typescript-a1lzlx?file=index.ts"
+                            target="_blank">Dagnummer</a></p>
+                    <p><a href='https://stackblitz.com/edit/typescript-sn6htz?file=index.ts' target='_blank'>if - else
+                            if - else (höger, vänster)</a></p>
+                    <p><a href='https://stackblitz.com/edit/typescript-bqaw5z?file=index.ts' target='_blank'>Logiskt
+                            och, && (kvadranter)</a></p>
+                    <p><a href='https://stackblitz.com/edit/typescript-rucqh3?file=index.ts'
+                            target='_blank'>Villkorsoperatorn</a></p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Vanliga fel vid selektioner</summary>
+                <div>
+                    <h3>Använda = istället för ==</h3>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if (x <span
+                                style="color: #ff0000;"><b>=</b></span> 1) <b><span style="color: #ff0000;">// Fel
+                                </span></b></span><br /><span style="font-family: 'courier new', courier, monospace;"> 
+                             
+                            <span>output</span>("Ett")</span></p>
+                    <p>Gör en tilldelning. Variabeln x blir 1. Hela uttrycket blir 1, vilket sedan tolkas som sant.</p>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if (x <span
+                                style="color: #008000;"><b>==</b></span> 1) <b><span style="color: #008000;">// Rätt
+                                </span></b></span><br /><span style="font-family: 'courier new', courier, monospace;"> 
+                             
+                            <span>output</span>("Ett")</span></p>
+
+                    <h3>Använda =&lt; istället för &lt;=</h3>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if
+                            (x <b>=&lt;</b> 0) <b><span style="color: #ff0000;">//
+                                    Fel</span> </b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">    <span>output</span>("Mindre än
+                            eller lika med noll")</span></p>
+                    <p>Skriv tecknen i den ordning man säger dem; "mindre än" eller "lika med".</p>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if (x
+                            &lt;<b>=</b> 0) <b><span style="color: #008000;">//
+                                    Rätt</span> </b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">    <span>output</span>("Mindre än
+                            eller lika med noll")</span></p>
+
+                    <h3>Inte använda else-if om flera alternativ</h3>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if (x == 0)</span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">   
+                            <span>output</span>("Noll")</span><br /><span
+                            style="font-family: 'courier new', courier, monospace;"><b><span
+                                    style="color: #ff0000;">if</span></b> (x == 1) <b><span style="color: #ff0000;">//
+                                    Fel </span></b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">   
+                            <span>output</span>("Ett") </span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">else </span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">   
+                            <span>output</span>("Annat")</span></p>
+                    <p>Om x har värdet 0 så kommer både "Noll" och "Annat" att skrivas ut!</p>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if (x == 0) </span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">   
+                            <span>output</span>("Noll") </span><br /><span
+                            style="font-family: 'courier new', courier, monospace;"><b><span
+                                    style="color: #008000;">else if</span></b> (x == 1) <b><span
+                                    style="color: #008000;">// Rätt </span></b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">   
+                            <span>output</span>("Ett") </span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">else </span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">   
+                            <span>output</span>("Annat")</span></p>
+
+                    <h3>Använda &amp;&amp;, eller ||, utan två villkor</h3>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if (x == 0 || <b><span
+                                    style="color: #ff0000;">1</span></b>) <b><span style="color: #ff0000;">//
+                                    Fel</span> </b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">    <span>output</span>("Noll eller
+                            ett")</span></p>
+                    <p>På båda sidor om &amp;&amp; så måste det finnas ett villkor.</p>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if (x == 0 || <span
+                                style="color: #008000;"><b>x == 1</b></span>) <b><span style="color: #008000;">//
+                                    Rätt</span></b> </span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">    <span>output</span>("Noll eller
+                            ett")</span></p>
+                    <p>Samma sak gäller för &amp;&amp;.</p>
+
+                    <h3>Testa intervall utan &amp;&amp;</h3>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if (0 &lt;= x <span
+                                style="color: #ff0000;">&lt;= 10</span>) <b><span style="color: #ff0000;">//
+                                    Fel</span> </b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">    <span>output</span>("I
+                            intervallet [0, 10]")</span></p>
+                    <p>De två villkoren måste sättas ihop med &amp;&amp;.</p>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if (0 &lt;= x <span
+                                style="color: #008000;">&amp;&amp; x &lt;= 10</span>) <b><span
+                                    style="color: #339966;">// Rätt</span> </b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">    <span>output</span>("I
+                            intervallet [0, 10]")</span></p>
+
+                    <h3>Använda indentering istället för satsblock</h3>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if (x &lt; 0)</span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">    <span>output</span>("Negativt.
+                            Byt tecken") </span><br /><span
+                            style="font-family: 'courier new', courier, monospace;"><span
+                                style="background-color: #ff0000;">   </span> x = -x;<b> <span
+                                    style="color: #ff0000;">// Fel </span></b></span></p>
+                    <p>Den sista satsen kommer alltid att utföras, även då x är positivt. Fixa till det genom att skapa
+                        ett satsblock.</p>
+                    <p><span style="font-family: 'courier new', courier, monospace;">if (x &lt; 0) </span><b><span
+                                style="font-family: 'courier new', courier, monospace; color: #008000;">{              
+                                         // Rätt</span></b><br /><span
+                            style="font-family: 'courier new', courier, monospace;">    <span>output</span>("Negativt.
+                            Byt tecken"); </span><br /><span style="font-family: 'courier new', courier, monospace;">   
+                            x = -x</span><br /><b><span
+                                style="font-family: 'courier new', courier, monospace; color: #008000;">}</span></b>
+                    </p>
+
+                    <h3>Fel ordning vid flera olikhetstester</h3>
+                    <p><span style="color: #ff0000;"><b><span style="font-family: 'courier new', courier, monospace;">if
+                                    (n &lt;
+                                    1000)</span></b></span><br /><span style="color: #ff0000;"><b><span
+                                    style="font-family: 'courier new', courier, monospace;">    <span>output</span>("n
+                                    mindre än 1000") // Fel</span></b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">else if (n &lt;
+                            100)</span><br /><span style="font-family: 'courier new', courier, monospace;">   
+                            <span>output</span>("n mindre än 100")</span><br /><span style="color: #ff0000;"><b><span
+                                    style="font-family: 'courier new', courier, monospace;">else if (n &lt;
+                                    10)</span></b></span><br /><span style="color: #ff0000;"><b><span
+                                    style="font-family: 'courier new', courier, monospace;">    <span>output</span>("n
+                                    mindre än 10")</span></b></span></p>
+                    <p>Den första satsen blir sann för alla värden mindre än tusen, de övriga testas aldrig. Ett n-värde
+                        på 42 skulle producera utskriften "n mindre än 1000" och inte, som avsett, "n mindre än 100".
+                    </p>
+                    <p><span style="color: #008000;"><b><span style="font-family: 'courier new', courier, monospace;">if
+                                    (n &lt;
+                                    10)</span></b></span><br /><span style="color: #008000;"><b><span
+                                    style="font-family: 'courier new', courier, monospace;">    <span>output</span>("n
+                                    mindre än 10") // Rätt</span></b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">else if (n &lt;
+                            100)</span><br /><span style="font-family: 'courier new', courier, monospace;">   
+                            <span>output</span>("n mindre än 100")</span><br /><span style="color: #008000;"><b><span
+                                    style="font-family: 'courier new', courier, monospace;">else if (n &lt;
+                                    1000)</span></b></span><br /><span style="color: #008000;"><b><span
+                                    style="font-family: 'courier new', courier, monospace;">    <span>output</span>("n
+                                    mindre än 1000")</span></b></span></p>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <p>Skapa en <b>codescan/prog/sel</b>-mapp på din användare på <a href="http://skelamp.se/"
+                    target="_blank">skelamp</a>.</p>
+
+            <details>
+                <summary>Selektioner</summary>
+                <div>
+                    <p>Namnge uppgifterna <b>sel-1</b>, <b>sel-2</b>, och så vidare.</p>
+                    <p>Inmatningar från användaren har här markerats med <b>fet stil</b>.</p>
+                    <ol>
+                        <li>Gör ett program som frågar efter din ålder och skriver ut om du är myndig (minst 18 år)
+                            eller inte. <br /><span style="font-family: 'courier new', courier, monospace;">Ålder:<br />
+                                <b>17</b> </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Omyndig</span><br /><br /><a
+                                href="http://127.0.0.1:5500/?p=Ålder%3A&amp;i=17" target="_blank">Start</a>  <a
+                                href="http://127.0.0.1:5500/?p=%C3%85lder%3A&amp;i=17&amp;o=Omyndig"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=%C3%85lder%3A&amp;i=18&amp;o=Myndig"
+                                target="_blank">Test-2</a><br /> </li>
+                        <li><span>Gör ett program som frågar hur lång du är. </span><span>Om svaret är under 200 ska
+                                programmet säga </span><span>"Hej du korte!" annars </span><span>"Hej du
+                                långe!".<br /></span><span style="font-family: 'courier new', courier, monospace;">Hur
+                                lång är du (i cm)? <br /><b>202</b></span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Hej du
+                                långe!</span><br /><br /><a
+                                href="http://127.0.0.1:5500/?p=Hur%20lång%20är%20du%20(i%20cm)%3F&amp;i=202"
+                                target="_blank">Start</a>  <a
+                                href="http://127.0.0.1:5500/?p=Hur%20l%C3%A5ng%20%C3%A4r%20du%20(i%20cm)%3F&amp;i=202&amp;o=Hej%20du%20l%C3%A5nge!"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=Hur%20l%C3%A5ng%20%C3%A4r%20du%20(i%20cm)%3F&amp;i=199&amp;o=Hej%20du%20korte!">Test-2</a><br /> 
+                        </li>
+                        <li>Gör ett program som läser in ett tal och presenterar en av utskrifterna "Talet är
+                            negativt.", "Talet är positivt." eller "Talet är noll.".<br /><span
+                                style="font-family: 'courier new', courier, monospace;">Ett tal:<br />
+                                <b>-32</b></span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Talet är
+                                negativt.<br /><br /></span><a href="http://127.0.0.1:5500/?p=Ett%20tal%3A&amp;i=-32"
+                                target="_blank">Start</a>  <a
+                                href="http://127.0.0.1:5500/?p=Ett%20tal%3A&amp;i=-32&amp;o=Talet%20%C3%A4r%20negativt."
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=Ett%20tal%3A&amp;i=1&amp;o=Talet%20%C3%A4r%20positivt."
+                                target="_blank">Test-2</a>  <a
+                                href="http://127.0.0.1:5500/?p=Ett%20tal%3A&amp;i=0&amp;o=Talet%20%C3%A4r%20noll."
+                                target="_blank">Test-3</a><br /><br /></li>
+                        <li>In med värden till variablerna x och y. Ut med något av meddelandena "x = y", "x &lt; y"
+                            eller "x &gt; y". <br /><span style="font-family: 'courier new', courier, monospace;">x
+                                =</span><br /><span style="font-family: 'courier new', courier, monospace;">y
+                                = <br /><b>5</b><br /><b>7</b> </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">x &lt; y</span><br /><br /><a
+                                href="http://127.0.0.1:5500/?p=x%20%3D%0Ay%20%3D&amp;i=5%0A7"
+                                target="_blank">Start</a>  <a
+                                href="http://127.0.0.1:5500/?p=x%20%3D%0Ay%20%3D&amp;i=5%0A7&amp;o=x%20%3C%20y"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=x%20%3D%0Ay%20%3D&amp;i=1%0A-1&amp;o=x%20%3E%20y"
+                                target="_blank">Test-2</a>  <a
+                                href="http://127.0.0.1:5500/?p=x%20%3D%0Ay%20%3D&amp;i=0%0A0&amp;o=x%20%3D%20y"
+                                target="_blank">Test-3</a><br /><br /></li>
+                        <li>Gör ett program som kan omvandla från ett sifferbetyg (1-5) till ett bokstavsbetyg (Låt 1
+                            och 2 bli 'IG', 3 'G', 4 'VG' och 5 'MVG'). <br /><span
+                                style="font-family: 'courier new', courier, monospace;">Sifferbetyg:
+                                <br /><b>5</b> </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Bokstavsbetyg:
+                                MVG</span><br /><br /><a href="http://127.0.0.1:5500/?p=Sifferbetyg%3A%20&amp;i=5"
+                                target="_blank">Start</a>  <a
+                                href="http://127.0.0.1:5500/?p=Sifferbetyg%3A%20&amp;i=5&amp;o=Bokstavsbetyg%3A%20MVG"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=Sifferbetyg%3A%20&amp;i=4&amp;o=Bokstavsbetyg%3A%20VG"
+                                target="_blank">Test-2</a>  <a
+                                href="http://127.0.0.1:5500/?p=Sifferbetyg%3A%20&amp;i=3&amp;o=Bokstavsbetyg%3A%20G"
+                                target="_blank">Test-3</a>  <a
+                                href="http://127.0.0.1:5500/?p=Sifferbetyg%3A%20&amp;i=2&amp;o=Bokstavsbetyg%3A%20IG"
+                                target="_blank">Test-4</a>  <a
+                                href="http://127.0.0.1:5500/?p=Sifferbetyg%3A%20&amp;i=1&amp;o=Bokstavsbetyg%3A%20IG"
+                                target="_blank">Test-5</a> <br /> </li>
+                        <li>Gör ett litet beräkningsprogram enligt nedan. <br /><span
+                                style="font-family: 'courier new', courier, monospace;">Tal 1: </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Tal 2: </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Operator (+, -, *, /):
+                                <br /><b>34<br />75<br />+ </b></span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Summa: 109</span><br /><br /><a
+                                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A%0AOperator%20(%2B%2C%20-%2C%20*%2C%20%2F)%3A&amp;i=34%0A75%0A%2B"
+                                target="_blank">Start</a>  <a
+                                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A%0AOperator%20(%2B%2C%20-%2C%20*%2C%20%2F)%3A&amp;i=34%0A75%0A%2B&amp;o=Summa%3A%20109"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A%0AOperator%20(%2B%2C%20-%2C%20*%2C%20%2F)%3A&amp;i=10%0A7%0A-&amp;o=Differens%3A%203"
+                                target="_blank">Test-2</a>  <a
+                                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A%0AOperator%20(%2B%2C%20-%2C%20*%2C%20%2F)%3A&amp;i=9%0A9%0A*&amp;o=Produkt%3A%2081"
+                                target="_blank">Test-3</a>  <a
+                                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A%0AOperator%20(%2B%2C%20-%2C%20*%2C%20%2F)%3A&amp;i=1%0A4%0A%2F&amp;o=Kvot%3A%200.25">Test-4</a><br /> 
+                        </li>
+                        <li>Skriv ett program som givet ett spelkorts valör (1-13) kan skriva vad spelkortet är. Låt 1
+                            motsvara ess, 11 knekt, 12 dam och 13 kung. <br /><span
+                                style="font-family: 'courier new', courier, monospace;">Valör (1-13): <br /><b>7
+                                </b></span><br /><span style="font-family: 'courier new', courier, monospace;">En
+                                7:a</span><br /><br /><a href="http://127.0.0.1:5500/?p=Valör%20(1-13)%3A&amp;i=7"
+                                target="_blank">Start</a>  <a
+                                href="http://127.0.0.1:5500/?p=Val%C3%B6r%20(1-13)%3A&amp;i=7&amp;o=En%207%3Aa"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=Val%C3%B6r%20(1-13)%3A&amp;i=1&amp;o=Ett%20ess"
+                                target="_blank">Test-2</a>  <a
+                                href="http://127.0.0.1:5500/?p=Val%C3%B6r%20(1-13)%3A&amp;i=12&amp;o=En%20dam"
+                                target="_blank">Test-3</a><br /><br /></li>
+                        <li><span>Läs in ett månadsnummer (1-12) och skriv ut namnet på månaden. Använd
+                                gärna </span><span face="courier new,courier,monospace"
+                                style="font-family: 'courier new', courier, monospace;">switch</span><span>-satsen.</span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Månadsnummer:
+                                <br /><b>10</b></span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Oktober</span><br /><br /><a
+                                href="http://127.0.0.1:5500/?p=M%C3%A5nadsnummer%3A&amp;i=10" target="_blank">Start</a> 
+                            <a href="http://127.0.0.1:5500/?p=M%C3%A5nadsnummer%3A&amp;i=10&amp;o=Oktober"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=M%C3%A5nadsnummer%3A&amp;i=1&amp;o=Januari"
+                                target="_blank">Test-2</a><br /> 
+                        </li>
+                        <li><span>Läs in ett månadsnummer och skriv ut vilken årstid det motsvarar. Använd
+                                gärna </span><span face="courier new,courier,monospace"
+                                style="font-family: 'courier new', courier, monospace;">switch</span><span>-satsen. Låt
+                                månad 12, 1, 2 motsvara vinter, 3-5 vår, 6-8 sommar och 9-11 höst.</span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Månadsnummer: <br /><b>10</b></span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Höst</span><br /><br /><a
+                                href="http://127.0.0.1:5500/?p=M%C3%A5nadsnummer%3A&amp;i=10" target="_blank">Start</a> 
+                            <a href="http://127.0.0.1:5500/?p=M%C3%A5nadsnummer%3A&amp;i=10&amp;o=H%C3%B6st"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=M%C3%A5nadsnummer%3A&amp;i=1&amp;o=Vinter"
+                                target="_blank">Test-2</a><br /> 
+                        </li>
+                        <li>Skriv ett program där du skriver in två heltal och sedan försöker beräkna deras produkt.
+                            Programmet rättar dig om räknat fel. <br /><span
+                                style="font-family: 'courier new', courier, monospace;">Tal 1:</span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Tal 2: </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Produkt:
+                                <br /><b>11<br />12<br />130</b> </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Fel. Rätt svar:
+                                132</span><br /><br /><a
+                                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A&amp;i=4%0A7"
+                                target="_blank">Start</a>  <a
+                                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A%0AProdukt%3A&amp;i=11%0A12%0A130&amp;o=Fel.%20R%C3%A4tt%20svar%3A%20132"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A%0AProdukt%3A&amp;i=13%0A13%0A169&amp;o=R%C3%A4tt!"
+                                target="_blank">Test-2</a><br /><br /></li>
+                        <li>In med två heltal och ut med lite info om talen på följande sätt: <br /><span
+                                style="font-family: 'courier new', courier, monospace;">Tal 1:</span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Tal 2:
+                                <br /><b>4</b><br /><b>7</b> </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Summa: 11 </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Medel: 5.5 </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Minsta: 4 </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Största: 7</span><br /><br /><a
+                                href="http://127.0.0.1:5500/?r=35&amp;p=Tal%201%3A%0ATal%202%3A&amp;i=4%0A7"
+                                target="_blank">Start</a>  <a
+                                href="http://127.0.0.1:5500/?r=35&amp;p=Tal%201%3A%0ATal%202%3A&amp;i=4%0A7&amp;o=Summa%3A%2011%0AMedel%3A%205.5%0AMinsta%3A%204%0ASt%C3%B6rsta%3A%207"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?r=35&amp;p=Tal%201%3A%0ATal%202%3A%0A&amp;i=9%0A7&amp;o=Summa%3A%2016%0AMedel%3A%208%0AMinsta%3A%207%0ASt%C3%B6rsta%3A%209"
+                                target="_blank">Test-2</a><br /> </li>
+                        <li>Gör föregående uppgift med tre tal istället.<br /><br /><a
+                                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A%0ATal%203%3A&amp;i=5%0A10%0A7"
+                                target="_blank">Start</a>  <a
+                                href="http://127.0.0.1:5500/?p=Tal%201%3A%0ATal%202%3A%0ATal%203%3A&amp;i=5%0A10%0A7&amp;o=Summa%3A%2022%0AMedel%3A%207.3%0AMinsta%3A%205%0ASt%C3%B6rsta%3A%2010"
+                                target="_blank">Test-1</a><br /> </li>
+                        <li>Detta program ska kunna avgöra om ett inmatat tecken är en liten bokstav, stor bokstav eller
+                            annat tecken. Det räcker om det fungerar för tecken i det engelska alfabetet (A-Z).
+                            <br /><span style="font-family: 'courier new', courier, monospace;">Tecken:
+                                <br /><b>B</b> </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Stor
+                                bokstav</span><br /><br /><a
+                                href="http://127.0.0.1:5500/?p=Tecken%3A&amp;i=B">Start</a>  <a
+                                href="http://127.0.0.1:5500/?p=Tecken%3A&amp;i=B&amp;o=Stor%20bokstav"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=Tecken%3A&amp;i=p&amp;o=Liten%20bokstav"
+                                target="_blank">Test-2</a>  <a
+                                href="http://127.0.0.1:5500/?p=Tecken%3A&amp;i=!&amp;o=Annat%20tecken">Test-3</a><br /> 
+                        </li>
+                        <li>Programmet ska kunna avgöra hur många siffror det inmatade talet består av samt om det är
+                            negativt, positivt eller noll.<br /><span
+                                style="font-family: 'courier new', courier, monospace;">Mata in ett tal mellan -999 och
+                                999: <br /><b>32 </b></span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Två siffror </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Positivt</span><br /><br /><a
+                                href="http://127.0.0.1:5500/?p=Mata%20in%20ett%20tal%20mellan%20-999%20och%20999%3A%0Ay%3A%0Az%3A&amp;i=32"
+                                target="_blank">Start</a>  <a
+                                href="http://127.0.0.1:5500/?p=Mata%20in%20ett%20tal%20mellan%20-999%20och%20999%3A%0Ay%3A%0Az%3A&amp;i=32&amp;o=Tv%C3%A5%20siffror%0APositivt"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=Mata%20in%20ett%20tal%20mellan%20-999%20och%20999%3A%0Ay%3A%0Az%3A&amp;i=-100&amp;o=Tre%20siffror%0ANegativt"
+                                target="_blank">Test-2</a>  <a
+                                href="http://127.0.0.1:5500/?p=Mata%20in%20ett%20tal%20mellan%20-999%20och%20999%3A%0Ay%3A%0Az%3A&amp;i=0&amp;o=En%20siffra%0ANoll"
+                                target="_blank">Test-3</a><br /><br /></li>
+                        <li>Om tre tal ska kunna vara sidor i en triangel så måste samtliga tal vara större än noll och
+                            inget tal större än de andra två tillsammans. Skriv ett program som frågar efter längden på
+                            tre sidor och som kollar om en triangel kan bildas med de angivna värdena. <br /><span
+                                style="font-family: 'courier new', courier, monospace;">Sida 1: </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Sida 2: </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Sida 3:
+                                <br /><b>5<br />10<br />4</b> </span><br /><span
+                                style="font-family: 'courier new', courier, monospace;">Triangel?
+                                Nej!</span><br /> <br /><a
+                                href="http://127.0.0.1:5500/?p=Sida%201%3A%0ASida%202%3A%0ASida%203%3A&amp;i=5%0A10%0A4">Start</a> 
+                            <a href="http://127.0.0.1:5500/?p=Sida%201%3A%0ASida%202%3A%0ASida%203%3A&amp;i=5%0A10%0A4&amp;o=Triangel%3F%20Nej!"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?p=Sida%201%3A%0ASida%202%3A%0ASida%203%3A&amp;i=5%0A6%0A7&amp;o=Triangel%3F%20Ja!"
+                                target="_blank">Test-2</a>
+                        </li>
+                    </ol>
+                    <p>Ladda upp mappen till <b>codescan/prog/sel</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>* Andragradare</summary>
+                <div>
+                    <p>Skapa en mapp <b>andragradare</b>.</p>
+                    <p>Skriv ett program som kan användas för att lösa andragradsekvationer, det vill säga ekvationer på
+                        formen:</p>
+                    <p><img src="images/pq-formeln.jpg" width="300" height="90" /></p>
+                    <p>Inmatning av koefficienterna p och q, beräkning av rötterna och utskrift av dessa alltså.</p>
+                    <p>Svaren bör visas med en decimals noggrannhet. Nedan visas tre exempel på körningar, med
+                        inmatningar i fet stil.</p>
+                    <p><a href="http://127.0.0.1:5500/?p=p%3A%0Aq%3A&amp;i=4%0A-5" target="_blank">Start</a>  <a
+                            href="http://127.0.0.1:5500/?p=p%3A%0Aq%3A&amp;i=4%0A-5&amp;o=x%E2%82%81%20%E2%89%88%201.0%0Ax%E2%82%82%20%E2%89%88%20-5.0"
+                            target="_blank">Test-1</a>  <a
+                            href="http://127.0.0.1:5500/?p=p%3A%0Aq%3A&amp;i=4%0A4&amp;o=x%20%E2%89%88%20-2.0%20(dubbelrot)"
+                            target="_blank">Test-2</a>  <a
+                            href="http://127.0.0.1:5500/?p=p%3A%0Aq%3A&amp;i=4%0A5&amp;o=Reella%20l%C3%B6sningar%20saknas."
+                            target="_blank">Test-3</a></p>
+                    <p><b>Exempel 1 - Två reella rötter </b></p>
+                    <p><span style="font-family: 'courier new', courier, monospace;">p:</span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">q:
+                            <br /><b>4</b><br /><b>-5</b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">x<sub>1</sub> ≈
+                            1.0</span><br /><span style="font-family: 'courier new', courier, monospace;">x<sub>2</sub>
+                            ≈ -5.0<br /></span></p>
+                    <p><b>Exempel 2 - En dubbelrot </b></p>
+                    <p><span style="font-family: 'courier new', courier, monospace;">p:</span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">q:
+                            <br /><b>4<br /></b></span><b>4</b><br /><span
+                            style="font-family: 'courier new', courier, monospace;">x ≈ -2.0
+                            (dubbelrot)</span><span><br /></span></p>
+                    <p><b>Exempel 3 - Reella lösningar saknas</b></p>
+                    <p><span style="font-family: 'courier new', courier, monospace;">p: <b></b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">q:
+                            <br /><b>4<br />5</b></span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">Reella lösningar saknas.</span></p>
+                    <p><b>Extrauppgifter (för matematikintresserade):</b></p>
+                    <ul>
+                        <li>Ändra i programmet så att de komplexa rötterna visas då reella lösningar saknas.</li>
+                        <li>Gör program som löser allmänna tredje- och fjärdegradsekvationer. (För ekvationer av högre
+                            grad än fyra så finns ingen lösningsformel.)</li>
+                    </ul>
+
+                    <p>Ladda upp mappen till <b>codescan/prog/sel</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+
+                </div>
+            </details>
+        </section>
+
+        <!-- <h2>if</h2>
+            https://regex101.com/
+            <h2>switch</h2>
+            <h2>Villkorsoperatorn</h2>
+            <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator</a> -->
+    </article>
+
+    <article>
+        <h1>Iterationer</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>Exempel</summary>
+                <div>
+                    <p><a href='https://intebaraprogrammering.wordpress.com/2018/01/16/ratt-slinga-vid-ratt-tillfalle/'
+                            target='_blank'>Rätt slinga vid rätt tillfälle</a></p>
+                    <iframe
+                        data-src="https://stackblitz.com/edit/typescript-wim5i2?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                        style="height: 30em"></iframe>
+                    <h3>while</h3>
+                    <iframe
+                        data-src="https://stackblitz.com/edit/typescript-w2h1ir?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                        style="height: 30em"></iframe>
+                </div>
+            </details>
+            <details>
+                <summary>javascript.info</summary>
+                <div>
+                    <p><a href='https://javascript.info/while-for' target='_blank'>Loops: while and for</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>MDN</summary>
+                <div>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for'
+                            target='_blank'>for</a></p>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while'
+                            target='_blank'>while</a></p>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while'
+                            target='_blank'>do...while</a></p>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break'
+                            target='_blank'>break</a></p>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue'
+                            target='_blank'>continue</a></p>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <p>Skapa en <b>codescan/prog/iter</b>-mapp på din användare på <a href="http://skelamp.se/"
+                    target="_blank">skelamp</a>.</p>
+
+            <details>
+                <summary>Iterationer</summary>
+                <div>
+                    <p>Namnge uppgifterna som <b>iter-1</b>, <b>iter-2</b>, och så vidare.</p>
+                    <p>Inmatningar från användaren har här markerats med <b>fet stil</b>.</p>
+                    <ol>
+                        <li>Programmet ska läsa in ett heltal och räkna upp från 0 till det talet. <br /><samp>Ange ett
+                                heltal:<br />
+                                <b>7</b><br />
+                                Uppräkning: 0 1 2 3 4 5 6 7 </samp><br /><br />
+                            <!-- <a href="http://127.0.0.1:5500/?p=Ange%20ett%20heltal%3A%0Ay%3A%0Az%3A&amp;i=7"
+                                target="_blank">Start</a>   -->
+                            <a href="http://127.0.0.1:5500/?i=7&amp;o=Uppr%C3%A4kning%3A%200%201%202%203%204%205%206%207"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?i=3&amp;o=Uppr%C3%A4kning%3A%200%201%202%203"
+                                target="_blank">Test-2</a><br /><br />
+                        </li>
+                        <li>Ändra i föregående uppgift så att det också räknar ner: <br /><samp>Ange ett heltal:<br />
+                                <b>7</b><br />
+                                Uppräkning: 0 1 2 3 4 5 6 7 <br />
+                                Nedräkning: 7 6 5 4 3 2 1 0 <br /><br />
+                            </samp>
+                            <!-- <a href="http://127.0.0.1:5500/?p=Ange%20ett%20heltal%3A%0Ay%3A%0Az%3A&amp;i=7"
+                                target="_blank">Start</a>   -->
+                            <a href="http://127.0.0.1:5500/?i=7&amp;o=Uppr%C3%A4kning%3A%200%201%202%203%204%205%206%207%0ANedr%C3%A4kning%3A%207%206%205%204%203%202%201%200"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?i=3&amp;o=Uppr%C3%A4kning%3A%200%201%202%203%0ANedr%C3%A4kning%3A%203%202%201%200"
+                                target="_blank">Test-2</a><br /><br />
+                        </li>
+                        <li>Skriv ett program som räknar upp mellan två heltal. <br />
+                            <samp>
+                                Start (heltal):<br />
+                                Stopp (heltal):<br />
+                                <b>3</b><br />
+                                <b>7</b><br>
+                                Uppräkning: 3 4 5 6 7<br /><br />
+                            </samp>
+                        </li>
+                        <li>Skriv ett program som räknar upp mellan två tecken. <br />
+                            <samp>
+                                Start (tecken):<br />
+                                Stopp (tecken):<br />
+                                <b>a</b><br />
+                                <b>f</b><br />
+                                Uppräkning: a b c d e f <br /><br />
+                            </samp>
+                            <!-- <a href="http://127.0.0.1:5500/?p=Start%20(tecken)%3A%0AStopp%20(tecken)%3A&amp;i=X%0AZ"
+                                target="_blank">Start</a>   -->
+                            <a href="http://127.0.0.1:5500/?i=a%0Af&amp;o=Uppr%C3%A4kning%3A%20a%20b%20c%20d%20e%20f"
+                                target="_blank">Test-1</a>  <a
+                                href="http://127.0.0.1:5500/?i=X%0AZ&amp;o=Uppr%C3%A4kning%3A%20X%20Y%20Z"
+                                target="_blank">Test-2</a><br /><br />
+                        </li>
+                        <li>Skriv ett program som fungerar så här: <br />
+                            <samp>
+                                Vilken tabell? <br />
+                                <b>8 </b><br />
+                                8-ans tabell: <br />
+                                1 * 8 = 8 <br />
+                                2 * 8 = 16 <br />
+                                3 * 8 = 24 <br />
+                                4 * 8 = 32 <br />
+                                5 * 8 = 40 <br />
+                                6 * 8 = 48 <br />
+                                7 * 8 = 56 <br />
+                                8 * 8 = 64 <br />
+                                9 * 8 = 72 <br />
+                                10 * 8 = 80<br /><br />
+                            </samp>
+                        </li>
+                        <li>Skapa ett program som skriver ut alla udda heltal mindre än ett givet tal. <br />
+                            <samp>
+                                Övre gräns:<br />
+                                <b>20</b><br />
+                                1 3 5 7 9 11 13 15 17 19<br /><br />
+                            </samp>
+                        </li>
+                        <li>Skapa ett program som skriver ut alla 2-potenser mindre än ett givet tal: <br />
+                            <samp>
+                                Övre gräns:<br />
+                                <b>1000</b><br />
+                                1 2 4 8 16 32 64 128 256 512 <br /><br />
+                            </samp>
+                        </li>
+                        <li>Skriv ett program som fungerar så här: <br />
+                            <pre><samp>
+Längd:
+Tecken:
+<b>5</b>
+<b>#</b>
+#####                                     
+                            </samp></pre>
+                        </li>
+
+                        <li>Detta program ska skapa ett förslag till lottorad, alltså sju slumptal mellan 1 och 35.
+                            <br /><samp>Veckans lottorad: 4 17 2 32 19 20 12</samp> <br />(Dubbletter får förekomma i
+                            din lösning, men inte i en riktig
+                            lottorad förstås.)
+                        </li>
+                    </ol>
+
+                    <h3>Tips / pseudokod / lösningar</h3>
+                    <p>1)
+                    <pre><samp>let tal = +input()        // Gör om till tal med ett + 
+output("Uppräkning: ")    // Skriv ut före upprepningen 
+for (let i = 0; i &lt;= tal; i++) { 
+    output(i, " " )       // Utskrifterna avslutas med ett mellanslag (inte radbyte) 
+}
+                    </samp></pre>
+                    <p>2)<br />Gör som i 1) men lägg till en loop som räknar ner också:
+                        <samp>
+                            <pre>for (let i = tal; i >= 0; i--) {
+    ...
+}</pre>
+                        </samp>
+                    <p>3)<br />
+                        Avläs två tal<code><pre>
+                    let start = +await input("Start")
+                    let stopp = +await input("Stopp")
+                            </pre></code>
+                        Loopa från start till stopp
+                        <code><pre>
+                    for (let i = start; i &lt;= stopp; i++) {
+                        ... 
+                    }
+                            </code></pre>
+
+                    <p>4)<br />
+                        Gör om till teckenkoder med metoden <a
+                            href="https://www.w3schools.com/jsref/jsref_charcodeat.asp" target="_blank">charCodeAt</a>.
+                        Omvandla sedan tillbaka till tecken med funktionen <a
+                            href="https://www.w3schools.com/jsref/jsref_fromcharcode.asp"
+                            target="_blank">String.fromCharCode</a>.</p>
+                    <!-- <code><pre>
+let start = input().charCodeAt(0) // Teckenkod för första tecknet
+let stopp = input().charCodeAt(0)
+
+for (let i = start; i &lt; stopp; i++) {
+    output(String.fromCharCode(i))                                
+                            </pre></code> -->
+                    <p>Med BalderJS så går de där inbyggda funktionerna <code>ord</code> och <code>chr</code> att
+                        använda:</p>
+                    <code><pre>
+let start = ord(await input("Start"))     // Teckenkod för första tecknet
+let stopp = ord(await input("Stopp"))
+
+for (let i = start; i &lt; stopp; i++) {
+    output(chr(i))                      // Omvandla till tecken  
+                    </pre></code>
+
+                    <p>5)<br />Loopa från 1 till 10<br /><span
+                            style="font-family: 'courier new', courier, monospace;">for (let i = 1; i &lt;=
+                            10; i++)
+                            {</span><br /><span style="font-family: 'courier new', courier, monospace;"> 
+                            output(i + " *
+                            " + tabell + " = " + (i * tabell))</span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">}</span></p>
+                    <p>6)<br />Loopa med steget 2 (istället för 1)<br /><span
+                            style="font-family: 'courier new', courier, monospace;">for (let i = 1; i &lt;=
+                            20; i += 2)
+                            {</span><br /><span style="font-family: 'courier new', courier, monospace;"> 
+                             output(i)</span><br /><span
+                            style="font-family: 'courier new', courier, monospace;">}</span></p>
+                    <p>7)<br />Jämför med förra uppgiften. Byt ut i += 2 mot i *= 2.<br />Istället för 1, 3,
+                        5, 7, ...
+                        blir det då 1, 2, 4, 8, 16, ...</p>
+                    <p></p>
+                    <p>8)<br />let längd = +await input("Längd")<br />let tecken = await
+                        input("Tecken")<br /><br />for-loop som
+                        snurrar 'längd'
+                        varv<br />  skriv ut 'tecken'</p>
+                    <p></p>
+                    <p>9)<br />repetera 7 gånger<br />  skapa o spara ett slumptal med <span
+                            style="font-family: 'courier new', courier, monospace;">randomInt(1,
+                            35)</span><br />  skriv
+                        ut slumptalet</p>
+
+
+                    <p>Ladda upp mappen till <b>codescan/prog/iter</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+
+                </div>
+            </details>
+            <details>
+                <summary>Loopa i canvasen</summary>
+                <div>
+                    <p>Namnge uppgifter <strong>loop-1</strong>, <strong>loop-2</strong>, och så vidare.</p>
+                    <ol>
+                        <li><span>Rita åtta röda cirklar bredvid varandra med hjälp av en for-loop.<br /><img
+                                    src="images/circles8.PNG" width="285" height="93" /><br /><br /></span></li>
+                        <li><span>Rita ett tio gröna horisontella linjer under varandra med hjälp av en
+                                for-loop.<br /><img src="images/lines10.PNG" width="290"
+                                    height="185" /><br /><br /></span></li>
+                        <li>Rita fem bilder bredvid varandra med hjälp av en for-loop.<br /><img src="images/ace5.PNG"
+                                width="600" /><br /></li>
+                        <li>
+                            <p>Skapa bilden med hjälp av loopar.<br /><img src="images/strecken1.PNG"
+                                    width="500" /> <br /> </p>
+                        </li>
+                        <li>Skapa bilden med hjälp av loopar.<br /><img src="images/strecken2.PNG"
+                                width="500" /><br />  </li>
+                        <li>Skapa ett rutnät som liknar det på fyra-i-rad-spelet nedan.<br /><img
+                                src="images/Connect_Four.jpg" width="600" height="454" /><br />(Slumpa gärna fram gula
+                            eller röda cirklar.)<br />
+                        </li>
+                        <li>Rita ett schackbräde med hjälp av loopar. I koden ska det (helst) bara finnas en rad som
+                            ritar en svart rektangel och en rad som ritar en vit rektangel.<br /><img
+                                src="images/Checker_700.gif" width="251" height="251" /><br /><br /></li>
+                    </ol>
+
+                    <p>Ladda upp mappen till <b>codescan/prog/iter</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+
+                </div>
+            </details>
+            <details>
+                <summary>* Personnummerkoll</summary>
+                <div>
+                    <p>Spara som <b>personnr</b>.</p>
+                    <p>Skriv ett program som kontrollerar om ett inmatat personnummer kan vara korrekt. Läs <a
+                            href="http://www.skatteverket.se/folkbokforing/ovrigt/personnummer.4.18e1b10334ebe8bc80001502.html">här</a> om
+                        hur kontrollsiffran beräknas. </p>
+                    <p>Ladda upp mappen till <b>codescan/prog/iter</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+                </div>
+            </details>
+
+        </section>
+
+    </article>
+
+    <article>
+        <h1>Funktioner</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>typescriptlang.org</summary>
+                <div>
+                    <p><a href='https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#functions'
+                            target='_blank'>Functions</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Exempel</summary>
+                <iframe
+                    data-src="https://stackblitz.com/edit/typescript-diorcr?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                    style="height: 30em"></iframe>
+            </details>
+            <details>
+                <summary>Genomgång funktioner</summary>
+                <p>
+                    Funktioner behöver ett namn som följs av parenteser. I exemplet nedan är namnet alltså 'mindre'.
+                    <br>
+                    Funktionen kan ta <i>argument</i>. I exemplet är x och y argument. Det är variabler som bara
+                    funktionen kommer åt. <br>
+                    När du ska köra en funktion så skriver du namnet följt av parenteser. I parenteserna kan du ange
+                    vilka värden argumenten ska ha. <br>
+                    För att resten av programmet ska få tillgång till något som händer i funktionen behöver det
+                    <i>returneras</i>.
+                    Du skriver return och sedan vilket värde som funktionen ska ge tillbaka. <br>
+                    I exemplet returneras true eller false. Variablerna m1, m2 och m3 blir då true eller false beroende
+                    på vad som händer i funktionen. <br>
+                    I exemplet finns y:number = 10 där funktionen deklareras. <br>
+                    Det betyder att om du kallar på funktionen utan att ange ett värde på y, så kommer y att få värdet
+                    10. <br>
+                    Därför fungerar det att skriva mindre(2), vilket är samma som om man hade skrivit mindre(2, 10).
+                    <br>
+                    <b>I exemplet nedan är console.log() samma sak som output()</b>
+                </p>
+                <iframe width="800" height="500" frameborder="0"
+                    src="https://pythontutor.com/iframe-embed.html#code=function%20mindre%28x%3A%20number,%20y%3A%20number%20%3D%2010%29%3A%20boolean%20%7B%0A%20%20if%20%28x%20%3C%20y%29%20%7B%0A%20%20%20%20console.log%28%22X%20%C3%A4r%20mindre%20%C3%A4n%20Y%22%29%0A%20%20%20%20return%20true%0A%20%20%7D%20else%20%7B%0A%20%20%20%20console.log%28%22X%20%C3%A4r%20inte%20mindre%20%C3%A4n%20Y%22%29%0A%20%20%20%20return%20false%0A%20%20%7D%0A%7D%0A%0Alet%20m1%20%3D%20mindre%283,%202%29%0Alet%20m2%20%3D%20mindre%282%29%0Alet%20m3%20%3D%20mindre%285,%207%29&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=ts&rawInputLstJSON=%5B%5D&textReferences=false">
+                </iframe>
+                <br>
+                <a
+                    href="https://pythontutor.com/visualize.html#code=function%20mindre%28x%3A%20number,%20y%3A%20number%20%3D%2010%29%3A%20boolean%20%7B%0A%20%20if%20%28x%20%3C%20y%29%20%7B%0A%20%20%20%20console.log%28%22X%20%C3%A4r%20mindre%20%C3%A4n%20Y%22%29%0A%20%20%20%20return%20true%0A%20%20%7D%20else%20%7B%0A%20%20%20%20console.log%28%22X%20%C3%A4r%20inte%20mindre%20%C3%A4n%20Y%22%29%0A%20%20%20%20return%20false%0A%20%20%7D%0A%7D%0A%0Alet%20m1%20%3D%20mindre%283,%202%29%0Alet%20m2%20%3D%20mindre%282%29%0Alet%20m3%20%3D%20mindre%285,%207%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=ts&rawInputLstJSON=%5B%5D&textReferences=false">Ändra
+                    exemplet</a>
+                <p> Du kan kopiera dina funktioner och testa dem när du ändrar exemplet i länken ovan.</p>
+                <p> Kom ihåg att då ändra output() till console.log() och inte ta några inputs utan hårdkoda värdena
+                    istället.</p>
+                <br>
+            </details>
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <p>Skapa en <b>codescan/prog/funk</b>-mapp på din användare på <a href="http://skelamp.se/"
+                    target="_blank">skelamp</a>.</p>
+
+            <details>
+                <summary>Rätta felen</summary>
+                <div>
+                    <p>Kopiera följande program och rätta felet/felen så att du får rätt output</p>
+                    <ol>
+                        <li> <br>
+                            <pre>
+            <code style="display: block; border: 1px solid #999; background-color: #eee; padding: 20px;">
+            import { output } from "./balder.js" 
+            
+            function räkna(): void {
+                for (let i = 0; i < 4; i++) {
+                    output(i, " ")
+                }
+            }
+            </code>
+                            </pre>
+                            Output: <br>
+                            0 1 2 3
+                        </li>
+                        <li> <br>
+                            <pre>
+            <code style="display: block; border: 1px solid #999; background-color: #eee; padding: 20px;">
+            import { output } from "./balder.js" 
+            
+            let x = 10
+            function räkna(): void {
+                for (let i = 0; i < x; i++) {
+                    output(i, " ")
+                }
+            }
+            </code>
+                            </pre>
+                            Output: <br>
+                            0 1 2 3
+                        </li>
+                        <li> <br>
+                            <pre>
+            <code style="display: block; border: 1px solid #999; background-color: #eee; padding: 20px;">
+            import { output } from "./balder.js" 
+            
+            let x = 10
+            function kvadrera(x: number): void {
+                return x * x
+            }
+            
+            kvadrera(10)
+            </code>
+                            </pre>
+                            Output: <br>
+                            9
+                        </li>
+                        <li> <br>
+                            <pre>
+            <code style="display: block; border: 1px solid #999; background-color: #eee; padding: 20px;">
+            import { output } from "./balder.js" 
+            
+            let x = 10
+            function addera(x: number): void {
+                return x + y
+            }
+            
+            addera(10)
+            </code>
+                            </pre>
+                            Output: <br>
+                            9
+                        </li>
+                        <li> <br>
+                            <pre>
+            <code style="display: block; border: 1px solid #999; background-color: #eee; padding: 20px;">
+            import { output } from "./balder.js" 
+            
+            let x = 10
+            function kvadrera(x: number): void {
+                return x * x
+            }
+            
+            function räkna(x: number): void {
+                let z = kvadrera(x)
+                return z + y
+            }
+            
+            räkna(10)
+            </code>
+                            </pre>
+                            Output: <br>
+                            15
+                        </li>
+                        <li> Fixa följande program utan att ändra funktionsanropen i slutet av programmet<br>
+                            <pre>
+            <code style="display: block; border: 1px solid #999; background-color: #eee; padding: 20px;">
+            import { output } from "./balder.js" 
+            
+            let x = 10
+            function kvadrera(x: number): void {
+                return x * x
+            }
+            
+            function räkna(x: number): void {
+                let z = kvadrera(x)
+                output(y + z)
+            }
+            
+            räkna(3, "Kvadraten av 3 är ")
+            räkna(4, "Kvadraten av 4 är ")
+            räkna(3)
+            </code>
+                            </pre>
+                            Output: <br>
+                            Kvadraten av 3 är 9
+                            Kvadraten av 4 är 16
+                            Svaret är 9
+                        </li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>Konvertera gamla uppgifter</summary>
+                <div>
+                    <div>
+                        <p>Öppna någon av dina gamla lösningar. Gör om den så att en del av programmet är en funktion.
+                        </p>
+                        <p>Programmet ska fungera likadant som tidigare, om det fanns tester på det gamla programmet så
+                            ska de fortfarande fungera.</p>
+                        <p>Fortsätt göra om fler gamla lösningar om du vill, gå vidare när du känner dig någorlunda
+                            säker på hur funktioner fungerar.</p>
+                    </div>
+            </details>
+            <details>
+                <summary>Diverse funktionsuppgifter</summary>
+                <div>
+                    <ol>
+                        <li>
+                            I tidigare uppgifter har du räknat upp och räknat ner mellan två tal. <br>
+                            Skriv två funktioner, en som räknar upp och en som räknar ner. <br>
+                            Om du har gjort det redan i 'Konvertera gamla uppgifter' så använd dem. <br>
+                            Funktionerna bör ta ett start och ett stopp som argument. <br>
+                            Skriv en ny funktion som tar två tal som argument och sedan skriver ut alla tal mellan dem.
+                            <br>
+                            Den ska alltså kolla om den ska räkna upp eller ner och sedan använda en av dina andra
+                            funktioner. <br>
+                            <samp>
+                                Start: <b>4</b> <br>
+                                Stopp: <b>7</b> <br>
+                                Output: 4 5 6 7 <br>
+                                <br>
+                                Start: <b>7</b> <br>
+                                Stopp: <b>4</b> <br>
+                                Output: 7 6 5 4 <br>
+                            </samp>
+                        </li>
+                        <li>
+                            Använd funktionen ovan för att skriva program som ger följande output: <br>
+                            (Den behöver inte ta input från användaren).
+                            <ol>
+                                <li>
+                                    Output: 5 4 3 6 7 8
+                                </li>
+                                <li>
+                                    Output: 1 1 2 3 4 3 2 1
+                                </li>
+                                <li>
+                                    Output: 1 2 4 5 7 5 6
+                                </li>
+                                <li>
+                                    Output: 9 8 7 6 7 6 5 4 3 8 9 0 1 2 3 4
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Skriv en funktion som tar en sträcka (i km) och räknar ut hur lång tid det tar att gå den
+                            sträckan. <br>
+                            Gör samma sak för cykel, buss och bil. Välj någon valfri hastighet för de olika färdsätten.
+                            <br>
+                            Skriv program som använder dina funktioner för att räkna ut hur lång tid det tar att göra
+                            följande:
+                            <ol>
+                                <li>
+                                    Bil 10 km
+                                </li>
+                                <li>
+                                    Gå 1 km, Buss 10 km
+                                </li>
+                                <li>
+                                    Cykla 3 km, Buss 10 km, Gå 1 km, Buss 25 km
+                                </li>
+                                <li>
+                                    Buss 6 km, Gå 1 km, Buss 11 km, Gå 4 km, Buss 25 km, Gå 6 km
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Ändra så att en kostnad per kilometer kan anges istället för hastighet i funktionerna ovan.
+                            <br>
+                            Om inget anges har funktionerna ett <em>'default'</em>-värde som används istället. Normalt
+                            sätt kostar det ju inget att gå t.ex. <br>
+                            Skriv några program som använder dina funktioner för att räkna ut total kostnad att färdas
+                            sträckan. <br>
+                            Använd nedanstående exempel eller hitta på egna.
+                            <ol>
+                                <li>
+                                    Bil 10 km 4 kr
+                                </li>
+                                <li>
+                                    Gå 5 km 3 kr (stannade på ICA)
+                                </li>
+                                <li>
+                                    Cykla 3 km, Buss 10 km 3 kr, Gå 1 km, Buss 25 km
+                                </li>
+                                <li>
+                                    Buss 6 km, Gå 1 km, Buss 11 km 5 kr, Gå 4 km, Bil 25 km 6 kr
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Skapa en funktion som krypterar ett ord. <br>
+                            Använd charCodeAt(0), charCodeAt(1) etc för att göra om alla bokstäver till siffror. <br>
+                            Addera sedan något tal till siffrorna och gör om dem till bokstäver igen innan du skriver ut
+                            ordet. <br>
+                            EXTRA: Hur kan du göra om du vill kryptera en hel mening men behålla mellanslag som vanligt
+                            mellan orden?
+                        </li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>Diverse funktionsuppgifter i canvasen</summary>
+                <div>
+                    <ol>
+                        <li>
+                            Skriv en funktion som tar x och y som argument och ritar ut tre cirklar bredvid varandra.
+                            <br>
+                            En av bollarna har mittpunk i x och y, förslags vis den mellersta. <br>
+                            Använd funktionen för att rita ut tre grupper av cirklar med tre i varje.
+                        </li>
+                        <li>
+                            Skriver tre funktioner som ritar något typ av "moln" (rita några cirklar så de överlappar).
+                            <br>
+                            Skriv en ny funktion som ritar ut ett slumpmässigt moln på en viss position på skärmen. <br>
+                            (Molnen kan vara 'missfärgade' för att de ska synas på skärmen).
+                        </li>
+                        <li>
+                            Skriv en funktion som returnerar olika färger beroende på värdet på en siffra. <br>
+                            T.ex. kan den returnera green om siffran är mindre än 100, blue för 100 - 200 osv. <br>
+                            Använd den nya funktionen för att bestämma färg på dina cirklar i föregående uppgift. <br>
+                            Det ska fortfarande gå att rita ut "moln" utan att skicka in någon färg <br>
+                            (Det är alltså möjligt för ett "moln" att bestå av cirklar med olika färg).
+                        </li>
+                        <li>
+                            Skriv en funktion ritar en sol. Använd streck eller trianglar som strålar runt en cirkel.
+                            <br>
+                            Funktionen ska kunna rita ut solen på olika ställen på skärmen.
+                        </li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>Matematiska funktioner</summary>
+                <div>
+                    <p>Programmeringsfunktioner och matematiska funktioner är på många sätt väldigt lika och används av
+                        liknande anledningar.</p>
+                    <p>Man kan representera en matematisk funktionen med f(x) = x + 3 för att sedan räkna ut f(3) = 3 +
+                        3 = 6, f(5) = 5 + 3 = 8 osv.</p>
+                    <p>På motsvarande sätt kan man skriva en programmeringsfunktion som heter f, tar ett värde x som
+                        argument och skriver ut x + 3 på skärmen.</p>
+                    <p>Följande uppgifter går ut på att definiera matematiska funktioner från hållfasthestläran i teknik
+                        1 som programmeringsfunktioner och sedan använda dem tillsammans för att göra olika uträkningar.
+                    </p>
+                    <p>Dessa kan sedan användas i nästa sektion för att rita grafer på canvasen.</p>
+                    <ol>
+                        <li>Skriv en funktion som räknar ut arean av en rektangel. Funktionen bör ta sidornas längd som
+                            argument för att sedan returnera svaret. <br>
+                            Låt användaren skriva in sidornas längd som input och sedan se programmet skriva ut arean i
+                            output. <br>
+                            <samp>
+                                Bas: <b>5</b> <br>
+                                Höjd: <b>4</b> <br>
+                                Area: 20 <br>
+                            </samp>
+                            Skriv sedan en liknande funktioner för en triangel.
+                        </li>
+                        <li>
+                            Skriv en funktion som tar namnet på en geometrisk figur (rektangel eller triangel) som input
+                            och sedan kallar på rätt funktion från föregående uppgift. <br>
+                            Användaren kan skriva in vilken figur som arean ska räknas ut för och får sedan fylla i de
+                            numeriska värdena. <br>
+                            <samp>
+                                Figur: <b>triangel</b> <br>
+                                Bas: <b>4</b> <br>
+                                Höjd: <b>3</b> <br>
+                                Area: 6
+                            </samp>
+                        </li>
+                        <li>
+                            Skriv en funktion för kraft F = m*g och en funktion för spänning sp = F/A <br>
+                            Spänningsfunktionen bör ta massan (m), figur, bas och höjd som argument. Sedan räknar den ut
+                            kraften med hjälp av kraftfunktionen för att till slut få fram spänningen. <br>
+                            <samp>
+                                Massa: <b>60</b> <br>
+                                Figur: <b>triangel</b> <br>
+                                Bas: <b>4</b> <br>
+                                Höjd: <b>3</b> <br>
+                                Spänning: 50
+                            </samp>
+                        </li>
+                        <li>
+                            Med spänningsfunktionen kan man sedan räkna ut töjningen m.h.a Hookes lag, töjning =
+                            spänning/E. E har olika värden beroende på vilket material det är.<br>
+                            Du kan antingen skriva E som en siffra direkt i programmet eller låta användaren skriva in
+                            det. <br>
+                            <samp>
+                                Massa: <b>60</b> <br>
+                                Figur: <b>triangel</b> <br>
+                                Bas: <b>4</b> <br>
+                                Höjd: <b>3</b> <br>
+                                E: <b>5</b> <br>
+                                Töjning: 10
+                            </samp>
+                        </li>
+                        <li>EXTRA: Vad behöver du ändra eller lägga till för att även tillåta att en cirkel används som
+                            area?</li>
+                        <li>EXTRA: Introducera även funktionen för förlängning (förlängning = töjning * längd).</li>
+                        <li>EXTRA: Hur kan man ändra så att funktionerna kan ta olika typer av argument och sedan räkna
+                            ut den okända variabeln?</li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>Grafritare</summary>
+                <p>Vi ska nu använda funktionerna vi skrev i föregående sektion för att rita ut grafer för area,
+                    spänning etc.</p>
+                <div>
+                    <ol>
+                        <li>Skriv en funktion som ritar prickar på varje pixel på skärmen från vänster till höger.</li>
+                        <li>
+                            Använd din funktion för area som du skrev tidigare. Bestäm ett värde på basen och låt höjden
+                            (x-värdet) förändras m.h.a din loop i föregående funktion.<br>
+                            Prickarnas y-värde ska vara arean på din rektangel/triangel. <br>
+                            Tänk på att 0 i canvasen är högst upp på skrämen i y-led. Hur gör du så att y = 0 hamnar
+                            längst ner på skärmen?
+                        </li>
+                        <li>
+                            Gör motsvarande för dina funktioner för spänning och töjning (och förlängning om du har
+                            den).
+                        </li>
+                        <li>
+                            Grafen kan se konstig ut beroende på vilka värden och funktion du använder.<br>
+                            Lös det problemet genom att göra så att man kan ändra skala på grafen. (Skalan behöver bara
+                            kunna ändras från koden).
+                        </li>
+                        <li> EXTRA: <br>
+                            Nu används Hookes lag för att räkna ut töjningen för alla x. Problemet är att den bara
+                            gäller tills man når sträckgränsen för materialet. <br>
+                            Gör om så att grafen bara går till en viss sträckgräns. <br>
+                            Hur kan du rita grafen efter sträckgränsen? Efter brottgränsen?
+                        </li>
+                        <li> EXTRA: <br>
+                            Gör en funktion som räknar ut värdet på någon andragradsfunktion (t.ex. y = 10 + x + x*x
+                            eller liknande). <br>
+                            Rita ut prickar på skärmen för att bilda en graf även för den. <br>
+                            Gör så att grafen kan visa negativa värden på x och y. <br>
+                            Kan du göra så att grafen visar (ungefär) var nollpunkten är?
+                        </li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>Rita en stad</summary>
+                <div>
+                    <p>I balder.ts finns funktioner som circle, rectangle, triangle line etc. Dessa kan kombineras för
+                        att skapa nya former och bilder.</p>
+                    <p>Till exempel skulle du kunna skapa en funktion som ritar ett enkelt hus genom att kombinera en
+                        rektangel och en triangel.</p>
+                    <p>Fundera över vilka funktioner (hus, träd, bil, etc.) du kan behöva/vilja ha i din stad. Du kan
+                        börja skriva tomma funktioner för att planera.</p>
+                    <p>Samarbeta gärna med en kompis och dela upp arbetet genom att skriva olika funktioner som ni sedan
+                        kan skicka till varandra.</p>
+                    <p>Använd sedan dina/era funktioner för att rita din stad.</p>
+
+                </div>
+            </details>
+            </div>
+
+        </section>
+        <!-- <h2>Rekursion</h2>
+
+        <a
+            href="https://javascript.plainenglish.io/javascript-use-function-expressions-instead-of-function-declarations-b5dd0572c3a6">
+            https://javascript.plainenglish.io/javascript-use-function-expressions-instead-of-function-declarations-b5dd0572c3a6</a>
+
+        <a
+            href="https://javascript.plainenglish.io/javascript-use-function-expressions-instead-of-function-declarations-b5dd0572c3a6">https://javascript.plainenglish.io/javascript-use-function-expressions-instead-of-function-declarations-b5dd0572c3a6</a>
+        <a
+            href="https://2ality.com/2021/01/looping-over-arrays.html">https://2ality.com/2021/01/looping-over-arrays.html</a> -->
+    </article>
+
+    <!-- <article>
+        <h1>Objekt</h1>
+
+    </article> -->
+
+    <article>
+        <h1>Arrayer</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>Vad gör programmet?</summary>
+                <div>
+                    Gå igenom följande program och fundera vad som händer i varje steg. Använd dem gärna som exmpel när
+                    du gör andra
+                    uppgifter.<br>
+                    <a
+                        href="https://pythontutor.com/visualize.html#code=let%20a%20%3D%20%5B1,%205,%203%5D%0Alet%20b%20%3D%20%5B%22hej%22,%20143,%20true%5D%0Alet%20c%20%3D%20%5B%22sortera%22,%20%22i%22,%20%22bokstavsordning%22%5D%0A%0A//console.log%28%29%20%C3%A4r%20samma%20som%20output%28%29%20i%20det%20h%C3%A4r%20fallet%0Aconsole.log%28b%5B1%5D%29%0Aconsole.log%28b.length%29%0Ac.sort%28%29%0Aconsole.log%28c%29%0Aa.push%2810%29%0Aconsole.log%28a%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=ts&rawInputLstJSON=%5B%5D&textReferences=false">Metoder
+                        1</a>
+                    <br> <a
+                        href="https://pythontutor.com/visualize.html#code=let%20a%20%3D%20%5B1,%205,%203%5D%0Alet%20b%20%3D%20%5B2,%205%5D%0A%0A//console.log%28%29%20%C3%A4r%20samma%20som%20output%28%29%20i%20det%20h%C3%A4r%20fallet%0Alet%20c%20%3D%20a.concat%28b%29%0Aconsole.log%28c%29%0Aconsole.log%28a.indexOf%283%29%29%0Aconsole.log%28a.indexOf%28100%29%29%0A%0Ac.splice%281,%201%29%0Aconsole.log%28c%29%0Adelete%20c%5B1%5D%0Aconsole.log%28c%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=ts&rawInputLstJSON=%5B%5D&textReferences=false"
+                        target="_blank">Metoder
+                        2</a>
+                    <br> <a
+                        href="https://pythontutor.com/visualize.html#code=let%20a%20%3D%20%5B5,%203%5D%0Alet%20b%20%3D%20%5B3,%20143,%2087%5D%0A%0Afunction%20summa%28nummer%3A%20number%5B%5D%29%20%7B%0A%20%20let%20s%20%3D%200%0A%20%20for%20%28let%20i%20%3D%200%3B%20i%20%3C%20nummer.length%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20s%20%2B%3D%20nummer%5Bi%5D%0A%20%20%7D%0A%20%20return%20s%0A%7D%0A%0Alet%20s1%20%3D%20summa%28a%29%0Alet%20s2%20%3D%20summa%28b%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=ts&rawInputLstJSON=%5B%5D&textReferences=false"
+                        target="_blank">Loop</a>
+                    <br> Är det någon skillnad mellan följande loop och den föregående?
+                    <br> <a
+                        href="https://pythontutor.com/visualize.html#code=let%20a%20%3D%20%5B5,%203%5D%0Alet%20b%20%3D%20%5B3,%20143,%2087%5D%0A%0Afunction%20summa%28nummer%3A%20number%5B%5D%29%20%7B%0A%20%20let%20s%20%3D%200%0A%20%20for%20%28let%20i%20in%20nummer%29%20%7B%0A%20%20%20%20s%20%2B%3D%20nummer%5Bi%5D%0A%20%20%7D%0A%20%20return%20s%0A%7D%0A%0Alet%20s1%20%3D%20summa%28a%29%0Alet%20s2%20%3D%20summa%28b%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=ts&rawInputLstJSON=%5B%5D&textReferences=false"
+                        target="_blank">Annan
+                        typ av loop</a>
+                    <br> <a
+                        href="https://pythontutor.com/visualize.html#code=let%20a%20%3D%20%5B5,%203%5D%0Alet%20b%20%3D%20%5B3,%20143,%2087%5D%0A%0Afunction%20%C3%B6ka%28nummer%3A%20number%5B%5D,%20add%3A%20number%29%20%7B%0A%20%20for%20%28let%20i%20in%20nummer%29%20%7B%0A%20%20%20%20nummer%5Bi%5D%20%2B%3D%20add%0A%20%20%7D%0A%7D%0A%0A%C3%B6ka%28a,%204%29%0A%C3%B6ka%28b,%207%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=ts&rawInputLstJSON=%5B%5D&textReferences=false"
+                        target="_blank">Uppdatera
+                        array</a>
+                    <br> Är det någon skillnad mellan följande funktion och föregående?
+                    <br> <a
+                        href="https://pythontutor.com/visualize.html#code=let%20a%20%3D%20%5B5,%203%5D%0Alet%20b%20%3D%20%5B3,%20143,%2087%5D%0A%0Afunction%20nyArray%28nummer%3A%20number%5B%5D,%20add%3A%20number%29%20%7B%0A%20%20let%20c%20%3D%20%5B%5D%0A%20%20for%20%28let%20i%20in%20nummer%29%20%7B%0A%20%20%20%20c%5Bi%5D%20%3D%20nummer%5Bi%5D%20%2B%20add%0A%20%20%7D%0A%20%20return%20c%0A%7D%0A%0AnyArray%28a,%203%29%0Alet%20b2%20%3D%20nyArray%28b,%204%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=ts&rawInputLstJSON=%5B%5D&textReferences=false"
+                        target="_blank">Skapa
+                        ny array</a>
+                </div>
+            </details>
+            <details>
+                <summary>javascript.info</summary>
+                <div>
+                    <p><a href='https://javascript.info/array' target='_blank'>Arrays</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>w3schools</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/jsref/jsref_obj_array.asp' target='_blank'>JavaScript Array
+                            Reference</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>MDN</summary>
+                <div>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array'
+                            target='_blank'>Array</a></p>
+                </div>
+            </details>
+
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <p>Skapa en <b>codescan/prog/array</b>-mapp på din användare på <a href="http://skelamp.se/"
+                    target="_blank">skelamp</a>.
+            </p>
+
+            <details>
+                <summary>Arrayer</summary>
+                <div>
+
+                    <ol>
+
+                        <li>
+                            <p>Givet följande array [4, 17, 12, 45, 104, 3], skriv ut talet på 3:e och 5:e plats (alltså
+                                12 och 104).</p>
+                        </li>
+                        <li>
+                            <p>Skriv ett program som skriver ut varannat element (värde) i en array. </p>
+                            <p>Om du använder arrayen i föregående uppgift skulle output bli följande:</p>
+                            <p><b>4, 12, 104</b></p>
+                        </li>
+                        <li>
+                            <p>
+                                Skriv ett program som tar ett nummer som input och skapar en array från noll till
+                                siffran du
+                                skrev in.
+                                <br>
+                                <b>Exempel:</b> <br>
+                                Input: 8 <br>
+                                Array: [0, 1, 2, 3, 4, 5, 6, 7]
+                            </p>
+                        </li>
+                        <li>
+                            <p>Skriv ett program som räknar hur många gånger ett visst ord eller nummer finns i en
+                                array.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Skriv ett program som tar en input och lägger till det i en array <b>bara</b> om det
+                                inte
+                                redan finns i
+                                arrayen. <br>
+                                Programmet behöver alltså ha en array till att börja med som du lägger till din input i.
+                                <br>
+                                Skriv sedan ut arrayen.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Skriv ett program med en array som tar ett input och tar bort alla element i arrayen som
+                                är
+                                samma som
+                                din input. <br>
+                                Testa dessa olika sätt att ta bort ett element från arrayen, vad blir det för skillnad
+                                om du
+                                använder
+                                det ena eller det andra? <br>
+                                ('index' kommer vara någon siffra i ditt program)
+                                <code
+                                    style="display: block; border: 1px solid #999; background-color: #eee; padding: 20px;">
+                            let a = [1, 2, 3] <br>
+                            delete a[index] <br>
+                            a.splice(index, 1)
+                        </code>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Elementen i arrayen behöver inte vara nummer, strängar eller liknande. Det kan också vara
+                                andra arrayer.</p>
+                            <p>Det är inte ovanligt att tvådimensionella arrayer (matriser) används och kan se ut på
+                                följande sätt:</p>
+                            <pre>
+    <code style="display: block; border: 1px solid #999; background-color: #eee; padding: 20px;">
+let a = [[0, 1, 0, 0],
+         [1, 0, 1, 1],
+         [0, 1, 0, 1],
+         [1, 1, 1, 1]]
+    </code>
+</pre>
+                            <p>Skriv ett program som räknar hur många 1:or som finns i ovanstående tvådimensionella
+                                array.</p>
+                            EXTRA: <br>
+                            Utveckla ditt program så det även skriver ut hur många 1:or som finns i varje rad (vågrätt)
+                            och i varje kolumn
+                            (lodrätt). <br>
+                            Output skulle i så fall se ut ungefär såhär: <br>
+                            Antal 1:or i varje rad: 1, 3, 2, 4<br>
+                            Antal 1:or i varje kolumn: 2, 3, 2, 3</p>
+                        </li>
+                        <li>
+                            <p>
+                                Som du kanske sett tidigare så sorterar .sort()-metoden en array. Däremot sorterar den
+                                inte alltid som man
+                                förväntar sig. <br>
+                                I exemplet nedan kommer arrayen efter att den har sorterats se ut såhär: [15, 3, 42, 5]
+                                <br>
+                                Det är för att den kollar första siffran i talet och sorterar utifrån den innan den går
+                                vidare till andra
+                                siffran osv. <br>
+                                <code
+                                    style="display: block; border: 1px solid #999; background-color: #eee; padding: 20px;">
+    let a = [3, 42, 15, 5] <br>
+    a.sort() <br>
+    output(a)
+</code>
+                                Undersök hur du kan ändra .sort()-metoden för att den ska sortera arrayen på följande
+                                sätt istället: [3, 5, 15,
+                                42] <br>
+                                Visual Studio kan ge tips om du börjar skriva exemplet ovan när du kommer till a.sort().
+                                Det går även hitta
+                                lösningar på nätet. <br>
+                                Genom att hålla muspekaren över .sort() kan du få en förklaring till varför den fungerar
+                                som den gör. <br>
+                                Det är överkurs i nuläget men försök förstå beskrivningen eller förklaringar på nätet.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                EXTRA: <br>
+                                Skriv ett program som tar inputs tills du skriver 'klar'. <br>
+                                Spara alla inputs i en array och skriv sedan ut arrayen. <br>
+                                Tips: Använd en while-loop för att fortsätta ta input. <br>
+                                Vad du behöver göra för skillnad om du vill att 'klar' ska vara med i arrayen eller
+                                inte?
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                EXTRA: <br>
+                                Utgå från programmet i föregående uppgift. <br>
+                                Din array får nu bara ta nummer som input och ska ta input tills du skriver 100. <br>
+                                Sortera arrayen och dela den på mitten (du kan skapa nya arrayer istället för första och
+                                andra halvan om
+                                du vill). <br>
+                                Skriv ut medelvärdet av alla tal i första halvan och medelvärdet av alla tal i andra
+                                halvan.
+                            </p>
+                        </li>
+
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>Canvasuppgifter</summary>
+                <div>
+
+                    <ol>
+                        <li>
+                            <p>
+                                Skapa en array med ett antal färger (som programmet förstår, alltså exempelvis let a =
+                                ['green',
+                                'yellow', 'blue']) <br>
+                                Rita cirklar på skärmen som slumpmässigt väljer färg från arrayen.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Utöka din lösning från föregående uppgift. Användaren ska nu kunna ge input för att ta
+                                bort
+                                färger från
+                                arrayen. <br>
+                                När en färg tagits bort bör cirklarna ritas ut igen.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Lägg till ytterliggare funktionalitet till ditt program. Om färgen du skriver in inte
+                                finns
+                                i arrayen
+                                bör den lägga till den. <br>
+                                Du bör hålla koll på vilka ord (färger) som är tillåtna, förslagsvis med ännu en array.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Anta att du har en array av arrayer (tvådimensionell array) som ser ut ungefär såhär:
+                                <code
+                                    style="display: block; border: 1px solid #999; background-color: #eee; padding: 20px;">
+                            let punkter = [[300, 60], [20, 500], [100, 40]]
+                        </code>
+                                Man kan tänka att det motsvarar punkter på canvasen. <br>
+                                I exemplet har du alltså en punkt som är x=300 och y=60, en punkt som är x=20 och y=500
+                                och
+                                en som är
+                                x=100 och y=40 <br>
+                                Skriv ett program som har en liknande array och ritar ut cirklar på de punkterna med
+                                hjälp
+                                av arrayen
+                                och en loop. <br>
+                            </p>
+
+                        </li>
+                        <li>
+                            <p>
+                                Använd din array med färger från första uppgiften (om du har många färger i den så kan
+                                du ta
+                                bort
+                                några). <br>
+                                Rita ut rektanglar (ungefär 10 st) bredvid varandra på canvasen med en loop. <br>
+                                Den första cirkeln har färgen som står först i arrayen, andra cirkeln har den andra
+                                färgen
+                                osv. <br>
+                                När du kommer till slutet av arrayen ska den börja om så att nästa cirkel får första
+                                färgen.
+                                <br>
+                                Tips: Undersök vad operanden modulo (ex. 5 % 2) gör och se om du kan använda den i ditt
+                                program. Det går
+                                även att lösa på andra sätt.
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>Hänga gubbe</summary>
+                <div>
+                    Gör ett program där användaren kan spela 'Hänga gubbe'. Ordet som ska gissas kan skrivas in direkt i
+                    programmet
+                    (behöver inte tas som input) <br>
+                    Börja med att rita upp en hängande gubbe på skärmen. Gissningsvis använder du mestadels linjer när
+                    du ritar
+                    gubben (förutom huvudet). <br>
+                    Spara gärna koordinaterna för linjerna i en array så att du lätt kan rita ut rätt antal linjer när
+                    användaren
+                    gissar fel. <br>
+                    Arrayen kan vara tvådimensionell, alltså ungefär såhär let a = [[40, 50], [20, 30], [80, 180]], där
+                    40 är x och
+                    50 är y för första linjen. <br>
+                    Gör ett specialfall för huvudet <br> <br>
+                    Gör en array som består av ett antal '_' som är lika många som bokstäverna i ordet som användaren
+                    ska gissa.
+                    <br>
+                    Om ordet är 'hej' kommer arrayen alltså till en början set ut såhär: let a = ['_', '_', '_'] <br>
+                    När användaren gissar rätt byts de korrekta positionerna i arrayen ut mot den gissade bokstaven.
+                    <br>
+                    Felaktiga gissningar bör sparas i ännu en array. <br>
+                    Skriv ut ordet med blandade '_' och korrekta gissningar, de felaktiga gissningarna och rita linjer
+                    på gubben
+                    motsvarande antalet felaktiga gissningar efter varje försök. <br>
+                    Använd dig gärna av funktioner när du skriver olika delar av programmet.
+                </div>
+            </details>
+            <details>
+                <summary>* Schack</summary>
+                <div>
+                    <p>Skapa ett program där två personer kan spela schack mot varandra. Om du är osäker på reglerna så
+                        läs <a href="http://sv.wikibooks.org/wiki/L%C3%A4robok_i_schack/Regler" target="_blank">här</a>.
+                    </p>
+                    <p><img src="images/chess2.PNG" width="445" height="446" /></p>
+                    <ul>
+                        <li>Skapa ett schackbräde.<br /> </li>
+                        <li>Ladda ner <a href="../chess.zip">bilder på
+                                schackpjäserna</a> (eller hitta egna).<br /> </li>
+                        <li>Placera ut pjäserna i startposition.<br /> </li>
+                        <li>Gör så att man kan flytta en pjäs från en ruta till en annan, det vill säga göra ett drag.
+                            <br /> 
+                        </li>
+                        <li>Visa vem som är i tur att dra, vit eller svart. </li>
+                    </ul>
+                    <h3>Förslag till extrafinesser</h3>
+                    <ul>
+                        <li>Gör specialdragen rockad och <em>en passent</em> möjliga att utföra. <br /> </li>
+                        <li>Visa en schackklocka.<br /> </li>
+                        <li>Visa ett protokoll med dragen i partiet. Gör det möjligt att spara protokollet på en fil. 
+                            <br /> 
+                        </li>
+                        <li>Kontrollera om draget är giltigt.</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+        <!-- <h2>foreach</h2>
+        https://love2dev.com/blog/javascript-remove-from-array/
+        
+        <p>Parallella arrayer vs array med objekt</p>
+
+        <a
+            href="https://levelup.gitconnected.com/which-is-faster-for-for-of-foreach-loops-in-javascript-18dbd9ffbca9">https://levelup.gitconnected.com/which-is-faster-for-for-of-foreach-loops-in-javascript-18dbd9ffbca9</a> -->
+    </article>
+
+    <!-- <article>
+        <h1>Tuple</h1>
+
+        <a
+            href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#labeled-tuple-elements">https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#labeled-tuple-elements</a>
+    </article> -->
+
+
+    <article>
+        <h1>Datastrukturer</h1>
+
+        <!-- hmm kan objekt arrayer mm passa här? -->
+
+        <!-- <h2>Kö och stack</h2> -->
+
+    </article>
+
+    <article>
+        <h1>Algoritmer</h1>
+
+        <!-- <h2>Sortering</h2>
+
+        <a href="https://en.wikipedia.org/wiki/Pancake_sorting">https://en.wikipedia.org/wiki/Pancake_sorting</a> -->
+
+    </article>
+
+    <article>
+        <h1>Grafiskt gränssnitt</h1>
+    </article>
+
+
+
+    <!-- TODO-->
+    <!-- foo-bar -->
+    <!-- reduce, prog2? -->
+    <!-- <p><a href="https://web.microsoftstream.com/video/bfb35356-f2ec-49c3-874b-161c022fb83f" target="_blank">Intro
+            till variabler</a></p> -->
+
+    <!-- <h2>BalderApp</h2> -->
+
+    <!-- <h2>Primitiva datatyper</h2>
+                        
+                        <ul>
+                            <li>string</li>
+                            <li>number</li>
+                            <li>boolean</li>
+                        </ul> -->
+
+    <!-- <p>undefined och null</p> -->
+
+    <!-- <h2>Identifierare</h2> -->
+    <!-- <p>kebab-case, pascal-case m fl</p> -->
+
+    <!-- <h2>Operatorer</h2>
+                            <h2>Funktioner</h2>
+                            <h2>Objekt</h2>
+                            <h2>Arrayer</h2>
+                            
+                            <h2>Kommentarer</h2>
+                            <h2>Feltyper</h2> -->
+    <!-- <p>Syntax, logiska, exekverings, ...</p> -->
+
+    <!-- <h2>Exempel</h2>
+                                <ul>
+        <li><a href="https://stackblitz.com/edit/typescript-alddmf?file=index.ts" target="_blank">Hitbox 210830</a></li>
+    </ul> -->
+
+    <!-- <div>
+                    <a href="https://tc39.es/ecma262/#sec-ecmascript-language-types-symbol-type"
+                        target="_blank">https://tc39.es/ecma262/#sec-ecmascript-language-types-symbol-type</a>
+                </div> -->
+    <!-- <div>
+                    <a href="https://www.theserverside.com/definition/Kebab-case"
+                        target="_blank">https://www.theserverside.com/definition/Kebab-case</a>
+                </div> -->
+
+    <!-- <div>
+                        <a href="https://codeburst.io/javascript-null-vs-undefined-20f955215a2"
+                            target="_blank">https://codeburst.io/javascript-null-vs-undefined-20f955215a2</a>
+                    </div> -->
+
+
+    <!-- 
+                                Text och tecken:
+                                <h2>Literaler</h2>
+                                    <p>single / double quotes</p>
+                                    <p>template strings</p>
+                                    <h2>Indexering</h2>
+                                    <h2>Metoder</h2>
+                                    <h2>Konverteringar</h2>
+                                    <h2>Teckenkoder</h2>
+                                    <p>chr och ord</p> -->
+
+    <!-- <a
+                                        href="https://medium.com/programming-essentials/how-to-convert-values-into-strings-in-javascript-13df1c09b3ed">https://medium.com/programming-essentials/how-to-convert-values-into-strings-in-javascript-13df1c09b3ed</a> -->
+
+    <!-- Iterationer
+            <h2>while</h2>
+                <h2>for</h2>
+                <h2>do-while</h2> -->
+
+
+    <!--
+
+https://progolymp.se/tidigare/uppgifter
+
+
+
+
+                -->
+
+    <!-- jämföra två objekt - referensvariabler                 -->

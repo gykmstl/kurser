@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API - BalderJS 3.0</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <svg width="2em" height="2em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="vscode-icon"
+        id="toggle">
+        <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 13V2a6 6 0 110 12z" fill="#C5C5C5"></path>
+    </svg>
+    <h1>API - BalderJS 3.0</h1>
+
+    <h2>Canvas properties</h2>
+
+    <details>
+        <summary>
+            <div>
+                W: number<br>
+                H: number
+            </div>
+        </summary>
+        <div>
+            <p>Width och height of the canvas.</p>
+            <iframe
+                data-src="https://stackblitz.com/edit/typescript-tr5dvq?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                style="height: 30em;">
+            </iframe>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>ctx: CanvasRenderingContext2D</div>
+        </summary>
+        <div>
+            <p>The canvas rendering context.</p>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D"
+                    target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D-+</a></p>
+            <iframe
+                data-src="https://stackblitz.com/edit/typescript-mg38cc?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                style="height: 20em;">
+            </iframe>
+        </div>
+    </details>
+
+    <h2>Canvas functions</h2>
+
+    <details>
+        <summary>
+            <div>
+                clear(x?: number, y?: number, width?: number, height?: number)
+            </div>
+        </summary>
+        <div>
+            <p>Clears the canvas.</p>
+            <iframe
+                data-src="https://stackblitz.com/edit/typescript-emsuma?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                style="height: 20em;">
+            </iframe>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                fill(style: Style, x?: number, y?: number, width?: number, height?: number)
+            </div>
+        </summary>
+        <div>
+            <p>Fills the canvas in given style.</p>
+            <p><code>Style = string | CanvasGradient | CanvasPattern</code></p>
+            <iframe
+                data-src="https://stackblitz.com/edit/typescript-pyjzoy?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                style="height: 20em;">
+            </iframe>
+        </div>
+    </details>
+
+    
+    <details>
+        <summary>
+            <div>
+                line(x1: number, y1: number, x2: number, y2: number, style?: Style, lineWidth?: number)
+            </div>
+        </summary>
+        <div>
+            <p>Draws a line from (x1, y1) to (x2, y2) in chosen style and lineWidth.</p>
+            <p>(<code>Style = string | CanvasGradient | CanvasPattern</code>)</p>
+            <iframe
+                data-src="https://stackblitz.com/edit/typescript-ejokhf?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                style="height: 20em;">
+            </iframe>
+        </div>
+    </details>
+    
+    <details>
+        <summary>
+            <div>
+                circle(x: number, y: number, radius: number, style?: Style, lineWidth?: number)
+            </div>
+        </summary>
+        <div>
+            <p>Draws a circle with center in (x, y) and given radius in chosen style and lineWidth.</p>
+            <p>(<code>Style = string | CanvasGradient | CanvasPattern</code>)</p>
+            <iframe
+            data-src="https://stackblitz.com/edit/typescript-9pghvd?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+            style="height: 24em;">
+        </iframe>
+    </div>
+</details>
+
+<details>
+    <summary>
+        <div>
+            rectangle(x: number, y: number, width: number, height: number, style?: Style, lineWidth?: number)
+        </div>
+        </summary>
+        <div>
+            <p>Draws a rectangle with upper left corner in (x, y), given width and height, in chosen style and
+                lineWidth.</p>
+            <p>(<code>Style = string | CanvasGradient | CanvasPattern</code>)</p>
+            <iframe
+                data-src="https://stackblitz.com/edit/typescript-d3rezf?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                style="height: 24em;">
+            </iframe>
+        </div>
+    </details>
+    
+    <details>
+        <summary>
+            <div>
+                triangle(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, style?: Style,
+                lineWidth?:
+                number)
+            </div>
+        </summary>
+        <div>
+            <p>Draws a triangle with corners in (x1, y1), (x2, y2) and (x3, y3) in chosen style and lineWidth.</p>
+            <p>(<code>Style = string | CanvasGradient | CanvasPattern</code>)</p>
+            <iframe
+            data-src="https://stackblitz.com/edit/typescript-hvhbzr?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+            style="height: 24em;">
+        </iframe>
+    </div>
+</details>
+
+<details>
+        <summary>
+            <div>
+                text(value: any, x?: number, y?: number, font?: number | string, style?: Style, lineWidth?: number)
+            </div>
+        </summary>
+        <div>
+            <p>Draws the value, converted to a string, with lower left corner in (x1, y1) in chosen font, style and
+                lineWidth.</p>
+            <p>(<code>Style = string | CanvasGradient | CanvasPattern</code>)</p>
+            <iframe
+                data-src="https://stackblitz.com/edit/typescript-hvhbzr?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                style="height: 24em;">
+            </iframe>
+        </div>
+    </details>
+    
+    <details>
+        <summary>
+            <div>
+                image(path: string, x?: number, y?: number, width?: number, height?: number): Promise&lt;void&gt;
+            </div>
+        </summary>
+        <div>
+            <p>Draws the image in given path with upper left corner in (x, y).</p>
+            <iframe
+                data-src="https://stackblitz.com/edit/typescript-souj75?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                style="height: 24em;">
+            </iframe>
+        </div>
+    </details>
+    
+    <details>
+        <summary>
+            <div>
+                pixel(x: number, y: number, color?: string)
+            </div>
+        </summary>
+        <div>
+            ... TODO
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                getPixel(x: number, y: number): { red: number; green: number; blue: number; alpha: number }
+            </div>
+        </summary>
+        <div>
+            <p>Returns RGBA values for the given pixel.</p>
+            <iframe
+            data-src="https://stackblitz.com/edit/typescript-cslfca?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+            style="height: 24em;">
+        </iframe>
+    </div>
+</details>
+
+<h2>Keyboard</h2>
+
+<details>
+        <summary>
+            <div>
+                keyboard.shiftLeft: boolean<br>
+                keyboard.shiftRight: boolean<br>
+                keyboard.backspace: boolean<br>
+                keyboard.enter: boolean<br>
+                keyboard.space: boolean<br>
+                keyboard.left: boolean<br>
+                keyboard.up: boolean<br>
+                keyboard.right: boolean<br>
+                keyboard.down: boolean<br>
+                keyboard.digit0: boolean<br>
+                keyboard.digit1: boolean<br>
+                keyboard.digit2: boolean<br>
+                keyboard.digit3: boolean<br>
+                keyboard.digit4: boolean<br>
+                keyboard.digit5: boolean<br>
+                keyboard.digit6: boolean<br>
+                keyboard.digit7: boolean<br>
+                keyboard.digit8: boolean<br>
+                keyboard.digit9: boolean<br>
+                keyboard.a: boolean<br>
+                keyboard.b: boolean<br>
+                keyboard.c: boolean<br>
+                keyboard.d: boolean<br>
+                keyboard.e: boolean<br>
+                keyboard.f: boolean<br>
+                keyboard.g: boolean<br>
+                keyboard.h: boolean<br>
+                keyboard.i: boolean<br>
+                keyboard.j: boolean<br>
+                keyboard.k: boolean<br>
+                keyboard.l: boolean<br>
+                keyboard.m: boolean<br>
+                keyboard.n: boolean<br>
+                keyboard.o: boolean<br>
+                keyboard.p: boolean<br>
+                keyboard.q: boolean<br>
+                keyboard.r: boolean<br>
+                keyboard.s: boolean<br>
+                keyboard.t: boolean<br>
+                keyboard.u: boolean<br>
+                keyboard.v: boolean<br>
+                keyboard.w: boolean<br>
+                keyboard.x: boolean<br>
+                keyboard.y: boolean<br>
+                keyboard.z: boolean
+            </div>
+        </summary>
+        <div>
+            <p>Gets the corresponding keyboard key.</p>
+            <iframe
+                data-src="https://stackblitz.com/edit/typescript-wymcvt?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                style="height: 24em;">
+            </iframe>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                keyboard.poll(): string | null
+            </div>
+        </summary>
+        <div>
+            <p>Polls for keyboard key.</p>
+            <iframe 
+                data-src="https://stackblitz.com/edit/typescript-i3mgrp?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                style="height: 24em;">
+            </iframe>
+        </div>
+    </details>
+
+    <h2>Mouse</h2>
+
+    <details>
+        <summary>
+            <div>
+                mouse.over: boolean
+            </div>
+        </summary>
+        <div>
+            <p>True if the mouse pointer is over the canvas.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                mouse.x: number<br>
+                mouse.y: number
+            </div>
+        </summary>
+        <div>
+            <p>The mouse pointer coordinates on the canvas.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                mouse.left: boolean<br>
+                mouse.middle: boolean<br>
+                mouse.right: boolean
+            </div>
+        </summary>
+        <div>
+            <p>Gets the corresponding mouse button.</p>
+            <iframe data-src="https://stackblitz.com/edit/typescript-hl2ucs?embed=1&file=index.ts&hideExplorer=1&hideNavigation=1"
+                style="height: 24em;">
+            </iframe>
+        </div>
+        </div>
+    </details>
+
+    <h2>Touchscreen</h2>
+
+    <details>
+        <summary>
+            <div>
+                touchscreen.touched: boolean
+            </div>
+        </summary>
+        <div>
+            <p>True if the canvas is touched.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                touchscreen.x: number<br>
+                touchscreen.y: number
+            </div>
+        </summary>
+        <div>
+            <p>The coordinates of the first touch on the canvas.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                touchscreen.touches: {x: number; y: number; id: number}[]
+            </div>
+        </summary>
+        <div>
+            <p>An array of touch objects describing all touches on the canvas.</p>
+        </div>
+    </details>
+
+    <h2>Hitbox</h2>
+
+    <details>
+        <summary>
+            <div>
+                constructor(x: number,
+                y: number,
+                width: number,
+                height: number)
+            </div>
+        </summary>
+        <div>
+            <p>Creates a hitbox object.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>hitbox</i>.x: number<br>
+                <i>hitbox</i>.y: number
+            </div>
+        </summary>
+        <div>
+            <p>Coordinates for the upper left corner of <i>hitbox</i></p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>hitbox</i>.width: number<br>
+                <i>hitbox</i>.height: number
+            </div>
+        </summary>
+        <div>
+            <p>Size of <i>hitbox</i></p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>hitbox</i>.intersects(other: Hitbox): boolean
+            </div>
+        </summary>
+        <div>
+            <p>True if <i>hitbox</i> intersects <code>other</code> hitbox.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>hitbox</i>.contains(x: number, y: number): boolean
+            </div>
+        </summary>
+        <div>
+            <p>True if <i>hitbox</i> contains this coordinate.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>hitbox</i>.drawOutline(color?: string): boolean
+            </div>
+        </summary>
+        <div>
+            <p>Draws the outline of <i>hitbox</i>.</p>
+        </div>
+    </details>
+
+    <h2>Sprite</h2>
+
+    <details>
+        <summary>
+            <div>
+                constructor(
+                path: string,
+                rows?: number,
+                columns?: number
+                )
+            </div>
+        </summary>
+        <div>
+            <p>Create a Sprite object.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>sprite</i>.x: number<br>
+                <i>sprite</i>.y: number
+            </div>
+        </summary>
+        <div>
+            <p>Coordinates for the upper left corner of <i>sprite</i></p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>sprite</i>.width: number<br>
+                <i>sprite</i>.height: number
+            </div>
+        </summary>
+        <div>
+            <p>Size of <i>sprite</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>sprite</i>.draw(): Promise&lt;void&gt;
+            </div>
+        </summary>
+        <div>
+            <p>Draw <i>sprite</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>sprite</i>.updatesPerFrame: number
+            </div>
+        </summary>
+        <div>
+            <p>Updates per frame for <i>sprite</i>. Ten (10) is default.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>sprite</i>.loop: boolean
+            </div>
+        </summary>
+        <div>
+            <p>True if <i>sprite</i> should loop.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>sprite</i>.tag: any
+            </div>
+        </summary>
+        <div>
+            <p>Additional info about <i>sprite</i>.</p>
+        </div>
+    </details>
+
+    <h2>Grid</h2>
+
+    <details>
+        <summary>
+            <div>
+                constructor(
+                rows: number,
+                columns: number,
+                x?: number,
+                y?: number,
+                width?: number,
+                height?: number,
+                style?: Style,
+                lineWidth?: number
+                )
+            </div>
+        </summary>
+        <div>
+            <p>Creates a Grid object.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>grid</i>[row: number][column: number]: Cell
+            </div>
+        </summary>
+        <div>
+            <p>Get cell from given position in <i>grid</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>grid</i>.activated: boolean
+            </div>
+        </summary>
+        <div>
+            <p>True if <i>grid</i> is activated.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>grid</i>.activeCell: Cell | null
+            </div>
+        </summary>
+        <div>
+            <p>Get the active cell in <i>grid</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>grid</i>.getCell(x: number, y: number): Cell | null
+            </div>
+        </summary>
+        <div>
+            <p>Get the cell in <i>grid</i> containing the given coordinate.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>grid</i>.draw()
+            </div>
+        </summary>
+        <div>
+            <p>Draw <i>grid</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>cell</i>.row: number<br>
+                <i>cell</i>.column: number
+            </div>
+        </summary>
+        <div>
+            <p>Gets the position of <i>cell</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>cell</i>.x: number<br>
+                <i>cell</i>.y: number
+            </div>
+        </summary>
+        <div>
+            <p>Coordinates for the upper left corner of <i>cell</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>cell</i>.width: number<br>
+                <i>cell</i>.height: number
+            </div>
+        </summary>
+        <div>
+            <p>Size of <i>cell</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>cell</i>.style: Style
+            </div>
+        </summary>
+        <div>
+            <p>Style of <i>cell</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>cell</i>.image: string
+            </div>
+        </summary>
+        <div>
+            <p>Image on <i>cell</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>cell</i>.custom: (cell: Cell) => void
+            </div>
+        </summary>
+        <div>
+            <p>Custom merhod for <i>cell</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>cell</i>.grid: Grid
+            </div>
+        </summary>
+        <div>
+            <p>Gets grid for <i>cell</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>cell</i>.tag: any
+            </div>
+        </summary>
+        <div>
+            <p>Additional info about <i>cell</i>.</p>
+        </div>
+    </details>
+
+    <h2>Turtle</h2>
+
+    <details>
+        <summary>
+            <div>
+                constructor(
+                x?: number,
+                y?: number
+                )
+            </div>
+        </summary>
+        <div>
+            <p>Create a Turtle object.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>turtle</i>.delay: number
+            </div>
+        </summary>
+        <div>
+            <p>Delay in milliseconds after actions on <i>turtle</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>turtle</i>.penColor: string
+            </div>
+        </summary>
+        <div>
+            <p>Pencolor of <i>turtle</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>turtle</i>.penSize: number
+            </div>
+        </summary>
+        <div>
+            <p>Pensize of <i>turtle</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>turtle</i>.forward(length: number): Promise&lt;void&gt;<br>
+                <i>turtle</i>.backward(length: number): Promise&lt;void&gt;
+            </div>
+        </summary>
+        <div>
+            <p>Move <i>turtle</i> <code>length</code> pixels.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>turtle</i>.right(degAngle?: number): Promise&lt;void&gt;<br>
+                <i>turtle</i>.left(degAngle?: number): Promise&lt;void&gt;
+            </div>
+        </summary>
+        <div>
+            <p>Turn <i>turtle</i> <code>degAngle</code> degrees.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>turtle</i>.penUp()<br>
+                <i>turtle</i>.penDown()
+            </div>
+        </summary>
+        <div>
+            <p>Lift up, or put down, the pen of <i>turtle</i>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                <i>turtle</i>.hide()<br>
+                <i>turtle</i>.show()
+            </div>
+        </summary>
+        <div>
+            <p>Hide, or show, <i>turtle</i>.</p>
+        </div>
+    </details>
+
+    <h2>IO functions</h2>
+
+    <details>
+        <summary>
+            <div>
+                input(prompt: string, value?: string): Promise&lt;string&gt;
+            </div>
+        </summary>
+        <div>
+            <div>
+                <p>Reads users input.</p>
+            </div>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                output(...values: any[], end?: "" | " " | "\t" | "\n")
+            </div>
+        </summary>
+        <div>
+            <p>Writes <code>values</code>.</p>
+        </div>
+    </details>
+
+    <h2>GUI functions</h2>
+
+    <details>
+        <summary>
+            <div>
+                add(tagName: string, text?: string | *, parent?: HTMLElement | **): HTMLElement<br>
+                add(tagName: string, parent?: HTMLElement | **): HTMLElement
+            </div>
+        </summary>
+        <div>
+            <p>Add a <code>tagName</code>-element.</p>
+            <p>
+                <code>* = {text: string, asHTML?: boolean}</code><br>
+                <code>** = {parent?: HTMLElement, before?: Node, newline?: boolean}</code>
+            </p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                getLabel(labeledElement: HTMLElement): string<br>
+                setLabel(labeledElement: HTMLElement, text: string)
+            </div>
+        </summary>
+        <div>
+            <p>Getter and setter for a labeled element.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                addSVG(tagName: "svg", attributes?: object, parent?: HTMLElement | SVGSVGElement): SVGSVGElement<br>
+                addSVG(tagName: "svg", parent?: HTMLElement | SVGSVGElement): SVGSVGElement<br>
+                addSVG(tagName: string, attributes: object, parent: SVGSVGElement): SVGElement<br>
+                addSVG(tagName: string, parent: SVGSVGElement): SVGElement
+            </div>
+        </summary>
+        <div>
+            <p>Add a <code>tagName</code>-element.</p>
+        </div>
+    </details>
+
+    <h2>Random</h2>
+
+    <details>
+        <summary>
+            <div>
+                randomInt(maxExclusive: number): number<br>
+                randomInt(min: number, max: number): number
+            </div>
+        </summary>
+        <div>
+            <p>Returns a random integer.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                randomItem<T>(...items: T[]): T
+            </div>
+        </summary>
+        <div>
+            <p>Returns a random item from the argument list.</p>
+        </div>
+    </details>
+
+    <h2>Colors</h2>
+
+    <details>
+        <summary>
+            <div>
+                rgba(red: number, green: number, blue: number, alpha?: number): string
+            </div>
+        </summary>
+        <div>
+            <p>Creates a RGBA color.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                hsla(hue: number, saturation: number, light: number, alpha?: number): string
+            </div>
+        </summary>
+        <div>
+            <p>Creates a HSLA color.</p>
+        </div>
+    </details>
+
+    <h2>Character codes</h2>
+
+    <details>
+        <summary>
+            <div>
+                ord(char: string): number
+            </div>
+        </summary>
+        <div>
+            <p>Returns the character code of <code>char</code>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                chr(charCode: number): string
+            </div>
+        </summary>
+        <div>
+            <p>Returns the character corresponding to <code>charCode</code>.</p>
+        </div>
+    </details>
+
+    <h2>Arrays</h2>
+
+    <details>
+        <summary>
+            <div>
+                array(length: number): any[]<br>
+                array(length: number, value: T): T[]<br>
+                array(length: number, value: ((index?: number) => T)): T[]
+            </div>
+        </summary>
+        <div>
+            <p>Creates a new array.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                array2D(rows: number, columns: number): any[][]<br>
+                array2D(rows: number, columns: number, value: T): T[][]<br>
+                array2D(rows: number, columns: number, value: ((rowIndex?: number, colIndex?: number) => T)): T[][]
+            </div>
+        </summary>
+        <div>
+            <p>Creates a new 2D-array.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                range(from: number, toExclusive: number, by?: number): number[]<br>
+                range(toExclusive: number): number[]
+            </div>
+        </summary>
+        <div>
+            <p>Creates a new array initialized with a range.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                shuffle(array: T[]): T[]
+            </div>
+        </summary>
+        <div>
+            <p>Shuffle <code>array</code> (in place).</p>
+        </div>
+    </details>
+
+    <h2>Angles</h2>
+
+    <details>
+        <summary>
+            <div>
+                radians(degAngle: number): number
+            </div>
+        </summary>
+        <div>
+            <p>Converts degAngle to radians.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                degrees(radAngle: number): number
+            </div>
+        </summary>
+        <div>
+            <p>Converts radAngle to degrees.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                fromPolar(radius: number, degAngle: number, x0?: number, y0?: number): [x: number, y: number]
+            </div>
+        </summary>
+        <div>
+            <p>Converts a coordinate from polar to rectangular form.</p>
+        </div>
+    </details>
+
+    <h2>Miscellaneous</h2>
+
+    <details>
+        <summary>
+            <div>
+                distance(x1: number, y1: number, x2: number, y2: number): number
+            </div>
+        </summary>
+        <div>
+            <p>The Euclidian distance from <code>(x1, y1)</code> to <code>(x2, y2)</code>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                preloadImage(path: string): Promise&lt;void&gt;
+            </div>
+        </summary>
+        <div>
+            <p>Preload image in <code>path</code>.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                sleep(msDuration: number): Promise&lt;void&gt;
+            </div>
+        </summary>
+        <div>
+            <p>Pause program for <code>msDuration</code> ms.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                setUpdate(handler: () => void)
+            </div>
+        </summary>
+        <div>
+            <p>Set update handler.</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>
+            <div>
+                str(value: any): string
+            </div>
+        </summary>
+        <div>
+            <p>Convert <code>value</code> to a readable string.</p>
+        </div>
+    </details>
+</body>
+
+</html>

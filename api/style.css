@@ -1,0 +1,28 @@
+#toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+details {
+    border: 1px solid black;
+}
+
+.dark-theme details {
+    border: 1px solid white;
+}
+
+details iframe {
+    width: 100%;
+}
+
+summary > div {
+    margin-left: 1em;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.dark-theme {
+  background-color: black;
+  color: white;
+}

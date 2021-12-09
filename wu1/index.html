@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Webbutveckling 1 - Balder</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+    <script>localStorage.setItem("balderkurs", "wu1")</script>
+</head>
+
+<body>
+    <nav>
+        <button data-src="../wu1/">Webbutveckling 1</button>
+        <button data-src="../prog1/">Programmering 1</button>
+        <button data-src="../prog2/">Programmering 2</button>
+        <button data-src="../wsp1/">Webbserverprogrammering1</button>
+    </nav>
+
+    <h1 class="kurs">Webbutveckling 1</h1>
+
+    <p>
+        <a href="https://skelleftea.sharepoint.com/:w:/s/Section_9625779c-9a38-4b4a-b2a7-68ac6d4edccf/ETEGJQck6wRJtrkgXZFEM20ByFA7XVG51xZfOQWvu7pvIA?e=ht6d80"
+            target="_blank">
+            Planering-lektionslogg TE2INF 2122
+        </a>
+    </p>
+
+    <article>
+        <h1>Allmänt</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>Tips o trix med <i>VS Code</i></summary>
+                <iframe src="../vscode.html" style="height: 40em;"></iframe>
+            </details>
+            <details>
+                <summary>Vad kallas tecknen?</summary>
+                <iframe src="../tecken.html" style="height: 40em;"></iframe>
+            </details>
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Öppet hus 211113</summary>
+                <div>
+                    <p>Skapa en webbplats, <b>info</b>, som ger besökaren till <i>Öppet hus</i> information om:</p>
+                    <ul>
+                        <li>Baldergymnasiet (skolan)</li>
+                        <li>Teknikprogrammet (programmet)</li>
+                        <li>Informations- och medieteknik (inriktningen)</li>
+                    </ul>
+
+                    <p>Du väljer själv vilken, eller vilka, punkter du vill informera om. Du kan ta alla eller bara en
+                        av dem.</p>
+
+                    <p>Målgruppen, det vill säga besökarna, är främst elever i åk9 och deras föräldrar.</p>
+
+                    <p>Din sida kan vara strikt och seriös. Inget fel med det.</p>
+
+                    <p>Men... din sida kan också vara lite mer lekfull med kanske inte helt korrekt information.
+                        Vi vill få deras uppmärksamhet och då kanske en inflygande snurrande bild är viktigare än poäng
+                        på kurser hit å dit.
+                        Känn dig fri att hitta på lite vad som helst!</p>
+                </div>
+            </details>
+            <details>
+                <summary>W3Schools Quizzes</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/quiztest/quiztest.asp?qtest=HTML' target='_blank'>HTML
+                            Quiz</a></p>
+                    <p><a href='https://www.w3schools.com/quiztest/quiztest.asp?qtest=CSS' target='_blank'>CSS Quiz</a>
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>Codecademy</summary>
+                <div>
+                    <p><a href='https://www.codecademy.com/learn/learn-html' target='_blank'>Learn HTML</a></p>
+                    <p><a href='https://www.codecademy.com/learn/learn-css' target='_blank'>Learn CSS</a></p>
+                    <p><a href='https://www.codecademy.com/learn/learn-intermediate-css' target='_blank'>Learn
+                            Intermediate CSS</a></p>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Introduktion</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>Webbling</summary>
+                <div>
+                    <p><a href='https://webbling.se/index.php/Introduktion_till_webbteknik' target='_blank'>Introduktion
+                            till webbteknik</a></p>
+                    <p><a href='https://webbling.se/index.php/HTML-grunder' target='_blank'>HTML-grunder</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>MDN</summary>
+                <div>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started"
+                            target="_blank">Getting started with HTML // MDN</a></p>
+
+                    <p><a
+                            href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML'>What’s
+                            in the head? Metadata in HTML // MDN</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>w3scools</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/html/default.asp'
+                            target='_blank'>https://www.w3schools.com/html/default.asp</a></p>
+                    <!-- <img src="images/w3s-intro.PNG" alt=""> -->
+                    <p><a href='https://www.w3schools.com/html/html_intro.asp'
+                            target='_blank'>https://www.w3schools.com/html/html_intro.asp</a></p>
+                    <p><a href='https://www.w3schools.com/html/html_basic.asp'
+                            target='_blank'>https://www.w3schools.com/html/html_basic.asp</a></p>
+                    <p><a href='https://www.w3schools.com/html/html_elements.asp'
+                            target='_blank'>https://www.w3schools.com/html/html_elements.asp</a></p>
+                    <p><a href='https://www.w3schools.com/html/html_attributes.asp'
+                            target='_blank'>https://www.w3schools.com/html/html_attributes.asp</a></p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Validera</summary>
+                <div><a href="https://validator.w3.org/">Markup Validation Service // W3C</a></div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Intro</summary>
+                <div>
+                    <p>Hjälp dem du sitter med om allt går bra. Ta annars hjälp av dem du sitter med!</p>
+                    <ol>
+                        <li>Installera texteditorn <a href="https://code.visualstudio.com/" target="_blank">VS
+                                Code</a>.<br />(Klicka på
+                            <strong>Download</strong>-knappen. Vänta. Dubbelklicka sedan på den nedladdade
+                            <b>exe</b>-filen.)
+                        </li>
+                        <li>Installera tillägget <i>Live Server</i>.<br />Öppna <i>VS Code</i>,
+                            Klicka på ikonen
+                            för
+                            tillägg (1), sök efter "live server" (2) och klicka på <b>Install</b> vid "Live
+                            Server"-tillägget
+                            (3).<br /><img src="images/live-server.PNG" width="200" height="212" /></li>
+                        <li>Skapa och öppna en ny mapp <b>site1</b>. (Bara <i>små</i> bokstäver och
+                            <i>inget</i>
+                            mellanslag)<br />Välj <b>File - Open Folder</b> och skapa en ny mapp på lämpligt
+                            ställe (ett
+                            ställe som du kan hitta tillbaka till senare...).<br />Markera och välj mappen.
+                        </li>
+                        <li>Skapa i den mappen en <b>index.html</b>-fil.<br />Klicka på Ny-fil-ikonen (1),
+                            skriv sedan -
+                            med
+                            små bokstäver - <strong>index.html</strong>, och tryck <strong>Enter</strong>.<br /><img
+                                src="images/new-index-file.PNG" width="200" height="143" /></li>
+                        <li>Skriv en kort text på index-sidan och starta Live Server-tillägget.<br /><img
+                                src="images/hello-world.PNG" width="400" height="133" /><br />Starta antingen genom
+                            att
+                            högerklicka på index-filen eller genom att
+                            klicka på Go Live-ikonen <img src="images/go-live.PNG" width="40" height="15" />längst
+                            ner i fönstret
+                            (Ibland syns inte den ikonen har jag märkt...).
+                        </li>
+                        <li>Nu bör en webbläsare öppnas och index-sidan visas. Inspektera sidan genom att högerklicka
+                            och välja
+                            <strong>Inspektera</strong> (<strong>Ctrl+Shift+I</strong>).<br /><img
+                                src="images/inspect.PNG" width="500" height="181" />
+                        </li>
+                        <li>Observera att <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> och
+                            <code>&lt;body&gt;</code>-elementen
+                            har skapats
+                            automatiskt. Detta "trick" ska vi dock inte utnyttja i fortsättningen. Det är lite jobbigare
+                            - men
+                            mycket
+                            bättre - att skriva ut elementen explicit i koden. Skriv till de saknade elementen. Skriv
+                            även till
+                            ett <code>&lt;title&gt;</code>-element
+                            enligt
+                            nedan.<br /><img src="images/hello-world-2.PNG" width="500" height="272" /><br /><br />En
+                            fördel är
+                            att Live-server-tillägget nu fungerar bättre. Prova
+                            att göra en liten ändring i din koda, spara den, och se att sidan uppdateras direkt!
+                        </li>
+                        <li>Ändra innehållet i <code>&lt;body&gt;</code>-element
+                            på detta vis:<br /><img src="images/p-id-class.PNG" width="300"
+                                height="128" /><br />Kontrollera att
+                            texten visas. Nu ska vi styla till den!</li>
+                        <li>Skapa en <strong>style.css</strong>-fil på samma sätt som du skapade index-filen. Skriv i
+                            den CSS-regeln
+                            nedan:<br /><img src="images/style1.PNG" width="500" height="124" /><br />Regeln säger
+                            att alla <code>&lt;p&gt;</code>-element ska ges
+                            en annan
+                            bakgrundsfärg.<br /><br />Men... än har inget hänt på sidan, eller hur? Anledningen är att
+                            vi "glömt"
+                            att
+                            koppla style-filen till index-filen!</li>
+                        <li>Lägg till ett <code>&lt;link&gt;</code>-element
+                            i
+                            <code>&lt;head&gt;</code>-elementet
+                            enligt
+                            nedan:<br /><img src="images/link.PNG" width="400" height="100" /><br />Nu bör sidan se
+                            ut så
+                            här:<br /><img src="images/page-css1.PNG" width="300" height="142" />
+                        </li>
+                        <li>Lägg till två nya regler enligt nedan:<br /><img src="images/style2.PNG" width="400"
+                                height="241" /><br /><br />Och då bör sidan ändras så här:<br /><img
+                                src="images/page-css2.PNG" width="300" height="145" /><br /><br />Ett id-värde ska
+                            vara unikt på sidan. Bara ett element kan ha
+                            id="a"
+                            alltså. Ett class-värde kan dock användas av flera element.</li>
+                        <li>Lägg till en <strong>script.js</strong>-fil på samma sätt som förut. Skriv i den koden
+                            nedan:<br /><img src="images/script.PNG" width="500" height="126" /><br /><br />Men
+                            återigen... så måste vi länka
+                            ihop filerna för att det ska funka!
+                        </li>
+                        <li>Lägg till ett <code>&lt;script&gt;</code>-element i
+                            <code>&lt;head&gt;</code>-elementet
+                            enligt
+                            nedan.<br /><img src="images/script-script.PNG" width="300"
+                                height="86" /><br /> <br />Testa! Det är
+                            lätt att skriva fel så kolla igenom
+                            noga. <br /><br />Men om du får alla tecken rätt ska något liknande detta visas:<br /><img
+                                src="images/page-js.PNG" width="300" height="134" /><br />Siffrorna i första stycket
+                            visar
+                            antalet millisekunder sedan 1 januari 1970 (<a href="https://sv.wikipedia.org/wiki/Unixtid"
+                                target="_blank">datorernas tideräknings början</a>...).
+                            Uppdatera (<strong>Ctrl+R</strong>) sidan så får du ett nytt värde.
+                        </li>
+                        <li>Installera filöverföringsprogrammet <a href="https://winscp.net/eng/index.php"
+                                target="_blank">WinSCP</a>.<br />(Klicka på <strong>Download</strong>-knappen. Vänta.
+                            Dubbelklicka
+                            sedan
+                            på den nedladdade <strong>exe</strong>-filen.)</li>
+                        <li>Skapa en ny session med dina användaruppgifter på <strong>skelamp</strong> (som du fått av
+                            din
+                            lärare):<br />Klicka på <strong>New Site</strong> (1)<br />Fyll i uppgifterna i textrutorna
+                            (2). Använd
+                            ditt
+                            användarnamn och lösenord!<br />Klicka på <strong>Save<br /></strong>Bocka för <strong>Save
+                                password</strong> (4)<br /><strong>OK</strong> (5) och <strong>Login</strong>
+                            (6)<br /><img src="images/win-scp.PNG" width="700" height="292" /> </li>
+                        <li>På vänstra sidan ser du filerna på din dator. På högra sidan de filer som finns på din
+                            användare på
+                            skelamp.
+                            Gå in i w-mappen och skapa där en ny mapp med namnet <strong>wu1</strong>:<br /><img
+                                src="images/wu1-folder.PNG" width="400" height="363" /></li>
+                        <li>Dra och släpp din <strong>site1</strong>-mapp i <strong>w/codescan/wu1</strong>-mappen på
+                            skelamp.<br />På vänstra
+                            sidan ser du filerna på din dator. På högra sidan de filer som finns på din användare på
+                            skelamp. Leta
+                            först
+                            rätt på stället där din <strong>site1</strong>-mapp finns.<br /><img
+                                src="images/site-wu1.PNG" width="500" /><br /> </li>
+                        <li>Gå till en webbläsare och testa att webbplatsen fungerar.<br />Gå till
+                            <strong>skelamp.se</strong><br />Klicka på den server där din användare ligger <br>
+                            och sedan på <b>codescan</b>-mappen bredvid ditt användarnamn:<br>
+                            <img src="images/brage.PNG" width="300" height="424" /><br /> 
+
+                            <p>Första gången måste du fylla i dina användaruppgifter (spara dem sedan i
+                                webbläsaren):<br>
+                                <img src="images/login-nanna.PNG" width="300" alt="">
+                            </p>
+                            <p>Klicka dig vidare till <strong>wu1</strong> och <strong>site1</strong>. Om allt fungerar
+                                - så att du
+                                kan se sidan visas -  så är du nu klar!</p>
+                        </li>
+                        <li>Extrauppgift: Gör en webbplats <strong>site1extra</strong> där du mixtrar på med egna
+                            förändringar. Du
+                            är
+                            fri att hitta på vad du vill!</li>
+                    </ol>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Text</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <details>
+                    <summary>w3scools</summary>
+                    <div>
+                        <p><a href='https://www.w3schools.com/html/html_headings.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_headings.asp</a></p>
+                        <p><a href='https://www.w3schools.com/html/html_paragraphs.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_paragraphs.asp</a></p>
+                        <p><a href='https://www.w3schools.com/html/html_formatting.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_formatting.asp</a></p>
+                        <p><a href='https://www.w3schools.com/html/html_quotation_elements.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_quotation_elements.asp</a></p>
+                        <p><a href='https://www.w3schools.com/html/html_links.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_links.asp</a></p>
+                        <p><a href='https://www.w3schools.com/html/html_tables.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_tables.asp</a></p>
+                        <p><a href='https://www.w3schools.com/html/html_lists.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_lists.asp</a></p>
+                        <p><a href='https://www.w3schools.com/html/html_blocks.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_blocks.asp</a></p>
+                        <p><a href='https://www.w3schools.com/html/html_entities.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_entities.asp</a></p>
+                        <p><a href='https://www.w3schools.com/html/html_symbols.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_symbols.asp</a></p>
+                        <p><a href='https://www.w3schools.com/html/html_emojis.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_emojis.asp</a></p>
+                        <p><a href='https://www.w3schools.com/html/html_charset.asp'
+                                target='_blank'>https://www.w3schools.com/html/html_charset.asp</a></p>
+                    </div>
+                </details>
+                <summary>MDN</summary>
+                <div>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals"
+                            target="_blank">HTML text fundamentals // MDN</a></p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks"
+                            target="_blank">Creating hyperlinks // MDN</a></p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting"
+                            target="_blank">Advanced text formatting // MDN</a></p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics" target="_blank">HTML
+                            table
+                            basics // MDN</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Kuriosa</summary>
+                <div>
+                    <p><a href="https://www.quora.com/Why-are-they-called-anchor-tags" target="_blank">Why are they
+                            called anchor tags? // Quora</a></p>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+            <p>Skapa en <b>codescan/wu1/text</b>-mapp på din användare på <a href="http://skelamp.se/"
+                    target="_blank">skelamp</a>.</p>
+
+            <details>
+                <summary>Text-1</summary>
+                <div>
+                    <ol>
+                        <li>Skapa en mapp <strong>text-1</strong> och öppna upp den inuti <em>VS
+                                Code</em>.</li>
+                        <li>Skapa dessa filer inuti den mappen:<br />
+                            <ul>
+                                <li><strong>index.html</strong></li>
+                                <li><strong>text.html</strong></li>
+                                <li><strong>lists.html</strong></li>
+                                <li><strong>links.html</strong></li>
+                            </ul>
+                        </li>
+                        <li>Välj filen <strong>text.html</strong> och skriv i den ett stycke <a
+                                href="https://sv.wikipedia.org/wiki/Lorem_ipsum" target="_blank">Lorem
+                                ipsum</a>-text. Alltså
+                            exempeltext som inte behöver betyda något men som används för att man ska få ett hum om
+                            hur sidan ska se ut.
+                            Du kan skriva texten själv eller kopiera in den. Texten ska stå i &lt;p&gt;-element.
+                            Alltså: <code>&lt;p&gt;Texten&lt;/p&gt;</code>.<br /><br />Kopiera
+                            stycket och klistra in det 20-30 gånger så att du får en lååång sida.<br /><br />Lägg in
+                            &lt;h1&gt;-,
+                            &lt;h2&gt;- och &lt;h3&gt;-element <br /><br />Läs:<br />
+                            <div><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements"
+                                    target="_blank">The HTML Section Heading elements</a></div>
+                            <div><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p"
+                                    target="_blank">The Paragraph element</a></div>
+                        </li>
+                        <li>Välj filen <strong>lists.html</strong>. Skapa en<ol>
+                                <li>En ordnad lista med &lt;ol&gt;-elementet</li>
+                                <li>En oordnad lista med &lt;ul&gt;-elementet</li>
+                                <li>En nästlad lista. Alltså en lista inuti en lista.</li>
+                                <li>En eller flera lite mer experimentella listor där du provar att byta symboler
+                                    med
+                                    mera.<br /><br />Läs:
+                                    <div><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol"
+                                            target="_blank">xThe Ordered List element</a>
+                                        <div><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul"
+                                                target="_blank">The
+                                                Unordered List element</a></div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>Välj nu filen <strong>links.html</strong>.
+                            <ul>
+                                <li>Skapa i den minst fem länkar till olika webbplatser. Länktexten ska vara
+                                    beskrivande - alltså ska
+                                    man kunna förstå var man hamnar.</li>
+                                <li>Gör en länk som länkar inne i dokumentet på detta vis:<ol>
+                                        <li>Gör en rubrik (&lt;h1&gt;-element) högst upp på sidan med id="rubrik". 
+                                        </li>
+                                        <li>Fyll på Lorem ipsum-stycken så att sidan blir längre att den ryms på
+                                            skärmen.</li>
+                                        <li>Skapa en länk till rubriken (Tips href="#rubrik")<br /><br />Läs:<br />
+                                            <div><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a"
+                                                    target="_blank">The Anchor element</a></div>
+                                        </li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Välj nu till sist <strong>index.html</strong>. Skapa i den en lista med länkar. Länkarna
+                            ska leda till de
+                            andra tre sidorna. Lägg också till en länk med texten <strong>Hem</strong> på dessa tre
+                            sidor som länkar
+                            till index-sidan.</li>
+                        <li>Ladda upp mappen till <b>codescan/wu1/text</b>-mappen på din användare på <a
+                                href="http://skelamp.se/" target="_blank">skelamp</a>.</li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>Tabeller</summary>
+                <div>
+                    <ol>
+                        <li>Skapa en mapp <strong>tables</strong> och öppna den inuti <em>VS Code</em>.</li>
+                        <li>Gör på index-sidan, med hjälp av elementen <code>&lt;table&gt;</code>,
+                            <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code> och <code>&lt;td&gt;</code> en
+                            multiplikationstabell
+                            som
+                            liknar den nedan:<br /><img src="images/multtable.PNG" width="300"
+                                height="176" /><br /><br />Du kan
+                            använda
+                            denna kod i stilmallen:
+                            <pre>
+                    th {
+                        background-color: darkgray;
+                    }
+                    
+                    td {
+                        background-color: lightgray;
+                    }
+                    </pre>
+
+                        </li>
+                        <li>Gör på samma sida också en tabell där du använder attributen <code>rowspan</code> och
+                            <code>colspan</code>.
+
+                            <p>
+                                <a href="https://codepen.io/gykmstl/pen/mdPpoWB?editors=1100" target="_blank">Exempel
+                                    colspan och
+                                    rowspan</a>
+                            </p>
+                        </li>
+
+                        <li>Ladda upp mappen till <b>codescan/wu1/text</b>-mappen på din användare på <a
+                                href="http://skelamp.se/" target="_blank">skelamp</a>.</li>
+                    </ol>
+                    <p>Läs mer här: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table"
+                            target="_blank">The Table element</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Text-2</summary>
+                <div>
+                    <ol>
+                        <li>Skapa en mapp <strong>text-2</strong> och öppna upp den inuti <em>VS
+                                Code</em>.</li>
+                        <li>Skapa en index-fil i den mappen.</li>
+                        <li>Skapa i den grundstrukturen för en webbsida (&lt;html&gt;-, &lt;head&gt;- och
+                            &lt;body&gt;-element).</li>
+                        <li>Lägg in koden nedan i body-elementet och visa sidan i en webbläsare (<em>Go
+                                Live</em>).<br /><br />
+                            <code>
+                                <pre>
+&lt;h1&gt;br&lt;/h1&gt;
+&lt;p&gt;
+    Med ett br-element så kan man göra radbyten.
+    Jag vill ha radbyte precis NU!&lt;br&gt;
+    Och så var jag på ny rad!
+
+    &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br"&gt;br&lt;/a&gt;
+&lt;/p&gt;
+                                </pre>
+                            </code>
+
+                            Det borde se ut ungefär så här:<br /><img src="images/br.PNG" width="500" height="175" />
+                        </li>
+                        <li>Skapa sedan motsvarande kod för elementen i listan nedan. För varje element så ska du
+                            alltså<br />
+                            <ul>
+                                <li>skapa en rubrik (&lt;h1&gt;:a) med elementets namn</li>
+                                <li>ge en kort beskrivning av av vad elementet används till</li>
+                                <li>använda elementet</li>
+                                <li>länka till elementets sida på MDN (eller på annan motsvarande webbplats).</li>
+                            </ul>
+                        </li>
+                        <h3>Elementlista</h3>
+                        <ul>
+                            <li><code>br</code><span style="font-family: arial, helvetica, sans-serif;">(använd
+                                    exempelkoden om du vill)</span></li>
+                            <li><code>hr</code></li>
+                            <li><code>b</code></li>
+                            <li><code>i</code></li>
+                            <li><code>sup</code></li>
+                            <li><code>sub</code></li>
+                            <li><code>kbd</code></li>
+                            <li><code>var</code></li>
+                            <li><code>code</code></li>
+                            <li><code>pre</code></li>
+                            <li><code>cite</code></li>
+                            <li><code>q</code></li>
+                            <li><code>blockquote</code></li>
+                            <li><br /> </li>
+                        </ul>
+                        <li>Skapa överst på sidan en punktlista liknande den ovan. Då man klickar på ett element ska man
+                            länkas till
+                            rätt rubrik i ditt dokument.</li>
+
+                        <li>Ladda upp mappen till <b>codescan/wu1/text</b>-mappen på din användare på <a
+                                href="http://skelamp.se/" target="_blank">skelamp</a>.</li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>HTML-entiteter</summary>
+                <div>
+                    <ol>
+                        <li>Skapa en mapp <strong>entities</strong> och öppna upp den inuti <em>VS
+                                Code</em>.</li>
+
+                        <li>Visa på index-sidan strukturen för en webbsida:<br />
+                            <div>
+                                <div><code>&lt;html&gt;</code>
+                                </div>
+                                <br />
+                                <div><code>&lt;head&gt;</code>
+                                </div>
+                                <div><code>&lt;/head&gt;</code>
+                                </div>
+                                <br />
+                                <div><code>&lt;body&gt;</code>
+                                </div>
+                                <div><code>&lt;/body&gt;</code>
+                                </div>
+                                <br />
+                                <div><code>&lt;/html&gt;</code>
+                                </div>
+                                <div></div>
+                            </div>
+                            Tips: För att visa vinkelhakarna (&lt; &gt;) så måste du använda HTML-entiteter.<br /> 
+                        </li>
+                        <li>De fem första bokstäverna i det grekiska alfabetet.<br /><br />Tips: Använd
+                            HTML-entiteter.<br /> </li>
+                        <li>Gör en låda  - eller annan figur - med hjälp av de symboler vars entitetsnamn börjar med
+                            box.<br /><br /><img src="images/box.PNG" width="800" height="377" /></li>
+
+                        <li>Ladda upp mappen till <b>codescan/wu1/text</b>-mappen på din användare på <a
+                                href="http://skelamp.se/" target="_blank">skelamp</a>.</li>
+
+                    </ol>
+                    <p>Läs om HTML-entiteter här:<br /><a href="https://www.w3schools.com/html/html_entities.asp"
+                            target="_blank">https://www.w3schools.com/html/html_entities.asp</a></p>
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Glossary/Entity"
+                            target="_blank">https://developer.mozilla.org/en-US/docs/Glossary/Entity</a></p>
+                    <p><a href="https://dev.w3.org/html5/html-author/charref"
+                            target="_blank">https://dev.w3.org/html5/html-author/charref</a></p>
+                    <p><a href="https://www.freeformatter.com/html-entities.html"
+                            target="_blank">https://www.freeformatter.com/html-entities.html</a></p>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Ljud och bild</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>w3scools</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/html/html_images.asp'
+                            target='_blank'>https://www.w3schools.com/html/html_images.asp</a></p>
+                    <p><a href='https://www.w3schools.com/html/html_media.asp'
+                            target='_blank'>https://www.w3schools.com/html/html_media.asp</a></p>
+                    <p><a href='https://www.w3schools.com/html/html5_video.asp'
+                            target='_blank'>https://www.w3schools.com/html/html5_video.asp</a></p>
+                    <p><a href='https://www.w3schools.com/html/html5_audio.asp'
+                            target='_blank'>https://www.w3schools.com/html/html5_audio.asp</a></p>
+                    <p><a href='https://www.w3schools.com/html/html_youtube.asp'
+                            target='_blank'>https://www.w3schools.com/html/html_youtube.asp</a></p>
+                    <p><a href='https://www.w3schools.com/tags/ref_av_dom.asp'
+                            target='_blank'>https://www.w3schools.com/tags/ref_av_dom.asp</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>MDN</summary>
+                <div>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML'
+                            target='_blank'>https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML</a>
+                    </p>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content'
+                            target='_blank'>https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content</a>
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>web.dev</summary>
+                <div>
+                    <p><a href="https://web.dev/media-file-basics/"
+                            target="_blank">https://web.dev/media-file-basics/</a></p>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+            <p>Skapa en <b>codescan/wu1/ljud-bild</b>-mapp på din användare på <a href="http://skelamp.se/"
+                    target="_blank">skelamp</a>.</p>
+
+            <details>
+                <summary>Topplista med bilder</summary>
+                <div>
+
+                    <p>Skapa en mapp <strong>img-list</strong>. Skapa i den en sida med en topp-10-lista i något ämne.
+                        Det
+                        kan vara
+                        spel, artister, politiker, vad-som-helst.</p>
+                    <p>Det ska dock finnas en bild som illustrerar varje position.</p>
+                    <p>Ladda upp mappen till <b>codescan/wu1/ljud-bild</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Tabell med bilder</summary>
+                <div>
+                    <p>Skapa en mapp <strong>img-table</strong>. Skapa i den en sida med ett schackbräde med pjäser i
+                        dess
+                        startposition.</p>
+                    <p><a href="../chess.zip">Bilder på pjäser</a></p>
+                    <p>Du får - om du vill - använda andra bilder än riktiga pjäser...</p>
+                    <!-- <p>Du får - om du vill - utgå från denna kod:<br /><a href="https://codepen.io/gykmstl/pen/wvGxRze?editors=1100" target="_blank">https://codepen.io/gykmstl/pen/wvGxRze?editors=1100</a></p> -->
+                    <p>Ladda upp mappen till <b>codescan/wu1/ljud-bild</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+
+                </div>
+            </details>
+            <details>
+                <summary>Bildformat</summary>
+                <div>
+                    <p>Skapa en mapp <strong>img-formats</strong>. Skapa i den en sida som visar
+                        bilder i
+                        olika format och beskriver dessa format.</p>
+                    <p>Varje bildformat ska ha en rubrik (&lt;h1&gt;:a), en bild i det formatet och en kort
+                        beskrivning av formatet. Gärna i punktform och med egna ord. Använd ord som du själv
+                        förstår!</p>
+                    <p>Åtminstone dessa format ska beskrivas - gärna fler:</p>
+                    <ul>
+                        <li>JPEG</li>
+                        <li>PNG</li>
+                        <li>GIF</li>
+                        <li>WEBP</li>
+                        <li>BMP</li>
+                        <li>SVG</li>
+                    </ul>
+                    <p>Lästips - men googla gärna vidare på egen hand:</p>
+                    <p><a href="https://webbson.se/allt-om-bildformat-for-webben-jpeg-png-gif-svg/"
+                            target="_blank">https://webbson.se/allt-om-bildformat-for-webben-jpeg-png-gif-svg/</a></p>
+                    <p><a href="https://www.sitepoint.com/gif-png-jpg-which-one-to-use/"
+                            target="_blank">https://www.sitepoint.com/gif-png-jpg-which-one-to-use/</a></p>
+                    <p><a href="https://blog.hubspot.com/insiders/different-types-of-image-files"
+                            target="_blank">https://blog.hubspot.com/insiders/different-types-of-image-files</a></p>
+                    <p><a href="https://blog.filestack.com/thoughts-and-knowledge/complete-image-file-extension-list/"
+                            target="_blank">https://blog.filestack.com/thoughts-and-knowledge/complete-image-file-extension-list/</a>
+                    </p>
+                    <p></p>
+                    <p>Ladda upp mappen till <b>codescan/wu1/ljud-bild</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Video-tutorials</summary>
+                <div>
+                    <p>Skapa en mapp <b>video-tutorials</b>. Skapa i den en sida som visar egna skärminspelningar.</p>
+                    <h3>Verktyg för skärminspelning</h3>
+                    <ul>
+                        <li><i>Windows 10 Game Bar</i><br />Enklast, men begränsat till ett fönster per
+                            inspelning<br />Inbyggt
+                            i Windows. Starta med <b>Win+G</b>.</li>
+                        <li><i>Screencast-o-matic</i><br />Gå till <a href="https://screencast-o-matic.com/"
+                                target="_blank">https://screencast-o-matic.com/</a></li>
+                        <li><i>OBS Studio</i><br />Mest avancerat<br />Ladda ner från <a
+                                href="https://obsproject.com/sv" target="_blank">https://obsproject.com/sv</a></li>
+                    </ul>
+                    <h3>Instruktion</h3>
+                    <ol>
+                        <li>Skapa en skärminspelning där du kort (1-2 minuter) berättar det du tycker man behöver veta
+                            om <b>img</b>-elementet.
+                            Spara videon i <b>mp4</b>-formatet.<br /> </li>
+                        <li>Läs på om <b>video</b>-elementet.
+                            Alltså hur man infogar en video på sin webbsida.<br />Lästips:<br /><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video"
+                                target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video</a><br /><a
+                                href="https://www.w3schools.com/tags/tag_video.asp"
+                                target="_blank">https://www.w3schools.com/tags/tag_video.asp</a><br /><br /></li>
+                        <li>Lägg in din skärminspelning på sidan. Skriv en rubrik ovanför och lite förklarande text om
+                            videon under.</li>
+                        <li>Gör och lägg in en skärminspelning till på samma sida, där du denna gång berättar lite om
+                            <b>video</b>-elementet.
+                        </li>
+                    </ol>
+
+                    <p>Ladda upp mappen till <b>codescan/wu1/ljud-bild</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+                </div>
+            </details>
+            <details>
+                <summary>YouTube-videos</summary>
+                <div>
+                    <p>Skapa en mapp <b>youtube-videos</b>. Skapa i den en sida som visar ett par handledningsfilmer
+                        hämtade från <a href="https://www.youtube.com/" target="_blank">YouTube</a>.</p>
+                    <h3>Instruktion</h3>
+                    <ol>
+                        <li>Hitta en film som - på ett någorlunda bra sätt - beskriver
+                            <code>&lt;img&gt;</code>-elementet. Du kanske måste titta igenom några stycken.<br /> 
+                        </li>
+                        <li>Hämta kod som gör så att filmen går att köra inbäddad på din sida.
+                            <ul>
+                                <li>Klicka på Dela: <img src="images/dela.PNG" width="250" height="70" /></li>
+                                <li>Därefter på Bädda in: <img src="images/bedin.PNG" width="250" height="120" /></li>
+                                <li>Kopiera koden: <img src="images/copy.PNG" width="220" height="60" /><br /><br />
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Klistra in koden på din sida. Komplettera med en rubrik ovanför och lite förklarande text
+                            under.<br /> </li>
+                        <li>Gör motsvarande (punkt 1-2-3) för <code>&lt;video&gt;</code>-elementet.<br /><br /></li>
+                        <li>I koden som du kopierar så används elementet <code>&lt;iframe&gt;</code>. Läs lite om
+                            elementet, se länkar nedan, och skriv sedan en kort sammanfattning på din sida. Med en
+                            rubrik före.<br /><br />
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"
+                                target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe</a><br>
+                            <a href="https://www.w3schools.com/tags/tag_iframe.asp"
+                                target="_blank">https://www.w3schools.com/tags/tag_iframe.asp</a>
+                        </li>
+                    </ol>
+
+                    <p>Ladda upp mappen till <b>codescan/wu1/ljud-bild</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Ljudklipp</summary>
+                <div>
+                    <p>Skapa en mapp <b>audio-clips</b>. Skapa i den en indexsida som med text och ljud beskriver några
+                        element och attribut. Samma text som skrivs ska också spelas in som ett ljudklipp och kunna
+                        höras på sidan.</p>
+                    <ol>
+                        <li>Skapa denna struktur på sidan med hjälp av <code>&lt;h1&gt;</code>- ,
+                            <code>&lt;h2&gt;</code>- och <code>&lt;p&gt;</code>-element:
+                            <div style="border: 1px solid black">
+                                <h1>Element</h1>
+                                <h2>img</h2>
+                                Används för att lägga in en bild.
+                                <h2>video</h2>
+                                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                                <h2>audio</h2>
+                                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                                <h2>source</h2>
+                                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                                <h1>Attribut</h1>
+                                <h2>src</h2>
+                                Anger sökvägen till en mediafil. Finns i elementen img, video, audio och source.
+                                <h2>alt</h2>
+                                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                                <h2>width, height</h2>
+                                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                                <h2>controls</h2>
+                                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                                <h2>autoplay</h2>
+                                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                                <h2>loop</h2>
+                                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                                <h2>preload</h2>
+                                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                                <h2>poster</h2>
+                                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                                <h2>type</h2>
+                                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                            </div>
+                        </li>
+                        <li>Ersätt "Lorem ipsum"-texterna med korta beskrivningar. Använd egna ord så att du förstår vad
+                            du skriver. Det räcker med en mening eller två. För attributen så ska det anges för vilka av
+                            elementen som de går att använda.</li>
+                        <li>Gå till <a href="https://online-voice-recorder.com/" target="_blank">Online Voice
+                                Recorder</a> och spela in de texter du skrivit för element och attribut. Gör en ljudfil
+                            i formatet <em>mp3</em> för varje beskrivning.<br />Tips 1: Namnge inspelningarna på något
+                            enkelt sätt, förslagsvis <b>img.mp3</b>, <b>video.mp3</b> och så vidare.
+                            Då blir de lättare att hitta sedan.<br />Tips 2: Redigera bort tystnaden i början och slutet
+                            av inspelningen. Dra i handtagen vid sidan om inspelningen.<br /><br />Du får använda något
+                            annat inspelningsprogram om du hellre vill det.</li>
+                        <li>Lägg in <code>&lt;audio&gt;</code>-element till alla element och attribut, så att den
+                            skrivna texten kan läsas upp.</li>
+                    </ol>
+
+                    <p>Ladda upp mappen till <b>codescan/wu1/ljud-bild</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Sektionering</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>w3scools</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/html/html5_semantic_elements.asp' target='_blank'>HTML
+                            Semantic Elements</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>MDN</summary>
+                <div>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html'
+                            target='_blank'>Semantics in HTML</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>freeCodeCamp</summary>
+                <div>
+                    <p><a href='https://www.freecodecamp.org/news/semantic-html5-elements/' target='_blank'>Semantic
+                            HTML5 Elements Explained</a></p>
+                </div>
+            </details>
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <p>Skapa en <b>codescan/wu1/sectioning</b>-mapp på din användare på <a href="http://skelamp.se/"
+                    target="_blank">skelamp</a>.</p>
+
+            <details>
+                <summary>Sektionering</summary>
+                <div>
+                    <p>Skapa en mapp <b>sectioning</b>. Skapa i den en sida med beskrivning av de sektioneringselement
+                        som tillkommit på senare år (i det som ibland kallas HTML5).</p>
+                    <ol>
+                        <li>Skapa denna struktur på sidan med hjälp av <code>&lt;h1&gt;</code>-
+                            , <code>&lt;h2&gt;</code>- och <code>&lt;p&gt;</code>-element:<br /> 
+                            <h1>Sektioneringselement</h1>
+                            <h2>nav</h2>
+                            Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                            <h2>header</h2>
+                            Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                            <h2>main</h2>
+                            Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                            <h2>article</h2>
+                            Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                            <h2>section</h2>
+                            Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                            <h2>aside</h2>
+                            Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+                            <h2>footer</h2>
+                            Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.<br />
+                        </li>
+                        <li>Ersätt "Lorem ipsum"-texterna med korta beskrivningar. Använd egna ord så att du förstår vad
+                            du skriver. Det räcker med en mening eller två. <br /><br />Lästips:<br /><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines#Section_Elements_in_HTML5"
+                                target="_blank">https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines#Section_Elements_in_HTML5</a><br /><a
+                                href="http://html5.silberman.nu/tags.html"
+                                target="_blank">http://html5.silberman.nu/tags.html</a><br /><a
+                                href="https://www.w3schools.com/html/html5_semantic_elements.asp"
+                                target="_blank">https://www.w3schools.com/html/html5_semantic_elements.asp</a><br /><br />Googla
+                            gärna vidare på egen hand om du inte hittat tillräckligt bra beskrivningar av
+                            elementen.</li>
+                    </ol>
+
+                    <p>Ladda upp mappen till <b>codescan/wu1/sectioning</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Blombloggen</summary>
+                <div>
+                    <p>Skapa en mapp <strong>my-blog</strong>. Skapa i den en blogg om blommor! (Du får, om du väldigt
+                        gärna vill, skriva om något annat. Men kom ihåg att det är inte innehållet som är det viktiga
+                        just nu så lägg inte ner så mycket tid på att hitta på vettiga/bra texter.)</p>
+                    <ol>
+                        <li>Utgå ifrån <a href="https://stackblitz.com/edit/web-platform-qcnszu?file=index.html"
+                                target="_blank">denna kod</a>.
+                            <!-- <iframe src="https://stackblitz.com/edit/web-platform-qcnszu?embed=1&file=index.html&hideExplorer=1&hideNavigation=1" style="height: 30em"></iframe> -->
+                        </li>
+                        <li>Gör så att länkarna i <code>&lt;nav&gt;</code>-element leder dig till tre andra sidor på din
+                            blogg. Se nedan för innehåll.</li>
+                        <ul>
+                            <li>Sida ett ska visa minst två bilder på några blommor (ladda ner från nätet).</li>
+                            <li>Sida två ska kunna visa minst två filmer om blommor (bädda in från <em>Youtube</em>).
+                            </li>
+                            <li>Sida tre ska innehålla tre länkar till andra blomsidor. (Googla)<br /><br /></li>
+                        </ul>
+                        <li>Inne i <code>&lt;article&gt;</code>-elementen
+                            så ska du ändra titel och text till något "blommigt".<br /> </li>
+                        <li>Lägg till en lämplig bild inne i varje blogginlägg. Använd denna gång också elementen
+                            <code>&lt;figure&gt;</code> och <code>&lt;figcaption&gt;</code> för
+                            detta.<br /><br />
+                        </li>
+                        <li>Märk varje blogginlägg med en tidpunkt då det lades upp. Hitta på dessa tidpunkter, men gör
+                            så att det nyaste kommer överst och det äldsta sist. Använd för detta
+                            <code>&lt;time&gt;</code>-elementet
+                            med <code>datetime</code>-attributet
+                            angivet.<br /> 
+                        </li>
+                        <li>Lägg till text inne i <code>&lt;aside&gt;</code>-elementet
+                            som berättar lite om dig själv och hur ditt starka blomintresse väcktes. (Det är fritt fram
+                            att hitta på...)<br /> </li>
+                        <li>Lägg till dina kontaktuppgifter i <code>&lt;footer&gt;</code>-elementet. (Det
+                            är fritt fram att hitta på även här.)<br /> </li>
+                    </ol>
+                    <p>Ladda upp mappen till <b>codescan/wu1/sectioning</b>-mappen på din användare på <a
+                            href="http://skelamp.se/" target="_blank">skelamp</a>.</p>
+
+                    <hr>
+
+                    <h3>Extra - om du har tid och lust och vill fördjupa dig i JavaScript</h3>
+
+                    <p>Lägg till en knapp på sidan som, då den klickas, kan lägga till ett nytt blogginlägg!</p>
+                    <p>Rubriken och innehållet ska slumpas fram. Även kommentarerna. Tidpunkten kan tas från datorns
+                        klocka.</p>
+
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>CSS-grunder</h1>
+
+        <p>Skapa en <b>codescan/wu1/css</b>-mapp på din användare på <a href="http://skelamp.se/"
+                target="_blank">skelamp</a>.</p>
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>Webbling</summary>
+                <div>
+                    <p><a href='https://webbling.se/index.php/CSS-grunder' target='_blank'>CSS-grunder</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>MDN</summary>
+                <div>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors' target='_blank'>Type
+                            selectors</a></p>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors' target='_blank'>Class
+                            selectors</a></p>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors' target='_blank'>ID
+                            selectors</a></p>
+                </div>
+            </details>
+
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Selektorer-1</summary>
+                <div>
+                    <p>Skapa en mapp <b>selectors-1</b></p>
+                    <ol>
+                        <li>Skapa en sida <strong>id.html</strong> och koppla den till en stilmall
+                            <strong>id.css</strong>. Använd - och beskriv med ord hur du använt - id-selektorn på denna
+                            sida. Det kan till exempel se ut så här:<br />
+                            <div style="background: beige; padding: 2em;">
+                                <h1>Id-selektorn</h1>
+                                <span style="color: #ff0000;">Detta stycke har attributet
+                                    <code>id='a'</code>.
+                                    Starttaggen ser ut så här: <code>&lt;p
+                                        id='a'&gt;</code>.</span><br /><br />I min css-fil har jag denna
+                                kod:<br /><code>#a {</code><br /><code>  color:
+                                    red;<br />
+                                    }</code><br /><br />Tecknet
+                                # används för att referera till det element som har det angivna id-värdet. Det är alltså
+                                därför det första stycket skrivs med röd färg.
+                            </div>
+                            <br /><br />
+                        </li>
+                        <li>Skapa en sida <strong>class.html</strong> och koppla den till en stilmall
+                            <strong>class.css</strong>. Gör motsvarande som i uppgift 1. Visa - och beskriv - att denna
+                            selektor kan påverka flera element.<br /><br />
+                        </li>
+                        <li>Skapa en sida <strong>element.html</strong> och koppla den till en
+                            stilmall <strong>element.css</strong>. Gör motsvarande som i uppgift 1. Visa - och beskriv -
+                            att denna selektor kan påverka flera element.</li>
+                        <li>Skapa en <b>index.html</b>-sida som kan länka till de tre sidorna ovan. Gör också på dessa
+                            sidor länkar tillbaka till index-sidan.</li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>Boxmodellen</summary>
+                <div>
+                    <p>Skapa en mapp <strong>boxes</strong> med en <strong>index.html</strong>-fil</p>
+                    <ol>
+                        <li>Gå till sidan <a href="https://www.w3schools.com/css/default.asp"
+                                target="_blank">https://www.w3schools.com/css/default.asp<br /> <br /></a>Läs igenom -
+                            och testa - det som beskrivs fram till och med "CSS Box Model":<br /><img
+                                src="images/css-boxes.PNG" width="230" height="431" /><br /><br />Läs översiktligt det
+                            du redan kan - och noggrannare det som är nytt för dig.<br /><br /><br /></li>
+                        <li>Skapa en egen handledning - på svenska, med egna ord - så att man där kan lära sig använda
+                            och förstå boxmodellen. <br /><br />Visa med exempel hur man kan skapa olika kantlinjer och
+                            hur man bestämma avståndet från innehållet till kantlinjen samt avståndet från kantlinjen
+                            till ett annat element. <br /><br />Förklara begreppen:<br />
+                            <ul>
+                                <li>content</li>
+                                <li>padding</li>
+                                <li>border</li>
+                                <li>margin<br /><br /></li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </details>
+
+
+            <details>
+                <summary>CSS-text</summary>
+                <div>
+                    <p>Skapa en mapp <strong>css-text</strong> med en <strong>index.html</strong>-fil</p>
+                    Skapa en egen handledning - på svenska, med egna ord - så att man där kan lära sig använda CSS för
+                    att ändra texter:<br />
+                    <p><a href='https://www.w3schools.com/css/css_text.asp' target='_blank'>CSS Text</a><br>
+                        <img src="images/css-text.PNG" width="225" height="235" />
+                    </p>
+
+                    <p><a href='https://www.w3schools.com/css/css_font.asp' target='_blank'>CSS Fonts</a><br>
+                        <img src="images/css-fonts.PNG" width="226" height="198" />
+                    </p>
+                </div>
+
+                <hr>
+
+                <h3>Extrauppgift/utmaning (om du har tid och lust)</h3>
+
+                <p>Gör så att man kan formatera en text direkt från sidan. Till exempel:</p>
+                <ul>
+                    <li>Ändra färg på en text.</li>
+                    <li>Ändra justering (vänster, mitt, höger) på en text.</li>
+                    <li>Bestämma om en text ska vara genomstruken eller inte.</li>
+                    <li>Bestämma om en text ska ha en skuggeffekt eller inte.</li>
+                </ul>
+
+                <p>Tips: Använd &lt;input&gt;-element och JavaScript.</p>
+            </details>
+
+            <details>
+                <summary>Selektorer-2</summary>
+                <div>
+                    <p>Skapa en mapp <strong>selectors-2</strong>.</p>
+                    <p>I denna uppgift ska du öva på kombinationsselektorer. Dessa väljer ut mål beroende på hur
+                        elementen förhåller sig till varandra. Läs mer här:<br /></p>
+
+                    <ul>
+                        <li><a href="https://www.w3schools.com/css/css_combinators.asp"
+                                target="_blank">https://www.w3schools.com/css/css_combinators.asp</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators"
+                                target="_blank">https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators</a>
+                        </li>
+                    </ul>
+                    <ol>
+                        <li>Skapa en sida <strong>index.html</strong>:
+                            <iframe src="code/?file=combinators.php" style="height: 40em;"></iframe>
+                            <span>Koppla den till en stilmall <strong>style.css</strong>:</span>
+                            <iframe src="code/?file=combinators-style.php" style="height: 12em;"></iframe>
+
+                            <br />Testa koden, det vill säga titta på sidan. Den första sektionen - som behandlar
+                            avkomlingsselektorn - är "klar". Den försöker beskriva vilka element som påverkas, och
+                            inte. Se till så att du förstår hur den fungerar innan du går vidare. <br /><br />
+                        </li>
+                        <li>Gör motsvarande för barnselektorn. Du kanske kan återanvända delar av koden från första
+                            sektionen, men kan också lägga till och ta bort element som du vill. Det som är viktigt är
+                            att man kan se skillnaden mellan denna selektor och den föregående.<br /> </li>
+                        <li>Gör motsvarande för syskonselektorn. Visa alltså vilka element som påverkas, och vilka som
+                            inte gör det. <br /><br /></li>
+                        <li>Gör motsvarande för angränsande-syskon-selektorn. Visa alltså vilka element som påverkas,
+                            och vilka som inte gör det. Visa speciellt skillnaden mellan denna och den föregående.</li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>CSS-lists</summary>
+                <div>
+                    <p>Skapa en mapp <strong>css-lists</strong> med en <strong>index.html</strong>-fil</p>
+                    <ol>
+                        <li>Gå till sidan <a href="https://www.w3schools.com/css/css_list.asp"
+                                target="_blank">https://www.w3schools.com/css/css_list.asp</a>. och läs om hur listor
+                            kan stilas till med CSS</li>
+                        <li>Skapa en sida som ser ut ungefär som denna (med en &lt;h1&gt;-, ett &lt;h2&gt;-, och ett
+                            &lt;ul&gt;-element):<br /><img src="images/list-css.PNG" width="300"
+                                height="270" /><br /><br /><br /></li>
+                        <li>Bygg vidare på sidan med fler, minst fem, underrubriker (&lt;h2&gt;-element) och listor.
+                            Skapa både punktlistor och numrerade listor med olika stilar.<br /><br /></li>
+                        <li>Gör - på samma sida - några underrubriker och listor där du visar psuedoklasserna <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child"
+                                target="_blank">first-child</a>, <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child"
+                                target="_blank">last-child</a> och <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child"
+                                target="_blank">nth-child</a>. </li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>CSS-tables</summary>
+                <div>
+                    <p>Skapa en mapp <strong>css-tables</strong> med en <strong>index.html</strong>-fil</p>
+                    <ol>
+                        <li>Gå till sidan <a href="https://www.w3schools.com/css/css_table.asp"
+                                target="_blank">https://www.w3schools.com/css/css_table.asp</a>. och läs om hur tabeller
+                            kan stilas till med CSS.</li>
+                        <li>Skapa en sida som ser ut ungefär som denna (med en &lt;h1&gt;-, ett &lt;h2&gt;-, och ett
+                            &lt;table&gt;-element):<br /><img src="images/table-css.PNG" width="290"
+                                height="296" /><br /><br /><br /></li>
+                        <li>Bygg vidare på sidan med fler, minst fem, underrubriker (&lt;h2&gt;-element) och tabeller.
+                            Skapa tabeller som visar hur olika tabeller med samma innehåll kan presenteras.<br /><br />
+                        </li>
+                        <li>Gör - på samma sida - några underrubriker och tabeller där du visar psuedoklasserna <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child"
+                                target="_blank">first-child</a>, <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child"
+                                target="_blank">last-child</a> och <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child"
+                                target="_blank">nth-child</a>. </li>
+                    </ol>
+
+                    <h3>Extrauppgift/utmaning (om du har tid och lust)</h3>
+                    <p>Skapa ett schackbräde, som det nedan; utan javascript, och med så lite HTML- och CSS-kod som
+                        möjligt.</p>
+                    <img src="images/chess-board.PNG" alt="" width="400">
+                </div>
+            </details>
+            <details>
+                <summary>Selektorer-3</summary>
+                <div>
+                    <p>Skapa en mapp <b>selectors-3</b>.</p>
+                    <p>I denna uppgift ska du öva på attributselektorer. Läs här:</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/css/css_attribute_selectors.asp"
+                                target="_blank">https://www.w3schools.com/css/css_attribute_selectors.asp</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors"
+                                target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors</a>
+                        </li>
+                    </ul>
+                    <ol>
+                        <li>Skapa en sida <strong>index.html</strong> och koppla den till en stilmall
+                            <strong>style.css</strong>. Du kan utgå från koden nedan.<br />
+                            <iframe src='code/?file=sel-3.php' style='height: 15em'></iframe>
+                        </li>
+                        <li>Lägg in fem <code>&lt;p&gt;</code>-element som på olika språk skriver ordet "Hej", och sedan
+                            fem ytterligare <code>&lt;p&gt;</code>-element som skriver ordet "Adjö". Märk upp elementen
+                            med lämpliga <code>lang</code>-attribut och använd
+                            attributselektorer för att ge varje språk en egen bakgrundsfärg.  <br /> </li>
+                        <li>Lägg in fyra <code>&lt;img&gt;</code>-element md bilder i. Två av bilderna ska vara med
+                            filändelsen "<b>jpg</b>" och två med filändelsen "<b>png</b>". Använd attributselektorer för
+                            att sätta olika typer av ramar runt bilderna beroende på filändelsen.</li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>Selektorer-4</summary>
+                <div>
+                    <p>Skapa en mapp <strong>selectors-4</strong>.</p>
+                    <p>I denna uppgift ska du använda pseudo-element. Läs här:</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/css/css_pseudo_elements.asp"
+                                target="_blank">https://www.w3schools.com/css/css_pseudo_elements.asp</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements"
+                                target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements</a>
+                        </li>
+                    </ul>
+                    <ol>
+                        <li>Kopiera filerna från föregående övning och lägg in dem i denna mapp.<br /><br />Ändra titeln
+                            och rubriken till "Pseudo-element".<br /> <br />
+                        </li>
+                        <li>Lägg till dessa två stycken (under rubriken) och försök att, med pseudo-element få dem att
+                            bli sanna.<br />
+                            <div><code>&lt;p&gt;Första raden är blå.&lt;br&gt;Men inte den andra.&lt;/p&gt;</code>
+                            </div>
+                            <div>
+                                <code>&lt;p&gt;Första tecknet i denna meing är mycket större än de övriga.&lt;/p&gt;</code>
+                            </div>
+                        </li>
+
+                        <li>Använd pseudo-elementet <code>::after</code> för att skriva vilket språk som styckena med
+                            "hej" och "adjö" var skrivna på. <br /> </li>
+                        <li><span style="text-decoration: line-through;">Använd pseudo-elementet <span>::after</span>
+                                för att skriva ut vilket filändelse ("<b>jpg</b>" eller "<b>png</b>") som bilderna
+                                har.</span> (Rättelse: Detta går inte att göra, i alla fall inte med CSS, se <a
+                                href="https://stackoverflow.com/questions/6949148/css-after-not-adding-content-to-certain-elements"
+                                target="_blank">https://stackoverflow.com/questions/6949148/css-after-not-adding-content-to-certain-elements</a>.)<br />
+
+                            <p><b>Utmaning (om du har tid o lust): Lös uppgiften med JavaScript isället.</b></p>
+                        </li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>* CSS-links</summary>
+                <div>
+                    <p>Skapa en mapp <strong>css-links</strong> med en <strong>index.html</strong>-fil</p>
+                    <ol>
+                        <li>Gå till sidan <a href="https://www.w3schools.com/css/css_link.asp"
+                                target="_blank">https://www.w3schools.com/css/css_link.asp</a>. och läs om hur länkar
+                            kan stilas till med
+                            CSS.<a href="https://www.w3schools.com/css/default.asp" target="_blank"></a></li>
+                        <li>Skapa en sida som ser ut ungefär som denna:<br /><img src="images/links.PNG" width="280"
+                                height="483" /><br /></li>
+                        <li>Skapa nio sidor som ut som denna (men med varierande siffor då):<br /><img
+                                src="images/link-p1.PNG" width="280" height="176" /><br />(Observera att länken ovan har
+                            en annan färg.
+                            Webbläsare gör så för att visa vilka
+                            länkar som använts.)<br /></li>
+                        <li>Ändra i stilmallen så att färgerna förändras för psuedoklasserna nedan (de olika tillstånd
+                            en länk kan befinna
+                            sig i):
+                            <ul>
+                                <li><code>link</code></li>
+                                <li><code>visited</code></li>
+                                <li><code>hover</code></li>
+                                <li><code>active</code></li>
+                            </ul>
+
+                            <p>OBS: Använd ordningen ovan (link - visited - hover - active) även i din stilmall. Annars
+                                kommer det inte se
+                                rätt ut.</p>
+                        </li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>* CSS-extras</summary>
+                <div>
+                    <p>Skapa en mapp <b>css-extras</b> med en <b>index.html</b>-fil</p>
+                    <ol>
+                        <li>Gå till sidan <a href="https://www.w3schools.com/css/css3_borders.asp"
+                                target="_blank">https://www.w3schools.com/css/css3_borders.asp</a>. och läs om hur man
+                            skapar rundande hörn
+                            med CSS. <br>
+                            <img src="images/extras.PNG" width="240" height="197" />
+                        </li>
+                        <li>Skapa en rubrik "Rundade hörn" och visa under den några element med, just det, rundade hörn.
+                            Beskriv också på
+                            sidan den kod som krävdes.<br /></li>
+                        <li>Fortsätt på samma sätt med rubrikerna nedan:
+                            <ul>
+                                <li>Rambilder</li>
+                                <li>Bakgrunder</li>
+                                <li>Färger</li>
+                                <li>Gradienter</li>
+                                <li>Skuggor</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>* CSS-effects</summary>
+                <div>
+                    <p>Skapa en mapp <b>css-effects</b> med en <b>index.html</b>-fil</p>
+                    <ol>
+                        <li>Gå till sidan <a href="https://www.w3schools.com/css/css3_2dtransforms.asp"
+                                target="_blank">https://www.w3schools.com/css/css3_2dtransforms.asp</a> och läs om hur
+                            man får saker att
+                            snurra och ändras på olika sätt.<br /><img src="images/effects.PNG" width="225"
+                                height="123" /></li>
+                        <li>Fyll din sida med "coola effekter". Skriv lite kort i ett <code>&lt;p&gt;</code>-element
+                            under vad det är som händer.</li>
+                    </ol>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Layout</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>Videogenomgångar</summary>
+                <div>
+                    <p><a href="https://web.microsoftstream.com/video/421b5619-d561-4e36-b686-c5e6437d8ada"
+                            target="_blank">position</a></p>
+                    <p><a href="https://web.microsoftstream.com/video/966d776e-fe21-45cb-9269-6e884473b604"
+                            target="_blank">float</a></p>
+
+                    <p><a href='https://web.microsoftstream.com/video/7480ff2c-2a33-4c7f-a292-d26e5020fb7d'
+                            target='_blank'>Grid-1</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Flexbox-länkar</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/css/css3_flexbox.asp' target='_blank'>w3schools</a></p>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox'
+                            target='_blank'>MDN</a></p>
+                    <p><a href='https://css-tricks.com/snippets/css/a-guide-to-flexbox/' target='_blank'>CSS-Tricks</a>
+                    </p>
+                    <p><a href='https://webbling.se/index.php/Flexbox_-_grunder' target='_blank'>Webbling</a></p>
+                    <p><a href='https://www.freecodecamp.org/news/flexbox-the-ultimate-css-flex-cheatsheet/'
+                            target='_blank'>freeCodeCamp</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Grid-länkar</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/css/css_grid.asp' target='_blank'>w3schools</a></p>
+                    <p><a href='https://css-tricks.com/snippets/css/complete-guide-grid/' target='_blank'>CSS-tricks</a>
+                    </p>
+                    <p><a href='https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids'
+                            target='_blank'>MDN</a></p>
+                    <p><a href='https://www.freecodecamp.org/news/css-grid-layout/' target='_blank'>freeCodeCamp</a></p>
+                </div>
+            </details>
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>position</summary>
+                <div>
+                    <p>Skapa en mapp <strong>position</strong>.</p>
+                    <p>Läs här:<br /><a href="https://www.w3schools.com/cssref/pr_class_position.asp"
+                            target="_blank">https://www.w3schools.com/cssref/pr_class_position.asp</a><br /><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/position"
+                            target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/position</a><a
+                            href="https://www.w3schools.com/cssref/pr_class_position.asp" target="_blank"><br /></a></p>
+                    <p>Gör en webbplats som visar - och med egna ord beskriver:</p>
+                    <ul>
+                        <li><code>position: relative</code></li>
+                        <li><code>position: absolute</code></li>
+                        <li><code>position: fixed</code></li>
+                        <li><code>position: sticky</code></li>
+                    </ul>
+                    <p><br />Du kan ta hjälp av - och göra något liknande om du vill - som i den inspelade genomgången.
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>float</summary>
+                <div>
+                    <p>Skapa en mapp <strong>float</strong>.</p>
+                    <p>Läs här:<br /><a href="https://www.w3schools.com/css/css_float.asp"
+                            target="_blank">https://www.w3schools.com/css/css_float.asp</a><br /><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/float"
+                            target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/float</a></p>
+                    <p>Gör en webbplats som visar - och med egna ord beskriver:</p>
+                    <ul>
+                        <li><code>float: left</code></li>
+                        <li><code>float: right</code></li>
+                        <li><code>clear: left</code></li>
+                        <li><code>clear: right</code></li>
+                        <li><code>clear: both</code></li>
+                    </ul>
+                    <p>* Extrauppgift - visa och beskriv egenskapen <code>shape-outside </code>(<a
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside"
+                            target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside</a>). Visa
+                        hur man med den kan få text att flyta in i de genomskinliga delarna av en bild. </p>
+                    <p><br />Du kan ta hjälp av - och göra något liknande om du vill - som i den inspelade genomgången.
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>flex-1</summary>
+                <div>
+                    <p>Skapa en mapp <strong>flex-1</strong>.</p>
+                    <p>Gör en webbplats liknande den i inspelade genomgången.</p>
+                    <p>Undersök - och försök att förstå - vad som händer då du ändrar i egenskaperna nedan. </p>
+                    <ul>
+                        <li><code>flex-direction</code></li>
+                        <li><code>flex-wrap</code></li>
+                        <li><code>flex-flow</code></li>
+                        <li><code>justify-content<br />  </code>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>flex-2</summary>
+                <div>
+                    <p>Skapa en mapp <strong>flex-2</strong>. (Tips: gör en kopia av <strong>flex-1</strong>)</p>
+                    <p>Gör en webbplats liknande den i inspelade genomgången.</p>
+                    <p>Undersök - och försök att förstå - vad som händer då du ändrar i egenskaperna nedan. </p>
+                    <ul>
+                        <li><code>align-content</code></li>
+                        <li><code>align-items</code></li>
+                        <li><code>align-self<br /></code></li>
+                        <li><code>order<br /></code></li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>Flexbox Froggy</summary>
+                <div>
+                    Spela spelet <a href="https://flexboxfroggy.com/#sv" target="_blank">Flexbox Froggy.</a> Börja på
+                    nivå 1, nå till nivå 24.
+                </div>
+            </details>
+
+            <details>
+                <summary>grid-1</summary>
+                <div>
+                    <p>Skapa en mapp <strong>grid-1</strong>.</p>
+                    <p>Gör en likadan webbplats som i den inspelade genomgången.</p>
+                    <p>Undersök - och försök att förstå - vad som händer då du ändrar i egenskaperna nedan. </p>
+                    <ul>
+                        <li><code>grid-template-rows</code></li>
+                        <li><code>grid-template-columns</code></li>
+                        <li><code>row-gap<br /></code></li>
+                        <li><code>column-gap<br /></code></li>
+                        <li><code>gap<br /></code></li>
+                        <li><code>order<br /></code></li>
+                        <li><code>grid-row<br /></code></li>
+                        <li><code>grid-column<br /></code></li>
+                        <li><code>grid-area<br /></code></li>
+                    </ul>
+                    <p>Lär dig använda <code>repeat</code>-fuktionen och enheten <code>fr</code>.</p>
+                    <p>Lämna in på skelamp.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Grid Garden</summary>
+                <div>
+                    Spela spelet <a href="https://cssgridgarden.com/#sv" target="_blank">Grid Garden.</a> Börja på
+                    nivå 1, nå till nivå 28.
+                </div>
+            </details>
+            <details>
+                <summary>grid-2</summary>
+                <div>
+                    <p>Skapa en mapp <strong>grid-2</strong>.</p>
+                    <p>Gör en likadan webbplats som i den inspelade genomgången.</p>
+                    <p>Undersök - och försök att förstå - vad som händer då du ändrar i egenskaperna nedan. </p>
+                    <ul>
+                        <li><code>grid-template-areas</code></li>
+                        <li><code>grid-area<br /></code></li>
+                        <li><code>grid<br /></code></li>
+                        <li><code>justify-*<br /></code></li>
+                        <li><code>align-*<br /></code></li>
+                    </ul>
+                    <p>Lämna in på skelamp.</p>
+                </div>
+            </details>
+            <details>
+                <summary>grid-flex</summary>
+                <div>
+                    <p>Se dessa videofilmer:<br /><a href="https://www.youtube.com/watch?v=hs3piaN4b5I"
+                            target="_blank">Flexbox vs. CSS Grid
+                            — Which is Better?</a></p>
+                    <p><a href="https://www.youtube.com/watch?v=dQHtT47eH0M" target="_blank">Using Flexbox + CSS Grid
+                            Together: Easy Gallery
+                            Layout</a> (Se bara de första 5 min - sedan tar hon upp en "fallback layoyt" för webbläsare
+                        som inte stödjer
+                        grid - vilket blir mindre och mindre intressant.)</p>
+                    <p>Skapa en egen webbplats <strong>flex-grid</strong> med liknande innehåll och design som den hon
+                        skapar i den andra
+                        videon.</p>
+                </div>
+            </details>
+        </section>
+
+
+        <!-- <h2>Flexbox</h2>
+            
+            <a
+            href="https://betterprogramming.pub/a-comprehensive-guide-to-flexbox-ca0ffdf770c6">https://betterprogramming.pub/a-comprehensive-guide-to-flexbox-ca0ffdf770c6</a> -->
+    </article>
+
+    <article>
+        <h1>SVG</h1>
+    </article>
+
+    <article>
+        <h1>Canvas</h1>
+    </article>
+
+    <article>
+        <h1>Formulärelement</h1>
+    </article>
+</body>
+
+</html>

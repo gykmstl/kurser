@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Webbserverprogrammering 1 - Balder</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+    <script>localStorage.setItem("balderkurs", "wsp1")</script>
+</head>
+
+<body>
+    <nav>
+        <button data-src="../wu1/">Webbutveckling 1</button>
+        <button data-src="../prog1/">Programmering 1</button>
+        <button data-src="../prog2/">Programmering 2</button>
+        <button data-src="../wsp1/">Webbserverprogrammering1</button>
+    </nav>
+
+    <h1 class="kurs">Webbserverprogrammering 1</h1>
+
+    <p>
+        <a href="https://skelleftea.sharepoint.com/:w:/s/Section_5ff3d60c-7c42-4a34-a618-1699c3821218/EZ0jfxuMG5RMmEZ-wSrbO4sBneiV1aAGhQcUNK3V74wMJg?e=cKsh7L"
+            target="_blank">
+            Planering-lektionslogg TE3INF 2122
+        </a>
+    </p>
+
+    <article>
+        <h1>Allmänt</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>php.net</summary>
+                <div>
+                    <p><a href='https://www.php.net/manual/en/langref.php' target='_blank'>Language Reference</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Att-kunna-lista (proven v 42-43)</summary>
+                <div>
+                    <p><a href="https://docs.google.com/document/d/1JqhqPpEEuOSlUV9PmNOXcFzF9KwqlLdABZfkN0UKFXw/edit?usp=sharing"
+                            target="_blank">Teoriprov (del 1)</a> (se också <a
+                            href="https://docs.google.com/document/d/13rTp-GGyewjuAp_EqviB7Z8VQWU4soPnmiHNg9HlJCQ/edit?usp=sharing"
+                            target="_blank">lösningsförslag</a>)
+                    </p>
+                    <ul>
+                        <li>Veta vad som skiljer en php-sida från en html-sida.</li>
+                        <li>Skapa, och testa, en webbplats för php-sidor på en lokal server.</li>
+                        <li>Skapa, och testa, en webbplats för php-sidor på en extern server (skelamp).</li>
+                        <li>Skriva HTML-kod med med <a
+                                href="http://php.net/manual/en/function.echo.php">echo</a>. <br /><br><a
+                                href="https://web.microsoftstream.com/video/7bba6619-f6f4-4159-bc43-228c1e4148cb"
+                                target="_blank">Film 1</a><br /> </li>
+                        <li>Använda variabler för text, tal och sanningsvärden.</li>
+                        <li>Använda vektorer (<em>arrayer</em>).<br><br><a
+                                href="https://web.microsoftstream.com/video/0f0915d4-04a3-4b12-a07d-4db8f8ebd9b6"
+                                target="_blank">Film 2</a><br><br></li>
+                        <li>Använda <a href="https://php.net/manual/en/langref.php"
+                                target="_blank">php-manualen</a>.<br /><br /><a
+                                href="https://web.microsoftstream.com/video/5cac139e-a2d4-436e-a773-44398eb805c3"
+                                target="_blank">Film 3</a><br /> </li>
+                        <li>Använda kontrollstrukturerna nedan.
+                            <ul>
+                                <li><code>if</code></li>
+                                <li><code>while</code> (med <code>break</code>)</li>
+                                <li><code>do-while</code></li>
+                                <li><code>for</code></li>
+                                <li><code>foreach</code></li>
+                            </ul><br>
+                            <a href="https://web.microsoftstream.com/video/5a26a7ab-4645-42bd-bc3c-3d4ee48a65e5"
+                                target="_blank">Film 4a</a> <a
+                                href="https://web.microsoftstream.com/video/684392ef-1850-49f1-aa6c-40ba38db5a10"
+                                target="_blank">Film 4b</a><br /> 
+                        </li>
+                        <li>Använda formulärkontrollerna nedan för att skicka värden, med metoderna GET/POST, till en
+                            sida.
+                            <ul>
+                                <li>textrutor</li>
+                                <li>knappar</li>
+                            </ul>
+                        </li>
+                        <li>Kontrollera om en variabel är definierad med funktionen <a
+                                href="http://php.net/manual/en/function.isset.php" target="_blank">isset</a>. <br /> 
+                        </li>
+                        <li>Rensa formulär från försök till HTML-injektioner med <a
+                                href="http://php.net/manual/en/function.htmlspecialchars.php"
+                                target="_blank">htmlspecialchars</a>.<br /><br /></li>
+                        <li>Skriva tillbaka värden till ett formulär vid nästa sidvisning. <br /><br /><a
+                                href="https://web.microsoftstream.com/video/ae697ed3-17f0-4f18-8e84-d735a1956958"
+                                target="_blank">Film 5</a><br /> </li>
+                        <li>Använda sessionsvariabler och cookies. <br /><br /></li>
+                        <li>Omdirigera från en sida till en annan med <a
+                                href="http://php.net/manual/en/function.header.php" target="_blank">header</a> och <a
+                                href="http://php.net/manual/en/function.exit.php" target="_blank">exit</a>.<br /></li>
+                        <li>Skapa, och anropa egna funktioner.<br /> </li>
+                        <li>Inkludera andra filer med <a href="http://php.net/manual/en/function.include.php"
+                                target="_blank">include</a>.</li>
+                    </ul>
+                </div>
+            </details>
+            <details>
+                <summary>codecademy</summary>
+                <div>
+                    <p><a href='https://www.codecademy.com/learn/learn-php' target='_blank'>Learn PHP</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>dbwebb</summary>
+                <div>
+                    <p><a href='https://dbwebb.se/kunskap/kom-i-gang-med-php-pa-20-steg' target='_blank'>Kom i gång med
+                            PHP på 20 steg</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>learn-php.org</summary>
+                <div>
+                    <p><a href='https://www.learn-php.org/' target='_blank'>Interactive PHP tutorial</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>w3schools</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/php/' target='_blank'>PHP Tutorial</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>PHP-FIG (PHP Framework Interop Group)</summary>
+                <div>
+                    <p><a href='https://www.php-fig.org/psr/psr-1/' target='_blank'>PSR-1: Basic Coding Standard</a></p>
+                    <p><a href='https://www.php-fig.org/psr/psr-12/' target='_blank'>PSR-12: Extended Coding Style</a>
+                    </p>
+                </div>
+            </details>
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <p><a href="https://docs.google.com/document/d/1JqhqPpEEuOSlUV9PmNOXcFzF9KwqlLdABZfkN0UKFXw/edit?usp=sharing"
+                    target="_blank">Teoriprov (del 1)</a> (se också <a
+                    href="https://docs.google.com/document/d/13rTp-GGyewjuAp_EqviB7Z8VQWU4soPnmiHNg9HlJCQ/edit?usp=sharing"
+                    target="_blank">lösningsförslag</a>)
+            </p>
+            <p><a href="https://docs.google.com/document/d/1_Peit3gYIT-mQI-YFo87yX0oBBF5HpzjJSu2m5UWwhI/edit?usp=sharing"
+                    target="_blank">Teoriprov (del 2)</a> (se också <a
+                    href="https://docs.google.com/document/d/1lso7AK_YPKIVN5AsDMO_whcgdNuQVoKfeOqQ-KfezNg/edit?usp=sharing"
+                    target="_blank">lösningsförslag</a>)
+            </p>
+            <p><a href='https://skelleftea-my.sharepoint.com/:w:/g/personal/mattias_steinwall_skelleftea_se/EQ9P5YHx_dRCr7EXZRxtnyoBgxlcZMdfQwJhcJ5ph5E2Zw?e=vS29Uz'
+                    target='_blank'>Bloggen (provuppgift 2021-10-26)</a></p>
+            <p><a href='codescan/?dir=bloggen' target='_blank'>Bloggen - lösningsförslag</a></p>
+
+            <p><a href='https://skelleftea-my.sharepoint.com/:w:/g/personal/mattias_steinwall_skelleftea_se/EQmqfb9GyExBirLHemFJb4cBBf5Ij_9wPiNFBtefX0-msg?e=V0Qff1'
+                    target='_blank'>Tipset (provuppgift 2021-10-19)</a></p>
+            <p><a href='codescan/?dir=tipset' target='_blank'>Tipset - lösningsförslag</a></p>
+
+        </section>
+    </article>
+
+    <article>
+        <h1>Introduktion</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>Tips o trix med <i>VS Code</i></summary>
+                <iframe src="../vscode.html" style="height: 40em;"></iframe>
+            </details>
+            <details>
+                <summary>Lokal server</summary>
+                <div>
+                    <p>Installera <a href="https://www.apachefriends.org/index.html">XAMPP.</a></p>
+                    <p>Starta sedan <i>XAMPP Control Panel</i> och i den <i>Apache</i> och <i>MySQL</i>:</p>
+                    <p><img src="images/xampp.PNG" width="744" height="477" /></p>
+                    <p>Om du får ett felmeddelande så kanske du måste byta portnummer till något annat än 80. Det kan
+                        din lärare hjälpa dig med.</p>
+                    <p>Skapa en ny mapp <b>c:\xampp\htdocs\test1</b>. </p>
+                    <p>Öppna en textredigerare och skapa en php-fil <b>index.php</b>:</p>
+                    <iframe src="code/?file=xampp.php"></iframe>
+                    <p>Öppna en webbläsare och skriv adressen</p>
+                    <p><b>localhost/test1</b></p>
+                    <p>Det bör då se ungefär så här:<br>
+                        <img src="images/xampp-test1.PNG" width="380" height="164" />
+                    </p>
+                    <p>Webbläsaren visar index-filen, i detta fall <b>index.php</b>,  i den angivna mappen (katalogen).
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>Extern server</summary>
+                <div>
+                    <h3>Installera</h3>
+                    <p>Ladda ner, installera (med standardinställningarna) och starta filöverföringsprogrammet <a
+                            href="http://winscp.net/eng/index.php" target="_blank">WinSCP</a>.</p>
+                    <p>Välj <b>Ny webbplats</b>. Skriv in inställningarna enligt nedan för uppkoppling mot
+                        <b>skelamp.se</b> (skolans övningsserver). Användarnamn och lösenord får du av din
+                        lärare. Observera att portnumret är 32.
+                    </p>
+                    <p><img src="images/winscp-login.PNG" width="600" height="378" /></p>
+                    <p>Tryck på <b>Save</b>-knappen. Spara lösenordet (trots rekommendationen på skärmen) för
+                        enkelhetens skull:<br /><img src="images/winscp-save.PNG" width="300" height="179" /></p>
+
+                    <h3>Överför</h3>
+                    <p>Logga därefter in och du kommer att se dina lokala filer till vänster och serverns filer till
+                        höger:</p>
+                    <p><img src="images/winscp-view.PNG" width="800" height="339" /></p>
+                    <p>Om du editerar en lokal fil och vill flytta den till servern så kan du dra den från den vänstra
+                        till den högra halvan. Filerna ska på server-sidan placeras i undermappar till <b>w</b>. </p>
+                    <p>Om du vill skapa en egen webbplats så lägg en index-fil direkt i mappen <b>w</b>.</p>
+                    <p>Mappen som heter <b>codescan</b> är speciell. Den använder du vid inlämningar i kursen. Gör då så
+                        här:</p>
+                    <p>1) Leta rätt på den mapp som ska lämnas in (på vänstersidan).</p>
+                    <p>2) Dra, och släpp, mappen på/i <b>codescan</b>-mappen:</p>
+                    <p><img src="images/winscp-move.PNG" width="800" height="340" /></p>
+                    <p>(De filerna som finns där från början ska du inte skriva över eller ta bort. De används för att
+                        kunna visa kod och testköra sidor inuti <b>codescan</b>-mappen.)</p>
+
+                    <h3>Testa</h3>
+                    <p>1) Gå till adressen <b>skelamp.se</b> i en webbläsare. Klicka dig vidare till "din" server (i
+                        exemplet Freja). Du bör då se ditt användarnamn i listan.</p>
+                    <p>2) Klicka på codescan-länken bredvid ditt användarnamn.<br /><img src="images/freja-codescan.PNG"
+                            width="200" /></p>
+                    <p>3) Du får då en en inloggning för att kunna komma vidare. Skriv in dina användaruppgifter
+                        där:<br /><img src="images/auth-freja.PNG" width="400" /><br>
+                        Får du en fråga om uppgifterna ska sparas på din dator så svara "Ja" på det.</p>
+                    <p>4) Klicka på den mapp du vill öppna (<b>test</b> i detta exempel) och sedan kan du både visa kod
+                        och testköra filer.</p>
+
+                    <h3>Synka</h3>
+                    <p>För att slippa över filen manuellt varje gång du vill testa så låt <i>WinSCP</i> automatiskt
+                        synka mapparna åt dig.</p>
+                    <ol>
+                        <li>Visa mapparna, lokalt och på serversidan, som ska synkas.</li>
+                        <li>Klicka på andra ikonen från vänster <b>Keep remote directory up to date.</b><br /><img
+                                src="images/sync-winscp.PNG" width="800" height="338" /></li>
+                        <li>Bekräfta i nästa ruta genom att klicka på <b>Start</b>.</li>
+                        <li>Och i rutan därefter med ett <b>Yes</b>.</li>
+                        <li>Minimera fönstret till sist med knappen <b>Minimize</b>.</li>
+                    </ol>
+                    <p>Testa nu att det fungerar.</p>
+                    <ol>
+                        <li>Gör en ändring lokalt och spara den.</li>
+                        <li>Kontrollera att ändringen "slår igenom" på sidan (då webbläsaren uppdateras).</li>
+                    </ol>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+        </section>
+    </article>
+
+    <article>
+        <h1>In- och utmatning, beräkningar</h1>
+
+        <section>
+            <h2>Material</h2>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+            <details>
+                <summary>Egna in- och utmatningar</summary>
+                <div>
+                    <p>Utgå från <a href="codescan/?dir=input-output" target="_blank">exemplet</a> och gör så att
+                        formuläret innehåller:</p>
+                    <ul>
+                        <li>En textruta för ditt namn.</li>
+                        <li>En textruta för din födelseår.</li>
+                        <li>En textruta för din längd.<br /><br /></li>
+                        <li>En listruta från vilken du kan välja det land du bor i. (* Extrauppgift - googla dig fram!)
+                        </li>
+                    </ul>
+                    <p>Gör så att utmatningssidan kan visa vilka inmatningar du gjort.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Ändra tilldelningar</summary>
+                <div>
+                    <p>Utgå från <a href="codescan/?dir=assignment" target="_blank">exemplet-2</a> och ändra till dina
+                        egna uppgifter (namn, ålder med mera).</p>
+                    <p>Byt dock ut barn-vektorn till något som passar dig. Kanske syskon, husdjur eller favoritartister.
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>Slumptal</summary>
+                <div>
+                    <p>Skapa en mapp <b>rand-int</b>.
+                        Skapa i den mappen en html-sida med ett formulär som tar emot indata och en php-sida som
+                        presenterar utdata.</p>
+
+                    <p>Slumpa fram ett heltal i det givna intervallet.</p>
+
+                    <h3>Indata</h3>
+                    <ul>
+                        <li>Nedre gräns: 1</li>
+                        <li>Övre gräns: 10</li>
+                    </ul>
+
+                    <h3>Utdata</h3>
+                    <ul>
+                        <li>Nedre gräns: 1</li>
+                        <li>Övre gräns: 10</li>
+                        <li>Slumptal: 7</li>
+                    </ul>
+                    <p>Tips: Sök på "php rand".</p>
+
+                    <p>Lämna in mappen i <b>skelamp/codescan/wsp1</b>-mappen.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Texthantering</summary>
+                <div>
+                    <p>Skapa en mapp <b>text</b>.
+                        Skapa i den mappen en html-sida med ett formulär som tar emot indata och en php-sida som
+                        presenterar utdata.</p>
+
+                    <p>Läs in ett namn och visa lite info om det.</p>
+
+                    <h3>Indata</h3>
+                    <ul>
+                        <li>Namn: Mattias</li>
+                    </ul>
+
+                    <h3>Utdata</h3>
+                    <ul>
+                        <li>Namn: Mattias</li>
+                        <li>Längd: 7</li>
+                        <li>Med gemener: mattias</li>
+                        <li>Med versaler: MATTIAS</li>
+                        <li>Första bokstav: M</li>
+                        <li>Sista bokstav: s</li>
+                    </ul>
+
+                    <p>Tips: Sök på "php string".</p>
+
+                    <p>Lämna in mappen i <b>skelamp/codescan/wsp1</b>-mappen.</p>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Kontrollstrukturer</h1>
+
+        <section>
+            <h2>Material</h2>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Jämför</summary>
+                <div>
+                    <p>Skapa en php-sida, <b>index.php</b>, som läser två tal och visar information som nedan.</p>
+                    <p><b>Tal1: 3<br />Tal2: 11<br />Tal1 (3) är mindre än Tal2 (11).</b></p>
+                    <p>"mindre än" byts mot "större än" eller "lika med" vid passande värden.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Upp- eller nedräkning</summary>
+                <div>
+                    <p>Skapa en php-sida, <b>index.php</b>, som läser två tal, visar talen och gör en upp- eller
+                        nedräkning som nedan. <br /> <br /><b>Tal1: 11<br />Tal2: 3<br /><br />11, 10, 9, 8, 7, 6, 5, 4,
+                            3</b></p>
+                    <p>Räkna (upp eller ned) från det första till det andra talet.</p>
+                </div>
+            </details>
+            <details>
+                <summary>* Dynamiska textrutor</summary>
+                <div>
+                    <p>Skapa en php-sida som:</p>
+                    <ol>
+                        <li>Frågar efter en siffra 1-9 och skickar iväg den med en knapp.</li>
+                        <li>Visar så många textrutor som siffran anger, tillsammans med en knapp.</li>
+                        <li>Slår ihop texten från textrutorna till en mening och visar den.</li>
+                    </ol>
+
+                    <p hidden><a href="http://gykmstl.altervista.org/wsp1/dyntext/info.php"
+                            target="_blank">Lösningsförslag</a></p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Kan du det här? (1)</summary>
+                <div>
+                    <p>Jobba parvis i 15 minuter. Börja med en tom sida och använd inga hjälpmedel.</p>
+                    <p>Skapa en sida som fungerar enligt nedan:</p>
+                    <p><img src="images/utmaning1_1v2.PNG" width="197" height="171" /> <img src="images/utmaning1_2.PNG"
+                            width="196" height="387" /></p>
+                    <p>Gör också så att:</p>
+                    <ul>
+                        <li>Formulärvärdena "skrivs tillbaka" då sidan visas efter knapptryckningen.</li>
+                        <li>Indata rensas från försök till html-injektioner. (Text som kan tolkas som html-kod.)</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Sessioner och cookies</h1>
+
+        <section>
+            <h2>Material</h2>
+
+            <details>
+                <summary>w3schools</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/php/php_cookies.asp'
+                            target='_blank'>https://www.w3schools.com/php/php_cookies.asp</a></p>
+                    <p><a href='https://www.w3schools.com/php/php_sessions.asp'
+                            target='_blank'>https://www.w3schools.com/php/php_sessions.asp</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>PHP Manual</summary>
+                <div>
+                    <p><a href='https://www.php.net/manual/en/function.header.php'
+                            target='_blank'>https://www.php.net/manual/en/function.header.php</a></p>
+                    <p><a href='https://www.php.net/manual/en/function.exit.php'
+                            target='_blank'>https://www.php.net/manual/en/function.exit.php</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Exempel</summary>
+                <div>
+                    <p><a href='codescan/?dir=session-test' target='_blank'>session-test</a></p>
+                    <p><a href='codescan/?dir=cookie-test' target='_blank'>cookie-test</a></p>
+                </div>
+            </details>
+
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Sidvisningsräknare</summary>
+                <div>
+                    <p>Skapa en php-sida som visar två räknare.</p>
+                    <p>Den första ska visa hur många gånger du visat sidan under den innevarande session. En
+                        sessionsvariabel ska hålla reda på antalet.</p>
+                    <p>Den andra ska visa hur många gånger du visat sidan totalt. En kaka (<i>cookie</i>) ska hålla reda
+                        på antalet. (Sätt att kakan ska tas bort om 10 år...)</p>
+                    <p>Det ska vara möjligt att "nollställa" båda inifrån sidan. De ska då sättas till ett.</p>
+                    <p>Om webbläsaren stängs och öppnas igen så ska sessionsvariabeln sättas till ett.</p>
+                    <p>Kod att börja med finns nedan.</p>
+                    <p><b>index.php</b></p>
+
+                    <iframe src="code/?file=sc-counter.php" style="height: 20em"></iframe>
+                </div>
+            </details>
+            <details>
+                <summary>Inloggning</summary>
+                <div>
+                    <p>Den första sidan visar ett inloggningsformulär. Om användarnamn och lösenord stämmer så sker en
+                        omdirigering till nästa sida.</p>
+                    <p>Omdirigeringar görs med kommandot <code>header</code> och måste komma före det att sidan byggs
+                        upp. En omdirigering bör alltid följas av ett <code>exit</code>-kommando. Detta för att avbryta
+                        skripten på den sida man lämnar att göra oönskade förändringar. </p>
+                    <p>Testa och gör om det så att du också kan logga in. Minst två olika användare ska alltså ges
+                        behörighet att gå vidare.</p>
+                    <p>På den sidan dit man kommer ska man ges möjlighet att logga ut. Vid utloggning så ska en
+                        omdirigering till inloggningssidan göras.</p>
+                    <p><b>index.php</b></p>
+                    <iframe src="code/?file=login-index.php" style="height: 20em;"></iframe>
+                    <p><b>loggedin.php</b></p>
+                    <iframe src="code/?file=login-loggedin.php"></iframe>
+                </div>
+            </details>
+            <details>
+                <summary>Språkvalet</summary>
+                <div>
+                    <p>Skapa en php-sida med en rullgardinsmeny i vilken (åtminstone) språken "Svenska", "Finska",
+                        "Engelska", "Tyska" och "Spanska" finns.</p>
+                    <p>Då ett språkval görs ska ett hälsningsmeddelande (typ "Hej!") på valt språk visas.</p>
+                    <p>Med en kaka (<i>cookie</i>) så ska språkvalet sparas så att hälsningen visas på det senast valda
+                        språket nästa gång sidan öppnas.</p>
+                    <p>Extrafinesser:</p>
+                    <ul>
+                        <li>Gör så att språkvalet "skrivs tillbaka" till rullgardinsmenyn så att det valet visas då
+                            sidan
+                            laddas om.</li>
+                        <li>Gör så att formuläret skickas direkt då en ändring gjorts i rullgardinsmenyn. (Sätt
+                            attributet
+                            <code>onchange='this.form.submit()'</code>.)
+                        </li>
+                    </ul>
+
+                    <h3>Tips</h3>
+                    <p>Koden nedan gör så att allt utom cookie-hanteringen fungerar, inklusive extrafinesserna.</p>
+                    <p>Gör så här:</p>
+                    <ol>
+                        <li>Testa och läs koden så att du förstår hur den fungerar. Fråga annars din bänkgranne eller
+                            lärare.</li>
+                        <li>Lägg till och få ett ytterligare språk att fungera.</li>
+                        <li>Fixa språkkakan genom genom att lägga till kod istället för kommentarerna i koden.</li>
+                    </ol>
+                    <p><b>index.php</b></p>
+                    <iframe src="code/?file=sprakval.php" style="height: 20em;"></iframe>
+                </div>
+            </details>
+            <details>
+                <summary>* Varukorg</summary>
+                <div>
+                    <p>Skapa, med hjälp av sessionsvariabler, den typ av varukorg som finns i internetbutiker,
+                        exempelvis <a href="http://www.clasohlson.se/Product/StartPageProducts.aspx"
+                            target="_blank">Clas Ohlson</a>.
+                    </p>
+                    <p>I din internetbutik ska finnas minst fem varor, välj själv vilka. Det ska finnas bilder på dina
+                        varor.</p>
+                    <p>Varje vara ska gå att lägga i varukorgen genom att klicka på en "Köp"-knapp bredvid varan.</p>
+                    <p>Man ska kunna ändra i varukorgen. Både ändra antal och ta bort varan.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Kan du det här? (2)</summary>
+                <div>
+                    <p>Jobba parvis i 20 minuter. Börja med tomma sidor och använd inga hjälpmedel.</p>
+                    <p>Skapa sidor som fungerar enligt nedan:<br /><br /><b>index.php</b></p>
+                    <p><img src="images/utmaning2_1.PNG" width="289" height="188" /></p>
+                    <p>Vid inloggning med korrekt lösenord ("balder") så ska en sessionsvariabel sättas samt en
+                        omdirigering (<code>header-location</code>) till <b>funnypage.php</b> utföras.</p>
+                    <p><b>funnypage.php</b></p>
+                    <p><img src="images/utmaning2_2.PNG" width="467" height="429" /></p>
+                    <p>Denna sida ska visa en "skojig bild" och bara vara åtkomlig efter inloggning. Kontrollera
+                        åtkomsten genom att försöka besöka sidan utan att vara inloggad. Då bör man hamna på
+                        inloggningssidan, <b>index.php</b>.</p>
+                    <p>Vid utloggning så ta bort (<b>unset</b>) sessionsvariabeln som markerar inloggning och gå till
+                        inloggningssidan, <b>index.php</b>.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Fika (Gammal provuppgift)</summary>
+                <div>
+                    <p><span>Skapa en webbplats <strong>fika</strong> med två sidor.
+                            En <strong>index.php</strong> (Köp-sidan) och en <strong>kvitto.php</strong> (Kvitto-sidan).
+                            Utseendet bestämmer du själv men det kan likna det nedan.</span></p>
+                    <p><img src="images/fika.PNG" width="200" height="435" />                                           
+                                              <img src="images/kvitto.PNG" width="200" height="367" /></p>
+                    <p></p>
+                    <p>Detta ska fungera:</p>
+                    <ul>
+                        <li>Man ska kunna "köpa" de olika produkterna genom att klicka på knapparna. Antalet ska då
+                            visas. Spara i sessionsvariabler.<br /><br />Tips: Jobba bara Saft-knappen tills du ser att
+                            den fungerar som du vill. Därefter kan du "klipp-o-klistra" till de övriga.<br /> </li>
+                        <li>Man ska kunna nollställa antalen.<br /> </li>
+                        <li>Man ska kunna gå till Kvitto-sidan för att se vad priset blir. Den sidan ska bara kunna
+                            besökas om en sessionsvariabel för någon produkt är satt. Om inte ska en omdirigering göras
+                            till Köp-sidan. (Testa detta genom att besöka Kvitto-sidan direkt i en ny session. Du ska då
+                            hamna på Köp-sidan.)<br /> </li>
+                        <li>Utmaning (för betygen B-A): Gör så att man på ett enkelt sätt kan lägga till fler produkter.
+                            Ett sätt är att placera produkter och priser i vektorer och loopa igenom dessa istället för
+                            att "klipp-o-klistra".<br />  </li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Funktioner och OOP</h1>
+
+        <section>
+            <h2>Material</h2>
+            <details>
+                <summary>w3schools</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/php/php_functions.asp' target='_blank'>PHP Functions</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>PHP Manual</summary>
+                <div>
+                    <p><a href='https://www.php.net/manual/en/language.functions.php' target='_blank'>Functions</a></p>
+                </div>
+            </details>
+            <details>
+                <summary>Exempel</summary>
+                <div>
+                    <p><a href='codescan/?dir=functions' target='_blank'>Funktioner</a></p>
+                    <p><a href='codescan/?dir=proc-vs-oop' target='_blank'>Procedurell programmering vs OOP</a></p>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Visa repeterat</summary>
+                <div>
+                    <p>Skriv en funktion som ska kunna anropas med ett meddelande och antal upprepningar ungefär så här:
+                    </p>
+                    <p><code>show_repeated('All work and no play
+                            makes Jack a dull boy.', 100);</code></p>
+                    <p>Vid anrop ska sidan fyllas med meddelandet det antal gånger som önskas. Funktionen ska placeras i
+                        en separat fil för att lätt vara återanvändbar.</p>
+                    <h3>Tips</h3>
+                    <ul>
+                        <li>
+                            Skapa två sidor, en <strong>index.php</strong> och en <strong>func.php</strong>. </li>
+                        <li>
+                            I <strong>func.php</strong> så skriver du funktionen. Den ska använda två parameter,
+                            förslagsvis namngivna <code>$mess</code> och <code>$rep</code> som anger
+                            meddelandet respektive antalet repetitioner.</li>
+                        <li>
+                            Inne i funktionen så kan du med en <code>for</code>-loop skriva
+                            <code>&lt;p&gt;</code>-element.
+                        </li>
+                        <li>
+                            I <strong>index.php</strong> så inkluderar du funktionsfilen med <code>include</code> (eller
+                            <code>require</code>).
+                        </li>
+                        <li>
+                            I <strong>index.php</strong> så testar du att funktionen fungera genom att anropa den. Du
+                            kan nöja dig med hårdkodade anrop eller skapa ett formulär med vars hjälp du kan bestämma
+                            argumentens värden.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Andragradare</summary>
+                <div>
+                    <p>
+                        Skriv en funktion som beräknar de reella rötterna till en andragradsekvation,
+                        x<sup>2</sup>+px+q = 0, givet koefficienterna p och q.</p>
+                    <p>
+                        <code>$x = solve_quadratic(6, -7);</code>
+                    </p>
+                    <p>
+                        Returvärdet från funktionen ska vara en vektor med längden 0, 1 eller 2.</p>
+                    <ul>
+                        <li>0 om funktionen saknar reella rötter. (Prova med <span
+                                style="font-family: 'courier new', courier, monospace; line-height: 22.0147190093994px;">solve_quadratic(4,
+                                9)</span> till exempel.)<br /> </li>
+                        <li>1 om funktionen har en dubbelrot. (Prova med <span
+                                style="font-family: 'courier new', courier, monospace; line-height: 22.0147190093994px;">solve_quadratic(4,
+                                4)</span> till exempel.)<br /> </li>
+                        <li>2 om funktionen har två olika rötter. (Prova med <span
+                                style="font-family: 'courier new', courier, monospace; line-height: 22.0147190093994px;">solve_quadratic(6,
+                                -7)</span> till exempel.)</li>
+                    </ul>
+                    <p>Funktionen ska placeras i en separat fil för att lätt vara återanvändbar.</p>
+                    <h3>Tips</h3>
+                    <p>Pseudokod för funktionen</p>
+                    <p><strong>$disc = uttrycket under rottecknet i pq-formeln (kallas diskriminant på svenska)</strong>
+                    </p>
+                    <p><strong>if ($disc &lt; 0)</strong><br /><strong>  return [ ];  </strong></p>
+                    <p><strong>if ($disc == 0) {</strong><br /><strong>  $x = beräkna
+                            (dubbel-)roten</strong><br /><strong>  return [ $x ];</strong><br /><strong>}</strong></p>
+                    <p><strong>// Nu måste funktionen ha två reella lösningar</strong><br /><strong>$x1 = beräkna den
+                            ena roten</strong><br /><strong>$x2 = beräkna den andra roten</strong><br /><strong>return [
+                            $x1, $x2 ]</strong></p>
+                    <p>Pseudokod för test av funktionen:</p>
+                    <p><strong>Sätt värden för $p och $q. Antingen hårdkodade eller hämtade från ett formulär.</strong>
+                    </p>
+                    <p><strong>$res = solve_quadratic($p, $q);</strong></p>
+                    <p><strong>$len = antal värden i $res-arrayen</strong></p>
+                    <p><strong>if ($len == 0)</strong><br /><strong>  Skriv att reella rötter saknas</strong></p>
+                    <p><strong>if ($len == 1)</strong><br /><strong>  Skriv att det finns en dubbelrot $res[0]</strong>
+                    </p>
+                    <p><strong>if ($len == 2)</strong><br /><strong>  Skriv att det finns två rötter, $res[0] och
+                            $res[1]</strong></p>
+                </div>
+            </details>
+
+            <details>
+                <summary>* Filträd</summary>
+                <div>
+                    <p>Skapa en php-sida som genererar ett filträd liknade det nedan.</p>
+                    <p><img src="images/dir-tree.png" alt="" width="271" height="308" role="presentation"
+                            style="vertical-align: text-bottom; margin: 0 .5em;" class="img-responsive" /></p>
+                    <p>Uppgiften lämpar sig väl att lösa rekursivt.</p>
+                    <p>Tips:</p>
+                    <p></p>
+                    <ul>
+                        <li>Funktionen <a href="http://php.net/manual/en/function.scandir.php">scandir</a> ger en vektor
+                            av alla filer och mappar.</li>
+                        <li>Funktionen <a href="http://php.net/manual/en/function.is-dir.php">is_dir</a> testar om
+                            argumentet är en mapp.</li>
+                    </ul>
+                    <p></p>
+                </div>
+            </details>
+
+            <details>
+                <summary>* Tidpunkt</summary>
+                <div>
+                    <p>Utgå från koden nedan. Testa och förstå vad som händer. Lös därefter dessa uppgifter:</p>
+                    <ul>
+                        <li>Skriv om <b>ticka</b>-metoden så att den klarar minut-, timmes- och
+                            dygnsövergångar.<br /><br />Tips: Testa om sekund &gt; 59; nollställ då sekund och öka minut
+                            med ett.<br /><br /></li>
+                        <li>Skriv om <strong>__toString</strong>-metoden så att den returnerar tiden med extra nollor
+                            före som ett digitalur. Som "09:03:05" till exempel. (Metodens konstiga namn, med två
+                            understreck i början, visar att den har en specialbetydelse i språket. Den gör om ett objekt
+                            till en text och anropas automatiskt om man, som i koden nedan, skriver ut
+                            objektet.)<br /><br />Tips: Går att lösa med if-satser men elegantast (och kortast) blir det
+                            med <a href="http://php.net/manual/en/function.str-pad.php"
+                                target="_blank">str_pad</a>.<br /> </li>
+                    </ul>
+                    <p><b>index.php</b></p>
+                    <p><code>&lt;?php<br />class Tidpunkt <br />{<br />    // Instansvariabler
+                            (egenskaper)<br />    public $timme;<br />    public $minut;<br />    public
+                            $sekund;<br /><br />    // Konstruktor<br />    public function __construct($timme, $minut,
+                            $sekund) <br />    {<br />        $this-&gt;timme = $timme;<br />        $this-&gt;minut =
+                            $minut;<br />        $this-&gt;sekund = $sekund;<br />    }<br /><br />    //
+                            Instansmetoder<br />    public function ticka()
+                            <br />    {<br />        $this-&gt;sekund++;<br />    }<br /><br />    public function
+                            __toString() <br />    {<br />        return $this-&gt;timme . ":" . $this-&gt;minut . ":" .
+                            $this-&gt;sekund;<br />    }<br />}<br />?&gt;<br /> <br />&lt;!doctype
+                            html&gt;<br />&lt;html&gt;<br />&lt;head&gt;<br />    &lt;meta
+                            charset='utf-8'&gt;<br />    &lt;title&gt;Tidpunkt&lt;/title&gt;<br />&lt;/head&gt;<br />&lt;body&gt;<br />    &lt;?php<br />    //
+                            Skapa ett Tidpunkt-objekt<br />    // __construct anropas automatiskt<br />    $tp = new
+                            Tidpunkt(13, 59, 57);<br /><br />    // Avläs variablerna (egenskaperna)<br />    // -&gt;
+                            ger åtkomst till medlemmar i objektet<br />    echo "&lt;p&gt;Timme: ",
+                            $tp-&gt;timme;<br />    echo "&lt;p&gt;Minut: ", $tp-&gt;minut;<br />    echo
+                            "&lt;p&gt;Sekund: ", $tp-&gt;sekund;<br /><br />    // Upprepa 10 gånger<br />    for ($i =
+                            0; $i &lt; 10; $i++) {<br /><br />        // Visa tidpunkten <br />        // __toString
+                            anropas automatiskt<br />        echo "&lt;p&gt;Tidpunkt: ", $tp;<br /><br />        // Gå
+                            en sekund
+                            framåt<br />        $tp-&gt;ticka();<br />    }<br />    ?&gt;<br />&lt;/body&gt;<br />&lt;/html&gt;</code>
+                    </p>
+                </div>
+            </details>
+            <details>
+                <summary>* Rektangel</summary>
+                <div>
+                    <p>Skapa en rektangel-klass <b>Rectangle</b>som innehåller:</p>
+                    <ul>
+                        <li>En variabel <b>width</b></li>
+                        <li>En variabel <b>height</b></li>
+                        <li>En konstruktor som tar emot bredd och höjd</li>
+                        <li>En metod <b>getArea</b></li>
+                        <li>En metod <b>getPerimiter</b></li>
+                    </ul>
+                    <p>Testa att den fungerar med hårdkodade anrop (skrivna direkt i koden), som de nedan.</p>
+                    <p><code>$r1 = new Rectangle(4, 3);<br /><br />echo "&lt;p&gt;Bredd: ", $r1-&gt;width,
+                            " le"; // 4 <br />echo "&lt;p&gt;Höjd: ", $r1-&gt;height, " le"; // 3<br />echo
+                            "&lt;p&gt;Area: ", $r1-&gt;getArea(), " ae";  // 12<br />echo "&lt;p&gt;Omkrets: ",
+                            $r1-&gt;getPerimeter(), " le"; // 14</code></p>
+                </div>
+            </details>
+        </section>
+    </article>
+
+    <article>
+        <h1>Databashantering</h1>
+        <section>
+            <h2>Material</h2>
+            <details>
+                <summary>Person (del 1, XAMPP)</summary>
+                <div>
+                    <h3>Skapa en databas lokalt (XAMPP)</h3>
+                    <p>Starta kontrollpanelen för <b>XAMPP </b>och starta <b>Apache </b>och <b>MySQL</b>.<br /> 
+                    </p>
+                    <p>Klicka på <b>Admin</b>-knappen på MySQL-raden för att öppna <b>PhpMyAdmin</b>, eller gå till
+                        <b>localhost/phpmyadmin/</b>.<br /><br />
+                    </p>
+                    <p>Skapa en ny databas genom att klicka på <b>Ny </b>och fylla i ett valfritt databasnamn (till
+                        exempel
+                        <b>persondb</b>).<br /><img src="images/ny-databas.PNG" alt="" width="497" height="133"
+                            role="presentation" style="vertical-align: text-bottom; margin: 0 .5em;"
+                            class="img-responsive" />
+                    </p>
+                    <h3>Skapa tabell</h3>
+                    <p>Välj din databas och skapa en tabell enligt nedan. Observera att fältet <b>id</b>ska vara
+                        primärnyckel
+                        (<b>PRIMARY</b>) samt automatuppräknat (<b>A_I</b>).<br />
+                        <img src="images/person-table.PNG" alt="" width="1104" height="255" />
+                    </p>
+                    <p>Då fältet id sätts till till primärnyckel (Index=PRIMARY) så får du en fråga. Bekräfta med
+                        <b>Kör</b>-knappen.
+                    </p>
+                    <h3>Lägg till några poster</h3>
+                    <p>Tryck på fliken "Lägg till" och lägg till ett par poster. (Den är inställd att visa två åt
+                        gången.)</p>
+                    <p><img src="images/new-post.PNG" width="738" height="521" /></p>
+                    <h3>Skapa en php-sida med databaskoppling</h3>
+                    <p>Skapa en ny mapp <b>person</b>(i din xampp/htdocs-mapp) och i den placerar du filen nedan.</p>
+                    <p><strong>index.php</strong></p>
+                    <iframe src="code/?file=person-index.php" style="height: 30em;"></iframe>
+
+
+                    <p>I mappen snäppet ovanför <strong>person</strong> så lägger du denna fil:</p>
+                    <p><strong>config.php</strong></p>
+                    <iframe src="code/?file=xampp-config.php" style="height: 6em;"></iframe>
+
+                    <p>Placeringen visas nedan.</p>
+                    <p>
+                        <strong>c:</strong><br />
+                        --<strong>xampp</strong><br />
+                        ----<strong>htdocs</strong><br />
+                        ------<strong>config.php</strong><br />
+                        ------<strong>person</strong><br />
+                        --------<strong>index.php</strong>
+                    </p>
+                    <p>Testkör!</p>
+                </div>
+            </details>
+            <details>
+                <summary>Person (del 2, Skelamp)</summary>
+                <div>
+                    <h3>Skapa en databas på Skelamp</h3>
+                    <ul>
+                        <li>
+                            <p>Gå till <a href="http://skelamp.se/putte/" target="_blank">skelamp.se/putte</a> och logga
+                                in med dina
+                                användaruppgifter.</p>
+                        </li>
+                        <li>Skapa en ny databas genom att välja fliken Databaser och fylla i ett databasnamnet. Det
+                            måste inledas med ditt
+                            användarnamn följt av ett understreck. Till
+                            exempel <em><strong>&lt;användarnamn&gt;_</strong></em><b>persondb</b>.<br /><img
+                                src="images/new-database.PNG" width="400" height="176" /><br /> (Mitt användarnamn är
+                            "matste20".)</li>
+                        <li>Gör nu antingen:
+                            <ul>
+                                <li>Stegen "Skapa tabell" och "Lägg till några poster" på samma sätt som med den lokala
+                                    databasen.<br /> eller</li>
+                                <li>Följ instruktionerna i <a
+                                        href="./?a=Databashantering&s=Kopiera%2520databas%2520till%2520Skelamp">Kopiera
+                                        databas till Skelamp</a>.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3>Ändra i config-filen</h3>
+                    <p>På din plats på skelamp så finns redan en config-fil. Ändra användarnamn och lösenord.</p>
+                    <p><strong>config.php</strong></p>
+
+                    <p>Placeringen visas nedan.</p>
+                    <p>
+                        <strong>w</strong><br />
+                        <strong>----codescan</strong><br />
+                        <strong>--------config.php</strong>
+                    </p>
+
+                    <p>Flytta sedan över mappen till din codescan-mapp på Skelamp och provkör där också.</p>
+                </div>
+            </details>
+            <details>
+                <summary>Kopiera databas till Skelamp</summary>
+                <div>
+                    <p>Om du har en databas lokalt och vill flytta den till skelamp så följ dessa steg.</p>
+                    <ol>
+                        <li>Öppna sidan <strong>localhost:/phpmyadmin/</strong>. (Du måste ha startat xampp
+                            först.)</li>
+                        <li>Välj den databas du vill kopiera. (I exemplet nedan <strong>gallerydb</strong>.)<br /><img
+                                src="images/gallerydb.PNG" width="882" height="260" /><br /> </li>
+                        <li>Klicka på fliken <strong>Exportera</strong> och välj där <strong>Kör</strong> utan att göra
+                            några ändringar. En
+                            sql-fil sparas på din dator (förmodligen i mappen hämtade filer).</li>
+                        <li>Logga in på <strong>skelamp.se/putte</strong>.</li>
+                        <li>Välj en databas dit innehållet ska kopieras. Vid behov skapa först en ny databas. Observera
+                            att alla dina
+                            databasnamn inleds med ditt <strong>användarnamn_</strong> (till exempel
+                            <strong>abcdef-1_</strong>).
+                        </li>
+                        <li> Klicka på fliken <b>Importera</b>, klicka på <strong>Välj fil</strong> och välj den fil som
+                            sparades i steg 3. Klicka
+                            sedan på <strong>Kör</strong>.</li>
+                    </ol>
+                    <p>Kontrollera att innehållet har kopierats över.</p>
+                </div>
+            </details>
+            <details>
+                <summary>SQL</summary>
+                <div>
+                    <p><a href='https://www.w3schools.com/sql/' target='_blank'>SQL Tutorial // w3schools</a></p>
+                    <p><a href='https://www.tutorialspoint.com/sql/index.htm' target='_blank'>SQL Tutorial // tutorialspoint</a></p>
+                    <p><a href='https://www.sqltutorial.org/' target='_blank'>SQL Tutorial // sqltutorial.org</a></p>
+                </div>
+            </details>
+        </section>
+        <section>
+            <h2>Uppgifter</h2>
+
+            <details>
+                <summary>Person med extra fält</summary>
+                <div>
+                    <p>Bygg vidare på exemplet <b>Person</b> och lägg till
+                        ett valfritt extra fält på personerna i databasen.</p>
+                    <p>Du kan till exempel välja:</p>
+                    <ul>
+                        <li>Längd</li>
+                        <li>Vikt</li>
+                        <li>Ort</li>
+                        <li>IQ</li>
+                        <li>...</li>
+                    </ul>
+                    <p>Ändra i koden så att den fungerar för det nya fältet.</p>
+
+                    <p>Skriv, på index-sidan, en beskrivning av vilka ställen du var tvungen att ändra på.</p>
+                </div>
+            </details>
+            <details>
+                <summary>* Filmdatabas</summary>
+                <div>
+                    <p>Bygg vidare på exemplet <b>Person</b>. Skapa två
+                        tabeller till i samma databas som du använde där.</p>
+                    <ul>
+                        <li>En tabell <strong>movie</strong> med fälten <strong>id</strong> och <strong>title</strong>.
+                            Fältet
+                            <strong>id</strong> är automatuppräknat och primärnyckel.<br /><br />
+                        </li>
+                        <li>En tabell <strong>rating</strong> med fälten <strong>person_id</strong>,
+                            <strong>movie_id</strong> och
+                            <strong>rating</strong>. Fältet <strong>rating</strong> ska ange ett betyg på skalan 1-5.
+                            Fälten <strong>person_id</strong><span> och </span><strong>movie_id</strong><span> är
+                                sammansatt
+                                primärnyckel.<br /> <br />Gör <strong>person_id</strong> till en främmande nyckel med en
+                                referens till
+                                fältet <strong>id</strong> i tabellen <strong>person</strong>.<br /><br />Gör
+                                <strong>movie_id</strong> till
+                                en främmande nyckel med en referens till fältet <strong>id</strong> i tabellen
+                                <strong>movie</strong>.<br /></span>
+                        </li>
+                    </ul>
+                    <p>Gör så att:</p>
+                    <ol>
+                        <li>Alla filmer visas.<br /><br /></li>
+                        <li>En film kan läggas till. Inmatning av <strong>title</strong>.<br /><br /></li>
+                        <li>Titeln på en film kan ändras. Inmatning av filmens <strong>id</strong> och
+                            <strong>title</strong>.<br /><br />
+                        </li>
+                        <li>En film kan tas bort. Inmatning av filmens <strong>id</strong>.<br /><br /></li>
+                        <li>Alla betyg visas.<br /><br /></li>
+                        <li>En person kan sätta betyg på en film. Inmatning
+                            av <strong>person_id</strong><span>, </span><strong>movie_id</strong><span> och </span><strong>rating</strong>.<br /><br />
+                        </li>
+                        <li>En person kan ändra sitt betyg på en film. <span>Inmatning
+                                av </span><strong>person_id</strong><span>, </span><strong>movie_id</strong><span> och </span><strong>rating</strong><span>.</span><br /><br />
+                        </li>
+                        <li>En person kan ta bort sitt betyg på en film. <span>Inmatning
+                                av </span><strong>person_id</strong><span> och </span><strong>movie_id</strong><span></span><span>.<br /></span>
+                        </li>
+                    </ol>
+                    <p>Testa att allt fungerar.</p>
+                    <p>Extrauppgift - gör så att:</p>
+                    <ol>
+                        <li>Det går att på ett lättare, mer överskådligt sätt, mata in betygen. Man ska slippa komma
+                            ihåg id:n på personer
+                            och filmer vid inmatning.<br /><br /></li>
+                        <li>Statistik visas för filmerna. <span>(Antal betyg, högsta betyg, lägsta betyg och
+                                medelbetyg.)</span></li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>Användare</summary>
+                <div>
+                    <h3>Del 1: Databasen</h3>
+                    <p>Skapa en databas, med en tabell, som kan spara användarnamn och lösenord. </p>
+                    <p>Steg-för-steg (med <em>XAMPP</em>):</p>
+                    <ol>
+                        <li>Öppna programmet <strong>XAMPP Control Panel</strong>.</li>
+                        <li>Starta webbservern <em>Apache</em> och databashanteraren <em>MySQL</em> genom att trycka på
+                            deras respektive
+                            <strong>Start</strong>-knappar:<br /><img src="images/xampp-start.PNG" width="557"
+                                height="171" /><br /><br />Om det fungerar så ändras knapparna till
+                            <strong>Stop</strong> och inget
+                            felmeddelande visas.<br /><br />
+                        </li>
+                        <li>Öppna webbgränssnittet <strong>phpMyAdmin</strong>, för att administrera dina databaser,
+                            genom att klicka på
+                            <strong>Admin</strong>-knappen för <em>MySQL</em>:<br /><img src="images/xampp-admin.PNG"
+                                width="529" height="53" /><br /><br />Nu bör en
+                            webbsida <strong>localhost/phpmyadmin/...</strong>
+                            öppnas.<br /><br />(Man kan alternativt skriva
+                            adressen <strong>localhost/phpmyadmin</strong> direkt i en
+                            webbläsare.)<br /><br />
+                        </li>
+                        <li>Skapa en ny databas, genom att trycka på <strong>Ny</strong>, skriva databasens namn,
+                            <strong>userdb</strong>,
+                            och trycka på <strong>Skapa</strong>:<br /><img src="images/phpmyadmin-nydb.PNG" width="677"
+                                height="192" /><br /> 
+                        </li>
+                        <li> Skapa en tabell i databasen genom att namnge tabellen (<strong>user</strong>), ändra
+                            antalet kolumner till 2,
+                            och trycka på <strong>Kör</strong>.<br /><img src="images/phpmyadmin-nytab.PNG" width="674"
+                                height="266" /><br /> </li>
+                        <li>Fyll i värden enligt nedan för de två fälten. Det är två textfält (<strong>VARCHAR</strong>)
+                            som kan rymma upp
+                            till tjugo (20) tecken. Observera att användarnamnet är en lämplig primärnyckel
+                            (<strong>PRIMARY</strong>), och
+                            att det därför inte krävs något automatuppräknat fält. <br /><br />Då primärnyckeln sätts så
+                            bekräftar du
+                            med <strong>Kör</strong> i den ruta som kommer fram. Avsluta genom att trycka
+                            på <strong>Spara</strong>.<br /><img src="images/phpmyadmin-nyafalt.PNG" width="998"
+                                height="327" /> <br /><br /> </li>
+                        <li>Lägg till två användare, med tillhörande lösenord, enligt nedan.<br /><img
+                                src="images/phpmyadmin-nyaposter.PNG" width="565" height="402" /><br /><br />  Om allt
+                            gick väl så bekräftas att två rader
+                            (poster) har lagts till
+                            och den INSERT-fråga som gjorde det visas.<br /> </li>
+                        <li>Du är nu klar med denna del. Men behåll gärna fliken öppen.<br /> </li>
+                    </ol>
+                    <h3>Del 2: Admin-sida</h3>
+                    <p>Skapa en sida, <b>admin.php</b>, som kan:</p>
+                    <ul>
+                        <li>Lägga till en användare.</li>
+                        <li>Ta bort en användare.</li>
+                        <li>Ändra lösenord för en användare.</li>
+                        <li>Visa alla användare.</li>
+                    </ul>
+                    <div>Lösenorden kan på denna sida visas helt öppet. Användaren <b>admin</b> ska <i>inte </i>kunna
+                        tas bort.</div>
+                    <div> </div>
+                    <div>Steg-för-steg:<br /><br /></div>
+                    <div>
+                        <ol>
+                            <li>Öppna en texteditor och skriv (eller kopiera in) koden nedan i en ny fil. Spara som
+                                <strong>admin.php</strong> i en ny mapp,
+                                förslagsvis, <strong>c:\xampp\htdocs\user</strong>.
+                                <iframe src="code/?file=user-admin.php"></iframe>
+
+                                <p>Det enda intressanta med sidan är att den innehåller en databasuppkoppling, raden
+                                    med <strong>new PDO(...)</strong>.</p>
+                            </li>
+                            <li>Visa sidan i en webbläsare genom att ange adressen:
+                                <strong>localhost/user/admin.php. </strong>(Om du i steg
+                                1 sparat filen i en annan mapp än <strong>user</strong> så får du justera din sökväg.) 
+                                <br /><br />Om
+                                uppkopplingen fungerar visas inget felmeddelande. Prova då att ändra databasnamnet i
+                                uppkopplingssträngen
+                                till något felaktigt, exempelvis <strong>yserdb</strong>.<br /><br />Detta felmeddelande
+                                ges:
+                                <br /><strong>Fatal error: Uncaught exception 'PDOException' with message
+                                    'SQLSTATE[HY000] [1049] Unknown
+                                    database 'yserdb''</strong><br /><br />Ändra tillbaka så att sidan fungerar
+                                igen.<br /><br />
+                            </li>
+                            <li>Lägg nu till ett formulär inne i <strong>&lt;body&gt;</strong>-elementet, under
+                                <strong>&lt;h1&gt;</strong>-elementet:<br /> 
+
+                                <iframe src="code/?file=user-admin-form.php"></iframe>
+
+                                <p>Visa sidan på nytt. Två textrutor och tre knappar bör ha tillkommit.</p>
+                            </li>
+                            <li>Lägg nu till php-kod (under databasuppkopplingen) som hanterar de tre knapparna:<br>
+
+                                <iframe src="code/?file=user-admin-ins-upd-del.php"></iframe>
+
+                                <p>Kontrollera direkt i phpmyadmin att knapparna gör det man kan förvänta sig.</p>
+                            </li>
+                            <li>Lägg till ett php-block under formuläret som visar alla användare och deras
+                                lösenord:<br />
+
+                                <iframe src="code/?file=user-admin-sel.php"></iframe>
+
+                            </li>
+                        </ol>
+                    </div>
+                    <h3>Del 3: Inloggningssida</h3>
+                    <p>Skapa en inloggningssida, <b>index.php</b>, där användare kan logga in och bli omdirigerade. 
+                    </p>
+                    <ul>
+                        <li>Om <b>admin</b> loggar in ska en omdirigering till sidan <b>admin.php</b> göras.</li>
+                        <li>Om någon annan användare loggar in så ska en omdirigering till sidan <b>user.php</b> göras. 
+                        </li>
+                        <li>På <b>admin.php</b> ska en kontroll göras så att endast <b>admin</b> får komma vidare.
+                            Övriga ska omdirigeras tillbaka till inloggningssidan.</li>
+                        <li>På <b>admin.php</b> ska man kunna logga ut.</li>
+                    </ul>
+                    <p>Tips: Använd sessionsvariabler.</p>
+                    <p>Steg-för-steg:</p>
+                    <ol>
+                        <li>Öppna en texteditor och skriv (eller kopiera in) koden nedan i en ny fil. Spara
+                            som <strong>index.php</strong> i en samma mapp som tidigare
+                            (<strong>c:\xampp\htdocs\user</strong>).<br />
+
+                            <iframe src="code/?file=user-login.php"></iframe>
+
+                        </li>
+                        <li>Lägg till dessa rader, i slutet av php-blocket, för att de värden som skickats ska
+                            skrivas tillbaka till
+                            formuläret.<br />
+
+                            <iframe src="code/?file=user-login-writeback.php"></iframe>
+
+                        </li>
+                        <li>För att kontrollera om det finns en användare med de angivna uppgifterna så lägger du
+                            till dessa rader inuti
+                            if-satsen från föregående steg.<br />
+
+                            <iframe src="code/?file=user-login-test.php"></iframe>
+
+                            <p>Lägg också till en likadan databasuppkoppling som på
+                                admin-sidan.<br /><br />Eftersom sidan använder sessionsvariabler måste denna rad också
+                                läggas
+                                till:</p>
+
+                            <span syntax="php">session_start();</span><br /> 
+                        </li>
+                        <li>Om man inte lyckas logga in vore det trevligt med ett meddelande om detta. Lägg därför
+                            till detta php-block
+                            efter form-elementet:<br />
+
+                            <iframe src="code/?file=user-login-info.php"></iframe>
+
+                            <p>Kontrollera att ett
+                                felmeddelande skrivs ut om
+                                du matat in uppgifter som inte finns i databasen.</p>
+
+                        </li>
+                        <li>För att kontrollera att det är en behörig användare (admin) som besöker Adminsidan så
+                            lägg till dessa rader
+                            högst upp i <strong>admin.php</strong>:<br />
+
+                            <iframe src="code/?file=user-admin-auth.php"></iframe>
+
+                            <p>Om sessionsvariabeln inte finns eller
+                                har fel värde så skickas man vidare till inloggningsssidan.</p>
+                        </li>
+                        <li>För att kunna logga ut så krävs en knapp och kod som beskriver vad som ska hända då den
+                            klickas. Lägg därför
+                            till en "Logga ut"-knapp inne i formuläret (på <strong>admin.php</strong>) med denna
+                            rad<br />
+
+                            <code>&lt;p&gt;&lt;input type='submit' name='logout'
+                                    value='Logga ut'&gt;&lt;/p&gt;</code>
+                            <br />
+
+                            Och en if-sats som denna direkt före den if-sats som las till i föregående
+                            steg:<br />
+                            <code>if (isset($_POST['logout']))
+                                        {<br />    unset($_SESSION['user']);<br />}</code>
+                        </li>
+                    </ol>
+                    <p>Klart! Kontrollera att allt fungerar som det ska.</p>
+
+                    <h3>Del 4: Användarsida</h3>
+                    <p>Skapa en inloggad-sida, <b>user.php</b>.</p>
+                    <ul>
+                        <li>En kontroll ska göras så att endast inloggade användare kommer vidare. Övriga ska
+                            omdirigeras tillbaka till
+                            inloggningssidan.</li>
+                        <li>På sidan ska användaren kunna logga ut.</li>
+                        <li>På sidan ska visas vem som är inloggad.</li>
+                        <li>På sidan ska användaren kunna byta sitt eget lösenord.</li>
+                        <li>På sidan ska användaren kunna ta bort den egna användaren.</li>
+                    </ul>
+                    <p>Steg-för-steg:</p>
+                    <ol>
+                        <li>Öppna en texteditor och skriv (eller kopiera in) koden nedan i en ny fil. Spara
+                            som <strong>user.php</strong> i
+                            en samma mapp som tidigare (<strong>c:\xampp\htdocs\user</strong>).<br />
+
+                            <iframe src="code/?file=user-user.php"></iframe>
+
+                            <p>Visa filen i en webbläsare. En <b>Logga ut</b>-knapp visas men gör inget.</p>
+                        </li>
+                        <li>Lägg till raderna nedan i php-blocket.<br />
+
+                            <iframe src="code/?file=user-user-logout.php"></iframe>
+
+                            <p>Den övre if-satsen kontrollerar om användaren vill logga ut och tar då bort
+                                sessionsvariabeln som håller den informationen.<br /><br />Den nedre if-satsen gör så
+                                att obehöriga besökare (ej inloggade) omdirigeras till
+                                inloggningssidan.<br /><br />Kontrollera att utloggningen fungerar. Kontrollera också
+                                (genom att skriva in sökvägen i adressfältet) att sidan inte kan besökas utan att vara
+                                inloggad.</p> 
+                        </li>
+                        <li> För att visa vem som är inloggad så sparar du först användarnamnet (som finns i
+                            sessionsvariabeln) i en enkel variabel. Lägg denna rad sist i php-blocket:<br />
+
+                            <code>$username = $_SESSION['user'];</code>
+
+                            <p>Skriv sedan ut värdet med dessa rader (efter Logga ut-knappen): </p>
+
+                            <iframe src="code/?file=user-user-write.php"></iframe>
+
+                            <p>Kontrollera att användarnamnet skrivs ut.</p>
+                        </li>
+                        <li>Bygg ut formuläret med dessa element:<br />
+
+                            <code>&lt;p&gt;&lt;input
+                                type='submit'
+                                name='delete' value='Ta bort användare'&gt;&lt;/p&gt;<br />&lt;p&gt;&lt;input
+                                type='submit' name='update'
+                                value='Ändra lösenord'&gt;&lt;/p&gt;<br /></code><br />
+
+                            <p>Kontrollera att de syns på sidan.
+                                Ännu så länge gör
+                                de dock ingenting.</p>
+                        </li>
+                        <li>Lägg till en databasuppkoppling på samma sätt som tidigare även på denna sida samt dessa två
+                            if-satser längst
+                            ner i php-blocket:<br />
+
+                            <iframe src="code/?file=user-user-upd-del.php"></iframe>
+
+                            <p>Kontrollera att lösenordet kan ändras och att användaren kan tas bort. <br /><br />Du
+                                kan kontrollera direkt i databasen eller genom att logga in som admin.</p>
+                        </li>
+                    </ol>
+
+                    <h3>Lämna in så här:</h3>
+                    <ol>
+                        <li>Skapa en databas på skelamp.<br />Gå till <a href="http://skelamp.se/putte/"
+                                target="_blank">skelamp.se/putte</a>.<br />Logga in.<br />Skapa databas med namnet
+                            <strong><em>&lt;anvnamn&gt;</em>_userdb</strong>.<br />Följ stegen i Del 1 för att skapa
+                            tabellen
+                            <strong>user</strong>. (Eller kopiera över den lokala databasen)
+                        </li>
+                        <li>Öppna <em>WinSCP</em> och för över den nya mappen till din <b>codescan</b>-mapp på
+                            <i>skelamp</i>.
+                        </li>
+                    </ol>
+                </div>
+            </details>
+            <details>
+                <summary>* Medddelanden</summary>
+                <div>
+                    <p>Bygg vidare på uppgiften Användare.</p>
+                    <p>Skapa, i samma databas, en ny tabell <b>message</b> i vilket ett meddelande från en användare
+                        till en annan kan
+                        sparas. Observera att meddelandets id är automatuppräknat samt primärnyckel.</p>
+                    <p></p>
+                    <p><img src="images/message-table.PNG" alt="" width="975" height="219" /></p>
+                    <p>På inloggad-sidan <b>user.php</b> så ska man nu kunna se meddelanden som användaren fått, och
+                        skickat, samt kunna
+                        skicka nya meddelanden.</p>
+                    <p>Sortera både in- och utkorg i omvänd ordning på id (högre id = nyare meddelande). </p>
+                    <p>I inkorgen så ska lästa meddelanden visas på ett avvikande sätt. </p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Skivfrågor</summary>
+                <div>
+                    <h3>Gör så här:</h3>
+                    <ol>
+                        <li>Ladda ner filen<b> <a href="matste_records.sql">matste_records</a> </b>(en
+                            skivdatabas). Högerklicka på länken, spara sedan ner filen på din datorn med "spara länk
+                            som..." .  <br /><br />
+                        </li>
+                        <li>Öppna <strong>XAMPP</strong>, starta <strong>MySQL</strong> och gå
+                            till <i>phpMyAdmin</i> genom att klicka på
+                            <strong>Admin</strong>-knappen.<br /> 
+                        </li>
+                        <li>Skapa en ny databas <strong>recordsdb</strong>, och välj sedan den databasen.<br /> </li>
+                        <li>Importera filen du laddade ner i steg 1. Om allt går bra skapas nu två tabeller:
+                            <strong>artists</strong> och
+                            <strong>records<br /><br /></strong>Titta igenom tabellerna så att du förstår hur de hänger
+                            ihop (tips: se
+                            fältet <strong>artist_id</strong>)<br /> 
+                        </li>
+                        <li>Skapa en mapp <b>skivfragor</b> och i den en fil <b>index.html</b>. Kopiera koden nedan och
+                            klistra in på index-sidan. <br /><br /></li>
+                        <li>Skriv och kör SQL-kod för uppgifterna inne i <i>phpMyAdmin</i>. <br /><br />Antalet inom
+                            parentes är det antal
+                            poster man kan förvänta sig om frågan skrivits rätt.<br /><br />Kopiera SQL-uttrycket och
+                            klistra in det under motsvarande uppgift i index-filen inne i ett
+                            &lt;code&gt;-element.<br /><br />
+
+                            Tips 1: Skriv alltid alla SQL-ord med versaler - stora bokstäver - och alla dina
+                            identifierare med gemener - små bokstäver. På detta vis blir koden enklare för att läsa.<br>
+                            Ex: <code>SELECT title, year FROM records WHERE year=2000</code>. <br /><br />
+                            Tips 2: Det går att använda tabell- och fältnamn med mellanslag i. Men då
+                            måste namnet skrivas med <em>backticks</em> (grav accent) runt. <br>
+                            Ex: <code>`year of birth`</code><br>
+                            En annan anledning är om fältnamnet är ett reserverat ord i SQL. 
+                            Lär mer <a
+                                href="https://dba.stackexchange.com/questions/23129/benefits-of-using-backtick-in-mysql-queries">här</a>.<br />  
+                        </li>
+                    </ol>
+
+                    <p>Lämna in på skelamp.</p>
+
+                    <iframe src="code/?file=skivfragor.html" style="height: 24em"></iframe>
+
+                </div>
+            </details>
+        </section>
+
+    </article>
+
+    <article>
+        <h1>Projekt</h1>
+    </article>
+
+    <article>
+        <h1>Översikt</h1>
+
+    </article>
+
+
+
+</body>
+
+</html>

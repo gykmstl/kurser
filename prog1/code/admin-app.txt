@@ -1,0 +1,56 @@
+import { add, connect, poll, setUpdate, resetCanvas, send } from "./balder.js";
+
+let uppkopplad = false
+                                              // Byt här:
+await connect("server", "http://eir.skelamp.se/xxxxxx-1/w/balder-server/")
+uppkopplad = true
+
+class Lärare {
+    constructor(
+        public signatur: string,
+        public förnamn: string,
+        public efternamn: string,
+    ) { }
+}
+
+let lärarlista: Lärare[] = []
+
+let sparat: string
+
+if (sparat = localStorage.getItem("lärarlista")) {
+    lärarlista = JSON.parse(sparat)
+} else {
+    localStorage.setItem("lärarlista", JSON.stringify(lärarlista))
+}
+
+
+add("h1", "Admin")
+
+let signatur = add("input", "Signatur")
+let förnamn = add("input", "Förnamn")
+let efternamn = add("input", "Efternamn")
+
+add("button", "Lägg till").onclick = () => {
+    let lärare = new Lärare(
+        signatur.value,
+        förnamn.value,
+        efternamn.value
+    )
+
+    lärarlista.push(lärare)
+    localStorage.setItem("lärarlista", JSON.stringify(lärarlista))
+}
+
+resetCanvas()
+
+setUpdate(() => {
+    if (!uppkopplad) return
+
+    let meddelande = poll()
+
+    if (meddelande) {
+        if (meddelande.content == "lärare") {
+            send(JSON.stringify(lärarlista), meddelande.sender)
+        }
+    }
+})

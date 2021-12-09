@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='sv'>
+
+<head>
+	<meta charset='utf-8'>
+	<title>Inmatning</title>
+</head>
+
+<body>
+	<h1>Inmatning</h1>
+
+	<!-- 
+	Attributet 'action' anger vilken sida som ska ta emot formuläret då det skickas.
+	Om det utelämnas så tar den egna sidan emot formuläret.
+
+    Attributet 'method' anger på vilket sätt formuläret kommer att skickas iväg. 
+    Metoden 'get' är förvald så attributet skulle kunna utelämnas i detta fall. 
+	
+	Det som skickas är ett eller flera namn-värde-par. 
+	Namnet anges med 'name'-attributet och värdet är det du skriver i textrutan.
+    -->
+
+	<form action='output.php' method='get'>
+		<p>
+			Meddelande:<br>
+			<input name='message'>
+		</p>
+
+		<button>Skicka</button>
+	</form>
+</body>
+
+</html>

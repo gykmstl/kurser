@@ -1,0 +1,41 @@
+import { add, connect, send, setUpdate, poll, output, resetCanvas } from "./balder.js";
+
+interface Lärare {
+    signatur: string,
+    förnamn: string,
+    efternamn: string,
+}
+
+add("h1", "Användare")
+
+let klient = add("input", "Klient:")
+
+let uppkopplad = false
+
+add("button", "connect").onclick = async () => {
+                                                      // Byt här:
+    await connect(klient.value, "http://eir.skelamp.se/xxxxxx-1/w/balder-server/")
+    uppkopplad = true
+}
+
+add("button", "Hämta lärare").onclick = () => {
+    send("lärare", "server")
+}
+
+resetCanvas()
+
+setUpdate(() => {
+    if (!uppkopplad) return
+
+    let meddelande = poll()
+
+    if (meddelande) {
+        let lärarlista: Lärare[] = JSON.parse(meddelande.content)
+
+        add("h2", "Lärarsignaturer")
+
+        for (const lärare of lärarlista) {
+            output(lärare.signatur)
+        }
+    }
+})
